@@ -1,0 +1,97 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Definitions for Gradients and Filters -->
+    <defs>
+        <!-- Glass Passport Gradient -->
+        <linearGradient id="glass_gradient" x1="200" y1="200" x2="800" y2="800" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.25" />
+            <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.05" />
+        </linearGradient>
+        
+        <!-- Glass Border Gradient -->
+        <linearGradient id="glass_border" x1="200" y1="200" x2="800" y2="800" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.6" />
+            <stop offset="50%" stop-color="#FFFFFF" stop-opacity="0.1" />
+            <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.4" />
+        </linearGradient>
+
+        <!-- Gold Metal Gradients for Shield/Lock -->
+        <linearGradient id="gold_face" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#FCD580" />
+            <stop offset="50%" stop-color="#FFB000" />
+            <stop offset="100%" stop-color="#D97706" />
+        </linearGradient>
+        
+        <linearGradient id="gold_rim" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#FFF9C4" />
+            <stop offset="50%" stop-color="#F59E0B" />
+            <stop offset="100%" stop-color="#B45309" />
+        </linearGradient>
+
+        <!-- Filters -->
+        <filter id="glass_blur" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="6" />
+        </filter>
+        
+        <filter id="soft_shadow" x="-50%" y="-50%" width="200%" height="200%">
+             <feDropShadow dx="0" dy="15" stdDeviation="30" flood-color="#000000" flood-opacity="0.5"/>
+        </filter>
+    </defs>
+
+    <!-- 2. Glass Passport Booklet -->
+    <g filter="url(#soft_shadow)">
+        <!-- Passport Shape -->
+        <path d="M 280,240 h 420 a 30,30 0 0 1 30,30 v 480 a 30,30 0 0 1 -30,30 h -420 a 20,20 0 0 1 -20,-20 v -500 a 20,20 0 0 1 20,-20 z" 
+              fill="url(#glass_gradient)" 
+              stroke="url(#glass_border)" 
+              stroke-width="4" />
+        
+        <!-- Spine Detail (Left Edge) -->
+        <path d="M 290,240 v 540" stroke="#FFFFFF" stroke-opacity="0.2" stroke-width="2"/>
+        
+        <!-- Globe Symbol (Etched) -->
+        <g opacity="0.4" stroke="#FFFFFF" stroke-width="8" fill="none">
+             <circle cx="490" cy="510" r="100" />
+             <ellipse cx="490" cy="510" rx="40" ry="100" />
+             <path d="M 390,510 h 200" />
+             <path d="M 490,410 v 200" />
+             <path d="M 405,460 h 170" />
+             <path d="M 405,560 h 170" />
+        </g>
+    </g>
+
+    <!-- 3. Gold Shield Badge -->
+    <g transform="translate(620, 620) scale(1.1)">
+        <!-- Circle Body (Replacing Shield) -->
+        <circle cx="115" cy="115" r="115"
+              fill="url(#gold_face)" 
+              stroke="url(#gold_rim)" 
+              stroke-width="8" 
+              filter="url(#soft_shadow)" />
+              
+        <!-- Overlapping Icons Group -->
+        <g transform="translate(30, 45)">
+            <!-- 1. Timer (Back/Left) -->
+            <g transform="translate(0, 10)">
+                <circle cx="60" cy="60" r="50" stroke="#78350F" stroke-width="10" fill="none" opacity="0.8"/>
+                <path d="M 60,60 v -30" stroke="#78350F" stroke-width="8" stroke-linecap="round" />
+                <path d="M 60,60 l 20 20" stroke="#78350F" stroke-width="8" stroke-linecap="round" />
+                <!-- Tick marks -->
+                <path d="M 60,10 v 10 M 110,60 h -10 M 60,110 v -10 M 10,60 h 10" stroke="#78350F" stroke-width="6" stroke-linecap="round" opacity="0.6"/>
+            </g>
+
+            <!-- 2. Lock (Front/Right) -->
+            <g transform="translate(80, 0)">
+                 <!-- White stroke for separation/mask effect -->
+                 <path d="M 30,50 v -20 a 20,20 0 0 1 40,0 v 20" stroke="#FCD580" stroke-width="20" stroke-linecap="round" fill="none"/>
+                 <rect x="15" y="45" width="70" height="60" rx="8" fill="#FCD580" /> <!-- Mask backing -->
+                 
+                 <!-- Actual Lock -->
+                 <path d="M 30,50 v -20 a 20,20 0 0 1 40,0 v 20" stroke="#78350F" stroke-width="12" stroke-linecap="round" fill="none"/>
+                 <rect x="20" y="50" width="60" height="50" rx="8" fill="#78350F" />
+                 <!-- Keyhole -->
+                 <circle cx="50" cy="70" r="6" fill="#FCD580" />
+                 <path d="M 50,70 v 15" stroke="#FCD580" stroke-width="4" stroke-linecap="round"/>
+            </g>
+        </g>
+    </g>
+</svg>
