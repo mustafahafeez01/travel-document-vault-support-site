@@ -25,7 +25,7 @@
           },
           boxShadow: {
             vault: '0 28px 65px rgba(0, 0, 0, 0.35)',
-            glass: '0 8px 32px 0 rgba(31, 38, 135, 0.37)',
+            glass: '0 8px 32px 0 rgba(0, 0, 0, 0.2)',
           },
           animation: {
             'fade-in-down': 'fadeInDown 0.8s ease-out forwards',
@@ -52,145 +52,165 @@
   </script>
   <style>
     html { scroll-behavior: smooth; }
-    .glass-panel {
-      background: rgba(255, 255, 255, 0.95);
+    
+    .glass-card {
+      background: rgba(17, 25, 40, 0.6);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      transition: all 0.3s ease;
+    }
+    
+    .glass-card:hover {
+      background: rgba(22, 33, 50, 0.7);
+      border-color: rgba(255, 255, 255, 0.15);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 40px -10px rgba(0,0,0,0.5);
+    }
+
+    .glass-panel {
+      background: rgba(17, 25, 40, 0.6);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
     }
   </style>
 </head>
-<body class="bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-900 via-brand-blue to-slate-900 font-sans antialiased text-slate-800 min-h-screen">
-  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14 space-y-8">
-    <header class="flex flex-col items-center text-center gap-4 animate-fade-in-down">
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 text-white text-sm font-semibold">
+<body class="bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-900 via-[#0a192f] to-[#050b14] font-sans antialiased text-slate-200 min-h-screen selection:bg-brand-gold selection:text-white">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20 space-y-16">
+    
+    <!-- Hero Section -->
+    <header class="flex flex-col items-center text-center gap-6 animate-fade-in-down max-w-4xl mx-auto">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-panel text-blue-200 text-sm font-medium tracking-wide shadow-lg">
+        <span class="w-2 h-2 rounded-full bg-brand-gold shadow-[0_0_10px_rgba(255,176,0,0.5)]"></span>
         Privacy-first · On-device only
       </div>
-      <h1 class="text-4xl sm:text-5xl font-bold tracking-tight text-white drop-shadow">
-        Your Personal Secure Vault
+      
+      <h1 class="text-5xl sm:text-7xl font-bold tracking-tight text-white drop-shadow-xl leading-[1.1]">
+        Your Personal <br />
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-200 to-white">Secure Vault</span>
       </h1>
-      <p class="max-w-2xl text-blue-100 text-base sm:text-lg">
-        Securely manage your passports, visas, and travel documents with absolute privacy. No accounts, no cloud, and no tracking. Your data remains strictly on your device, protected by system-level security.
+      
+      <p class="max-w-2xl text-blue-100/80 text-lg sm:text-xl leading-relaxed">
+        Manage passports, visas, and travel documents with absolute privacy. No accounts. No cloud. Just you and your data.
       </p>
-      <div class="flex flex-col items-center gap-4">
-        <a href="https://apps.apple.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center transition hover:opacity-80">
-          <img src="assets/images/app-store-badge.svg" alt="Download on the App Store" class="h-[50px] w-auto" />
+      
+      <div class="flex flex-col sm:flex-row items-center gap-6 pt-4">
+        <a href="https://apps.apple.com" target="_blank" rel="noopener noreferrer" class="group relative inline-flex items-center transition-transform active:scale-95">
+           <div class="absolute -inset-1 bg-gradient-to-r from-brand-blue to-blue-600 rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-200"></div>
+           <img src="assets/images/app-store-badge.svg" alt="Download on the App Store" class="relative h-[56px] w-auto" />
         </a>
-        <div class="flex items-center gap-4 text-sm font-medium">
-          <a href="mailto:support@mustafahafeez.com" class="text-blue-100/80 hover:text-white transition">Contact Support</a>
-          <span class="text-blue-100/40">·</span>
-          <a href="privacy-policy/index.html" class="text-blue-100/80 hover:text-white transition">Privacy Policy</a>
-        </div>
       </div>
     </header>
 
-    <main class="glass-panel rounded-2xl shadow-glass border border-white/20 p-6 sm:p-8 space-y-10 animate-fade-in-up opacity-0">
-      <section class="grid md:grid-cols-2 gap-8">
-        <div class="space-y-4">
-          <h2 class="text-2xl font-semibold text-brand-blue">Private by Design</h2>
-          <p class="text-slate-600">
-            Travel Document Vault is engineered to operate offline and independently. We have eliminated user accounts, cloud synchronization, and external server dependencies to ensure that your sensitive identification documents are never exposed to third parties.
-          </p>
-          <p class="text-slate-600">
-            The application functions as a secure local utility—what you save here, stays here.
-          </p>
-        </div>
-        <div class="space-y-4">
-          <h2 class="text-2xl font-semibold text-brand-blue">Privacy at a Glance</h2>
-          <ul class="space-y-3 text-slate-600">
-            <li class="flex items-start gap-3">
-              <svg xmlns="http://www.w3.org/2000/svg" class="mt-0.5 h-5 w-5 text-brand-blue flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-              </svg>
-              <span><strong>No Accounts:</strong> No sign-up required.</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <svg xmlns="http://www.w3.org/2000/svg" class="mt-0.5 h-5 w-5 text-brand-blue flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-              </svg>
-              <span><strong>No Cloud:</strong> Zero backend uploads.</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <svg xmlns="http://www.w3.org/2000/svg" class="mt-0.5 h-5 w-5 text-brand-blue flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-              </svg>
-              <span><strong>No Tracking:</strong> No analytics or ads.</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <svg xmlns="http://www.w3.org/2000/svg" class="mt-0.5 h-5 w-5 text-brand-blue flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-              </svg>
-              <span><strong>Lifetime Access:</strong> One-time unlock.</span>
-            </li>
-          </ul>
-        </div>
+    <!-- Main Content Grid -->
+    <main class="space-y-8 animate-fade-in-up opacity-0 delay-[200ms]">
+      
+      <!-- Privacy Statement -->
+      <section class="glass-panel rounded-3xl p-8 sm:p-10 text-center max-w-4xl mx-auto relative overflow-hidden">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-2/3 h-1 bg-gradient-to-r from-transparent via-brand-blue/50 to-transparent"></div>
+        <h2 class="text-2xl font-semibold text-white mb-4">Private by Design</h2>
+        <p class="text-slate-300 text-lg leading-relaxed max-w-2xl mx-auto">
+          We eliminated user accounts, cloud sync, and tracking.
+          <span class="text-blue-200 font-medium">What you save here, stays here.</span>
+        </p>
       </section>
 
-      <section class="space-y-4">
-        <div class="flex items-center justify-between flex-wrap gap-3">
-          <h2 class="text-2xl font-semibold text-brand-blue">Features</h2>
-          <span class="text-sm font-semibold text-brand-blue bg-blue-50 border border-blue-100 px-3 py-1 rounded-full">Built for travel peace of mind</span>
-        </div>
-        <div class="grid md:grid-cols-2 gap-4">
-          <div class="flex gap-3 p-4 border border-blue-100 rounded-xl bg-blue-50/50 hover:bg-white hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-            <div class="h-11 w-11 flex-shrink-0 flex items-center justify-center rounded-xl bg-white shadow-sm ring-1 ring-blue-100">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-brand-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M12 5.5c-1.5-1.5-3.75-1.5-5.25 0-1.5 1.5-1.5 3.75 0 5.25L12 16l5.25-5.25c1.5-1.5 1.5-3.75 0-5.25-1.5-1.5-3.75-1.5-5.25 0Z" />
-              </svg>
-            </div>
-            <div>
-              <h3 class="font-semibold text-brand-blue">Encrypted Local Storage</h3>
-              <p class="text-sm text-slate-600">Securely store digital copies of passports, visas, and IDs. Data is encrypted at rest by the operating system.</p>
-            </div>
+      <!-- Features Grid -->
+      <section class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+        
+        <!-- Feature 1 -->
+        <div class="glass-card rounded-2xl p-6 sm:p-8 flex flex-col gap-4">
+          <div class="h-12 w-12 rounded-xl bg-blue-500/10 flex items-center justify-center border border-blue-400/20 text-brand-gold">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+            </svg>
           </div>
-          <div class="flex gap-3 p-4 border border-blue-100 rounded-xl bg-blue-50/50 hover:bg-white hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-            <div class="h-11 w-11 flex-shrink-0 flex items-center justify-center rounded-xl bg-white shadow-sm ring-1 ring-brand-gold/30">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-brand-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6l3 1.5M21 12a9 9 0 11-18 0 9 9 0 0118 0Z" />
-              </svg>
-            </div>
-            <div>
-              <h3 class="font-semibold text-brand-blue">Private Notifications</h3>
-              <p class="text-sm text-slate-600">Expiry reminders are scheduled locally on your device. We don't track when your documents expire.</p>
-            </div>
-          </div>
-          <div class="flex gap-3 p-4 border border-blue-100 rounded-xl bg-blue-50/50 hover:bg-white hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-            <div class="h-11 w-11 flex-shrink-0 flex items-center justify-center rounded-xl bg-white shadow-sm ring-1 ring-blue-100">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-brand-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M7 9h10M7 13h6m2-9H9a2 2 0 00-2 2v12l5-3 5 3V6a2 2 0 00-2-2Z" />
-              </svg>
-            </div>
-            <div>
-              <h3 class="font-semibold text-brand-blue">On-Device Processing</h3>
-              <p class="text-sm text-slate-600">Our OCR engine runs entirely on your phone to suggest expiry dates. No images are ever uploaded.</p>
-            </div>
-          </div>
-          <div class="flex gap-3 p-4 border border-blue-100 rounded-xl bg-blue-50/50 hover:bg-white hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-            <div class="h-11 w-11 flex-shrink-0 flex items-center justify-center rounded-xl bg-white shadow-sm ring-1 ring-blue-100">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-brand-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M7 9h1.5a2.5 2.5 0 000-5H7v11a3 3 0 003 3h6.5a2.5 2.5 0 000-5H14" />
-              </svg>
-            </div>
-            <div>
-              <h3 class="font-semibold text-brand-blue">User-Controlled Sharing</h3>
-              <p class="text-sm text-slate-600">Your documents leave the app only when you explicitly choose to export or share them.</p>
-            </div>
+          <div>
+            <h3 class="text-lg font-semibold text-white mb-2">Encrypted Local Storage</h3>
+            <p class="text-sm text-slate-400 leading-relaxed">Copies of your documents are encrypted at rest by iOS. No external servers involved.</p>
           </div>
         </div>
+
+        <!-- Feature 2 -->
+        <div class="glass-card rounded-2xl p-6 sm:p-8 flex flex-col gap-4">
+          <div class="h-12 w-12 rounded-xl bg-blue-500/10 flex items-center justify-center border border-blue-400/20 text-blue-300">
+             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold text-white mb-2">Completely Offline</h3>
+            <p class="text-sm text-slate-400 leading-relaxed">No internet connection required. Your vault works perfectly in airplane mode.</p>
+          </div>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="glass-card rounded-2xl p-6 sm:p-8 flex flex-col gap-4">
+          <div class="h-12 w-12 rounded-xl bg-blue-500/10 flex items-center justify-center border border-blue-400/20 text-brand-gold">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold text-white mb-2">Private Notifications</h3>
+            <p class="text-sm text-slate-400 leading-relaxed">Expiry reminders are scheduled locally. We never know when your documents expire.</p>
+          </div>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="glass-card rounded-2xl p-6 sm:p-8 flex flex-col gap-4">
+          <div class="h-12 w-12 rounded-xl bg-blue-500/10 flex items-center justify-center border border-blue-400/20 text-blue-300">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold text-white mb-2">On-Device OCR</h3>
+            <p class="text-sm text-slate-400 leading-relaxed">Scanning happens on your processor. Images are never uploaded for analysis.</p>
+          </div>
+        </div>
+
+        <!-- Feature 5 -->
+        <div class="glass-card rounded-2xl p-6 sm:p-8 flex flex-col gap-4">
+          <div class="h-12 w-12 rounded-xl bg-blue-500/10 flex items-center justify-center border border-blue-400/20 text-brand-gold">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold text-white mb-2">You Control Sharing</h3>
+            <p class="text-sm text-slate-400 leading-relaxed">Documents leave the app only when <em>you</em> consciously choose to export them.</p>
+          </div>
+        </div>
+
+         <!-- Feature 6 (Stats/Trust) -->
+         <div class="glass-card rounded-2xl p-6 sm:p-8 flex flex-col gap-4">
+          <div class="h-12 w-12 rounded-xl bg-blue-500/10 flex items-center justify-center border border-blue-400/20 text-blue-300">
+           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold text-white mb-2">Zero Tracking</h3>
+             <p class="text-sm text-slate-400 leading-relaxed">No analytics. No ads. No hidden SDKs. Just code we wrote.</p>
+          </div>
+        </div>
+
       </section>
 
-
-
-      <section class="space-y-3">
-        <h2 class="text-2xl font-semibold text-slate-900">Support</h2>
-        <p class="text-slate-600">For help, questions, or feedback, email <a class="text-brand-blue font-semibold" href="mailto:support@mustafahafeez.com">support@mustafahafeez.com</a>.</p>
-        <p class="text-slate-600">One-time lifetime unlock; no subscriptions.</p>
-      </section>
+      <!-- Footer / Support -->
+      <footer class="text-center pt-10 pb-6 space-y-6">
+        <div class="flex items-center justify-center gap-6 text-sm font-medium">
+          <a href="mailto:support@mustafahafeez.com" class="text-blue-200/60 hover:text-white transition-colors duration-200">Contact Support</a>
+          <span class="text-blue-200/20">·</span>
+          <a href="privacy-policy/index.html" class="text-blue-200/60 hover:text-white transition-colors duration-200">Privacy Policy</a>
+        </div>
+        <p class="text-blue-200/40 text-xs">© 2025 Travel Document Vault</p>
+      </footer>
+      
     </main>
-
-    <footer class="text-center text-blue-200 text-sm pb-4 animate-fade-in opacity-0">
-      © Travel Document Vault · <a class="underline decoration-blue-200 underline-offset-4 hover:text-white transition" href="mailto:support@mustafahafeez.com">support@mustafahafeez.com</a>
-    </footer>
   </div>
 </body>
 </html>
