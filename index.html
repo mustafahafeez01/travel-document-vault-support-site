@@ -4,20 +4,20 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Travel Document Vault - Secure Passport & Visa Organizer</title>
-  <meta name="description" content="Organize passports, visas, and travel reminders securely on your device. Offline, private, and on-device storage for your most sensitive documents." />
+  <meta name="description" content="Never miss a passport renewal again. Organize passports, visas, and travel documents securely on your device with smart expiry reminders. No accounts. No cloud. Just privacy." />
   <meta name="theme-color" content="#003A87" />
 
   <!-- Open Graph / Facebook -->
-  <meta property="og:title" content="Travel Document Vault" />
-  <meta property="og:description" content="Organize passports, visas, and travel reminders securely on your device." />
+  <meta property="og:title" content="Travel Document Vault - Never Miss a Passport Renewal" />
+  <meta property="og:description" content="Organize passports, visas, and travel documents securely on your device with smart expiry reminders." />
   <meta property="og:image" content="https://travelvault.mustafahafeez.com/assets/images/social-preview.png" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://travelvault.mustafahafeez.com/" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Travel Document Vault" />
-  <meta name="twitter:description" content="Organize passports, visas, and travel reminders securely on your device." />
+  <meta name="twitter:title" content="Travel Document Vault - Never Miss a Passport Renewal" />
+  <meta name="twitter:description" content="Organize passports, visas, and travel documents securely on your device with smart expiry reminders." />
   <meta name="twitter:image" content="https://travelvault.mustafahafeez.com/assets/images/social-preview.png" />
   <link rel="icon" type="image/svg+xml" href="assets/images/app_icon.svg">
   <link rel="apple-touch-icon" href="assets/images/app_icon.svg">
@@ -69,7 +69,7 @@
   </script>
   <style>
     html { scroll-behavior: smooth; }
-    
+
     .glass-card {
       background: rgba(17, 25, 40, 0.6);
       backdrop-filter: blur(12px);
@@ -77,7 +77,7 @@
       border: 1px solid rgba(255, 255, 255, 0.08);
       transition: all 0.3s ease;
     }
-    
+
     .glass-card:hover {
       background: rgba(22, 33, 50, 0.7);
       border-color: rgba(255, 255, 255, 0.15);
@@ -91,55 +91,285 @@
       -webkit-backdrop-filter: blur(12px);
       border: 1px solid rgba(255, 255, 255, 0.08);
     }
+
+    /* Scroll-triggered animations */
+    .scroll-fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .scroll-fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .scroll-fade-in-left {
+      opacity: 0;
+      transform: translateX(-50px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .scroll-fade-in-left.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .scroll-fade-in-right {
+      opacity: 0;
+      transform: translateX(50px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .scroll-fade-in-right.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    /* Stagger children */
+    .stagger-children > * {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    }
+
+    .stagger-children.visible > *:nth-child(1) { transition-delay: 0s; opacity: 1; transform: translateY(0); }
+    .stagger-children.visible > *:nth-child(2) { transition-delay: 0.1s; opacity: 1; transform: translateY(0); }
+    .stagger-children.visible > *:nth-child(3) { transition-delay: 0.2s; opacity: 1; transform: translateY(0); }
+    .stagger-children.visible > *:nth-child(4) { transition-delay: 0.3s; opacity: 1; transform: translateY(0); }
+    .stagger-children.visible > *:nth-child(5) { transition-delay: 0.4s; opacity: 1; transform: translateY(0); }
+    .stagger-children.visible > *:nth-child(6) { transition-delay: 0.5s; opacity: 1; transform: translateY(0); }
+
+    /* Pricing card highlight */
+    .pricing-highlight {
+      background: linear-gradient(145deg, rgba(255,176,0,0.15) 0%, rgba(255,176,0,0.05) 100%);
+      border: 2px solid rgba(255,176,0,0.3);
+    }
+
+    .pricing-highlight:hover {
+      border-color: rgba(255,176,0,0.5);
+      background: linear-gradient(145deg, rgba(255,176,0,0.2) 0%, rgba(255,176,0,0.08) 100%);
+    }
+
+    /* Navigation */
+    .nav-link {
+      position: relative;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #FFB000;
+      transition: width 0.3s ease;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
   </style>
 </head>
 <body class="bg-gradient-to-b from-[#003A87] to-[#0A192F] font-sans antialiased text-slate-200 min-h-screen selection:bg-brand-gold selection:text-white">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20 space-y-16">
-    
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 glass-panel border-b border-white/5">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="/" class="flex items-center gap-3">
+          <img src="assets/images/app_icon.svg" alt="Travel Document Vault" class="w-8 h-8" />
+          <span class="font-semibold text-white hidden sm:block">Travel Document Vault</span>
+        </a>
+        <div class="flex items-center gap-6 text-sm font-medium">
+          <a href="#features" class="nav-link text-blue-200/80 hover:text-white transition-colors">Features</a>
+          <a href="#pricing" class="nav-link text-blue-200/80 hover:text-white transition-colors">Pricing</a>
+          <a href="faq/" class="nav-link text-blue-200/80 hover:text-white transition-colors">FAQ</a>
+          <a href="https://apps.apple.com" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-gold text-brand-blue font-semibold text-sm hover:bg-brand-goldHover transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+            </svg>
+            Download
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-12 sm:pt-32 sm:pb-20 space-y-24">
+
     <!-- Hero Section -->
-    <header class="flex flex-col items-center text-center gap-6 animate-fade-in-down max-w-4xl mx-auto">
+    <header class="flex flex-col items-center text-center gap-8 animate-fade-in-down max-w-4xl mx-auto">
       <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-panel text-blue-200 text-sm font-medium tracking-wide shadow-lg">
         <span class="w-2 h-2 rounded-full bg-brand-gold shadow-[0_0_10px_rgba(255,176,0,0.5)]"></span>
         Privacy-first · On-device only
       </div>
-      
-      <h1 class="text-5xl sm:text-7xl font-bold tracking-tight text-white drop-shadow-xl leading-[1.1]">
-        Your Personal <br />
-        <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-200 to-white">Travel Document Vault</span>
+
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white drop-shadow-xl leading-[1.1]">
+        Never Miss a <br />
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-gold to-yellow-300">Passport Renewal</span><br />
+        <span class="text-blue-200">Again</span>
       </h1>
-      
+
       <p class="max-w-2xl text-blue-100/80 text-lg sm:text-xl leading-relaxed">
-        Manage passports, visas, and travel documents on your device. No accounts. No cloud. Just you and your data.
+        Family travel documents, organized and private. Smart expiry reminders that actually work — 6 months before your passport expires, not 6 days.
       </p>
-      
-      <div class="flex flex-col sm:flex-row items-center gap-6 pt-4">
+
+      <p class="text-blue-200/60 text-sm">
+        The average passport renewal takes 6-8 weeks. We remind you 6 months early.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center gap-4 pt-4">
         <a href="https://apps.apple.com" target="_blank" rel="noopener noreferrer" class="group relative inline-flex items-center transition-transform active:scale-95">
            <div class="absolute -inset-1 bg-gradient-to-r from-brand-blue to-blue-600 rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-200"></div>
            <img src="assets/images/app-store-badge.svg" alt="Download on the App Store" class="relative h-[56px] w-auto" />
         </a>
+        <span class="text-blue-200/40 text-sm">One-time purchase · No subscription</span>
       </div>
     </header>
 
-    <!-- Main Content Grid -->
-    <main class="space-y-8 animate-fade-in-up opacity-0 delay-[200ms]">
-      
-      <!-- Privacy Statement -->
-      <section class="glass-panel rounded-3xl p-8 sm:p-10 text-center max-w-4xl mx-auto relative overflow-hidden">
-        
-        <div class="flex items-center justify-center gap-5 mb-4">
-          <img src="assets/images/app_icon_foreground.svg" alt="Privacy Shield" class="w-16 h-16 drop-shadow-2xl hover:scale-105 transition-transform duration-300" />
-          <h2 class="text-3xl font-semibold text-white">Private by Design</h2>
+    <!-- Trust Bar -->
+    <section class="scroll-fade-in">
+      <div class="glass-panel rounded-2xl p-6 sm:p-8">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+          <div>
+            <div class="text-3xl font-bold text-white">100%</div>
+            <div class="text-blue-200/60 text-sm mt-1">On-Device</div>
+          </div>
+          <div>
+            <div class="text-3xl font-bold text-white">0</div>
+            <div class="text-blue-200/60 text-sm mt-1">Cloud Servers</div>
+          </div>
+          <div>
+            <div class="text-3xl font-bold text-white">0</div>
+            <div class="text-blue-200/60 text-sm mt-1">Tracking SDKs</div>
+          </div>
+          <div>
+            <div class="text-3xl font-bold text-brand-gold">∞</div>
+            <div class="text-blue-200/60 text-sm mt-1">Privacy</div>
+          </div>
         </div>
-        <p class="text-slate-300 text-lg leading-relaxed max-w-2xl mx-auto">
-          We eliminated user accounts, cloud sync, and tracking.
-          <span class="text-blue-200 font-medium">What you save here, stays here.</span>
-        </p>
-      </section>
+      </div>
+    </section>
 
-      <!-- Features Grid -->
-      <section class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-        
+    <!-- Privacy Statement -->
+    <section id="privacy" class="scroll-fade-in glass-panel rounded-3xl p-8 sm:p-10 text-center max-w-4xl mx-auto relative overflow-hidden">
+      <div class="flex items-center justify-center gap-5 mb-4">
+        <img src="assets/images/app_icon_foreground.svg" alt="Privacy Shield" class="w-16 h-16 drop-shadow-2xl hover:scale-105 transition-transform duration-300" />
+        <h2 class="text-3xl font-semibold text-white">Private by Design</h2>
+      </div>
+      <p class="text-slate-300 text-lg leading-relaxed max-w-2xl mx-auto">
+        We eliminated user accounts, cloud sync, and tracking.
+        <span class="text-blue-200 font-medium">What you save here, stays here.</span>
+      </p>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="space-y-12">
+      <div class="text-center scroll-fade-in">
+        <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">Everything You Need</h2>
+        <p class="text-blue-200/70 text-lg max-w-2xl mx-auto">Built for families who travel. Designed for people who value privacy.</p>
+      </div>
+
+      <!-- Feature Grid -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5 stagger-children">
+
         <!-- Feature 1 -->
+        <div class="glass-card rounded-2xl p-6 sm:p-8 flex flex-col gap-4">
+          <div class="h-12 w-12 rounded-xl bg-blue-500/10 flex items-center justify-center border border-blue-400/20 text-brand-gold">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold text-white mb-2">Family Profiles</h3>
+            <p class="text-sm text-slate-400 leading-relaxed">Store documents for your whole family. Spouse, kids, parents — everyone organized in one place with separate profiles.</p>
+          </div>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="glass-card rounded-2xl p-6 sm:p-8 flex flex-col gap-4">
+          <div class="h-12 w-12 rounded-xl bg-blue-500/10 flex items-center justify-center border border-blue-400/20 text-blue-300">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold text-white mb-2">Smart Expiry Reminders</h3>
+            <p class="text-sm text-slate-400 leading-relaxed">Cascading reminders at 6 months, 3 months, 6 weeks, 1 month, 2 weeks, and 1 week. Customized per document type.</p>
+          </div>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="glass-card rounded-2xl p-6 sm:p-8 flex flex-col gap-4">
+          <div class="h-12 w-12 rounded-xl bg-blue-500/10 flex items-center justify-center border border-blue-400/20 text-brand-gold">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold text-white mb-2">Smart Capture Guides</h3>
+            <p class="text-sm text-slate-400 leading-relaxed">Visual guides for passport spreads, ID cards (front + back), A4 visas, and airline tickets. Get the perfect shot every time.</p>
+          </div>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="glass-card rounded-2xl p-6 sm:p-8 flex flex-col gap-4">
+          <div class="h-12 w-12 rounded-xl bg-blue-500/10 flex items-center justify-center border border-blue-400/20 text-blue-300">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold text-white mb-2">All Document Types</h3>
+            <p class="text-sm text-slate-400 leading-relaxed">Passports, National IDs, Visas, Residence Permits, Airline Tickets. Import from camera, photos, or files (including PDFs).</p>
+          </div>
+        </div>
+
+        <!-- Feature 5 -->
+        <div class="glass-card rounded-2xl p-6 sm:p-8 flex flex-col gap-4">
+          <div class="h-12 w-12 rounded-xl bg-blue-500/10 flex items-center justify-center border border-blue-400/20 text-brand-gold">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold text-white mb-2">Edit & Enhance</h3>
+            <p class="text-sm text-slate-400 leading-relaxed">Rotate, crop, and zoom your document images. Resolution warnings ensure your captures are always readable.</p>
+          </div>
+        </div>
+
+        <!-- Feature 6 -->
+        <div class="glass-card rounded-2xl p-6 sm:p-8 flex flex-col gap-4">
+          <div class="h-12 w-12 rounded-xl bg-blue-500/10 flex items-center justify-center border border-blue-400/20 text-blue-300">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold text-white mb-2">On-Device OCR</h3>
+            <p class="text-sm text-slate-400 leading-relaxed">Automatically detect expiry dates from your documents. All processing happens on your device — nothing is uploaded.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- More Features Link -->
+      <div class="text-center">
+        <a href="features/" class="inline-flex items-center gap-2 text-brand-gold hover:text-brand-goldHover font-medium transition-colors">
+          See all features
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+          </svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- Privacy Features -->
+    <section class="scroll-fade-in">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+
         <div class="glass-card rounded-2xl p-6 sm:p-8 flex flex-col gap-4">
           <div class="h-12 w-12 rounded-xl bg-blue-500/10 flex items-center justify-center border border-blue-400/20 text-brand-gold">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
@@ -152,11 +382,10 @@
           </div>
         </div>
 
-        <!-- Feature 2 -->
         <div class="glass-card rounded-2xl p-6 sm:p-8 flex flex-col gap-4">
           <div class="h-12 w-12 rounded-xl bg-blue-500/10 flex items-center justify-center border border-blue-400/20 text-blue-300">
              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M18.364 5.636a9 9 0 010 12.728m0 0l-2.829-2.829m2.829 2.829L21 21M15.536 8.464a5 5 0 010 7.072m0 0l-2.829-2.829m-4.243 2.829a4.978 4.978 0 01-1.414-2.83m-1.414 5.658a9 9 0 01-2.167-9.238m7.824 2.167a1 1 0 111.414 1.414m-1.414-1.414L3 3m8.293 8.293l1.414 1.414" />
             </svg>
           </div>
           <div>
@@ -165,47 +394,6 @@
           </div>
         </div>
 
-        <!-- Feature 3 -->
-        <div class="glass-card rounded-2xl p-6 sm:p-8 flex flex-col gap-4">
-          <div class="h-12 w-12 rounded-xl bg-blue-500/10 flex items-center justify-center border border-blue-400/20 text-brand-gold">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
-            </svg>
-          </div>
-          <div>
-            <h3 class="text-lg font-semibold text-white mb-2">Local Notifications</h3>
-            <p class="text-sm text-slate-400 leading-relaxed">Expiry reminders are scheduled locally; we do not collect this information.</p>
-          </div>
-        </div>
-
-        <!-- Feature 4 -->
-        <div class="glass-card rounded-2xl p-6 sm:p-8 flex flex-col gap-4">
-          <div class="h-12 w-12 rounded-xl bg-blue-500/10 flex items-center justify-center border border-blue-400/20 text-blue-300">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
-              <path stroke-linecap="round" stroke-linejoin="round" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
-            </svg>
-          </div>
-          <div>
-            <h3 class="text-lg font-semibold text-white mb-2">On-Device OCR (optional)</h3>
-            <p class="text-sm text-slate-400 leading-relaxed">Processing occurs entirely on-device; images are never uploaded. OCR suggestions require user verification.</p>
-          </div>
-        </div>
-
-        <!-- Feature 5 -->
-        <div class="glass-card rounded-2xl p-6 sm:p-8 flex flex-col gap-4">
-          <div class="h-12 w-12 rounded-xl bg-blue-500/10 flex items-center justify-center border border-blue-400/20 text-brand-gold">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
-            </svg>
-          </div>
-          <div>
-            <h3 class="text-lg font-semibold text-white mb-2">You Control Sharing</h3>
-            <p class="text-sm text-slate-400 leading-relaxed">Documents leave the app only when <em>you</em> consciously choose to export them.</p>
-          </div>
-        </div>
-
-         <!-- Feature 6 (Stats/Trust) -->
          <div class="glass-card rounded-2xl p-6 sm:p-8 flex flex-col gap-4">
           <div class="h-12 w-12 rounded-xl bg-blue-500/10 flex items-center justify-center border border-blue-400/20 text-blue-300">
            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
@@ -218,19 +406,216 @@
           </div>
         </div>
 
-      </section>
+      </div>
+    </section>
 
-      <!-- Footer / Support -->
-      <footer class="text-center pt-10 pb-6 space-y-6">
-        <div class="flex items-center justify-center gap-6 text-sm font-medium">
-          <a href="mailto:support@mustafahafeez.com" class="text-blue-200/60 hover:text-white transition-colors duration-200">support&#64;mustafahafeez&#46;com</a>
-          <span class="text-blue-200/20">·</span>
-          <a href="privacy-policy/" class="text-blue-200/60 hover:text-white transition-colors duration-200">Privacy Policy</a>
+    <!-- Pricing Section -->
+    <section id="pricing" class="space-y-12 scroll-fade-in">
+      <div class="text-center">
+        <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">Simple, Honest Pricing</h2>
+        <p class="text-blue-200/70 text-lg max-w-2xl mx-auto">One-time purchase. No subscriptions. No hidden fees. No data harvesting.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+
+        <!-- Free Tier -->
+        <div class="glass-card rounded-2xl p-8 flex flex-col">
+          <div class="mb-6">
+            <h3 class="text-xl font-bold text-white mb-2">Free</h3>
+            <p class="text-blue-200/60 text-sm">Perfect for getting started</p>
+          </div>
+
+          <div class="mb-6">
+            <span class="text-4xl font-bold text-white">$0</span>
+            <span class="text-blue-200/60">/forever</span>
+          </div>
+
+          <ul class="space-y-3 mb-8 flex-1">
+            <li class="flex items-center gap-3 text-slate-300">
+              <svg class="h-5 w-5 text-brand-gold flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>1 profile</span>
+            </li>
+            <li class="flex items-center gap-3 text-slate-300">
+              <svg class="h-5 w-5 text-brand-gold flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>Up to 5 documents</span>
+            </li>
+            <li class="flex items-center gap-3 text-slate-300">
+              <svg class="h-5 w-5 text-brand-gold flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>Expiry reminders</span>
+            </li>
+            <li class="flex items-center gap-3 text-slate-300">
+              <svg class="h-5 w-5 text-brand-gold flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>All document types</span>
+            </li>
+            <li class="flex items-center gap-3 text-slate-300">
+              <svg class="h-5 w-5 text-brand-gold flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>On-device OCR scanning</span>
+            </li>
+            <li class="flex items-center gap-3 text-slate-300">
+              <svg class="h-5 w-5 text-brand-gold flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>Guided capture overlays</span>
+            </li>
+            <li class="flex items-center gap-3 text-slate-300">
+              <svg class="h-5 w-5 text-brand-gold flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>100% offline &amp; private</span>
+            </li>
+            <li class="flex items-center gap-3 text-slate-300">
+              <svg class="h-5 w-5 text-brand-gold flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>Share individual docs</span>
+            </li>
+          </ul>
+
+          <a href="https://apps.apple.com" target="_blank" rel="noopener noreferrer" class="w-full py-3 px-6 rounded-xl border border-white/20 text-white font-semibold text-center hover:bg-white/5 transition-colors">
+            Download Free
+          </a>
         </div>
-        <p class="text-blue-200/60 text-xs">© Travel Document Vault</p>
-      </footer>
-      
-    </main>
+
+        <!-- Pro Tier -->
+        <div class="glass-card pricing-highlight rounded-2xl p-8 flex flex-col relative">
+          <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-brand-gold text-brand-blue text-xs font-bold rounded-full uppercase tracking-wide">
+            Best Value
+          </div>
+
+          <div class="mb-6">
+            <h3 class="text-xl font-bold text-white mb-2">Pro</h3>
+            <p class="text-blue-200/60 text-sm">For families who travel</p>
+          </div>
+
+          <div class="mb-2">
+            <span class="text-2xl text-blue-200/40 line-through">$19.99</span>
+            <span class="text-4xl font-bold text-white ml-2">$14.99</span>
+            <span class="text-blue-200/60">/one-time</span>
+          </div>
+          <div class="mb-6">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-gold/20 text-brand-gold text-xs font-semibold">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd" />
+              </svg>
+              Launch Price
+            </span>
+          </div>
+
+          <p class="text-blue-200/80 text-sm mb-4 font-medium">Everything in Free, plus:</p>
+
+          <ul class="space-y-3 mb-8 flex-1">
+            <li class="flex items-center gap-3 text-slate-300">
+              <svg class="h-5 w-5 text-brand-gold flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+              <span><strong class="text-white">Unlimited</strong> profiles</span>
+            </li>
+            <li class="flex items-center gap-3 text-slate-300">
+              <svg class="h-5 w-5 text-brand-gold flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+              <span><strong class="text-white">Unlimited</strong> documents</span>
+            </li>
+            <li class="flex items-center gap-3 text-slate-300">
+              <svg class="h-5 w-5 text-brand-gold flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>Combined PDF export</span>
+            </li>
+            <li class="flex items-center gap-3 text-slate-300">
+              <svg class="h-5 w-5 text-brand-gold flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>Batch export (ZIP)</span>
+            </li>
+            <li class="flex items-center gap-3 text-slate-300">
+              <svg class="h-5 w-5 text-brand-gold flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>Biometric app lock</span>
+            </li>
+            </ul>
+
+          <a href="https://apps.apple.com" target="_blank" rel="noopener noreferrer" class="w-full py-3 px-6 rounded-xl bg-brand-gold text-brand-blue font-semibold text-center hover:bg-brand-goldHover transition-colors">
+            Get Pro — <span class="line-through opacity-60">$19.99</span> $14.99
+          </a>
+        </div>
+      </div>
+
+      <p class="text-center text-blue-200/50 text-sm">
+        Restore purchases anytime on your other devices.
+      </p>
+    </section>
+
+    <!-- Disclaimer -->
+    <section class="scroll-fade-in">
+      <div class="glass-panel rounded-2xl p-6 sm:p-8 text-center max-w-3xl mx-auto">
+        <p class="text-blue-200/60 text-sm leading-relaxed">
+          <strong class="text-blue-200/80">Important:</strong> Travel Document Vault is a personal organization tool. It does not verify document authenticity, provide legal advice, or guarantee compliance with immigration requirements. Always verify travel requirements with official government sources.
+        </p>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="scroll-fade-in text-center space-y-6">
+      <h2 class="text-3xl sm:text-4xl font-bold text-white">Ready to Get Organized?</h2>
+      <p class="text-blue-200/70 text-lg max-w-xl mx-auto">Download now and never worry about expired documents again.</p>
+      <a href="https://apps.apple.com" target="_blank" rel="noopener noreferrer" class="group relative inline-flex items-center transition-transform active:scale-95">
+         <div class="absolute -inset-1 bg-gradient-to-r from-brand-gold to-yellow-500 rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-200"></div>
+         <img src="assets/images/app-store-badge.svg" alt="Download on the App Store" class="relative h-[56px] w-auto" />
+      </a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center pt-10 pb-6 space-y-6 border-t border-white/10">
+      <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm font-medium">
+        <a href="mailto:support@mustafahafeez.com" class="text-blue-200/60 hover:text-white transition-colors duration-200">support&#64;mustafahafeez&#46;com</a>
+        <span class="text-blue-200/20 hidden sm:inline">·</span>
+        <a href="features/" class="text-blue-200/60 hover:text-white transition-colors duration-200">Features</a>
+        <span class="text-blue-200/20 hidden sm:inline">·</span>
+        <a href="faq/" class="text-blue-200/60 hover:text-white transition-colors duration-200">FAQ</a>
+        <span class="text-blue-200/20 hidden sm:inline">·</span>
+        <a href="privacy-policy/" class="text-blue-200/60 hover:text-white transition-colors duration-200">Privacy Policy</a>
+        <span class="text-blue-200/20 hidden sm:inline">·</span>
+        <a href="terms/" class="text-blue-200/60 hover:text-white transition-colors duration-200">Terms of Service</a>
+      </div>
+      <p class="text-blue-200/60 text-xs">© 2025 Travel Document Vault. All rights reserved.</p>
+    </footer>
+
   </div>
+
+  <!-- Scroll Animation Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, observerOptions);
+
+      // Observe all scroll-animated elements
+      document.querySelectorAll('.scroll-fade-in, .scroll-fade-in-left, .scroll-fade-in-right, .stagger-children').forEach(el => {
+        observer.observe(el);
+      });
+    });
+  </script>
 </body>
 </html>

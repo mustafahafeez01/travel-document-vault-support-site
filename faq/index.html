@@ -1,0 +1,515 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FAQ - Travel Document Vault</title>
+  <meta name="description" content="Frequently asked questions about Travel Document Vault. Learn about privacy, data storage, reminders, and more." />
+  <meta name="theme-color" content="#003A87" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:title" content="FAQ - Travel Document Vault" />
+  <meta property="og:description" content="Frequently asked questions about Travel Document Vault." />
+  <meta property="og:image" content="https://travelvault.mustafahafeez.com/assets/images/social-preview.png" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="FAQ - Travel Document Vault" />
+  <meta name="twitter:description" content="Frequently asked questions about Travel Document Vault." />
+  <meta name="twitter:image" content="https://travelvault.mustafahafeez.com/assets/images/social-preview.png" />
+  <link rel="icon" type="image/svg+xml" href="../assets/images/app_icon.svg">
+  <link rel="apple-touch-icon" href="../assets/images/app_icon.svg">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              blue: '#003A87',
+              gold: '#FFB000',
+              goldHover: '#e69f00',
+              white: '#FFFFFF',
+            },
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+          },
+          boxShadow: {
+            vault: '0 28px 65px rgba(0, 0, 0, 0.35)',
+            glass: '0 8px 32px 0 rgba(0, 0, 0, 0.2)',
+          },
+          animation: {
+            'fade-in-down': 'fadeInDown 0.8s ease-out forwards',
+            'fade-in-up': 'fadeInUp 0.8s ease-out forwards 0.2s',
+            'fade-in': 'fadeIn 1s ease-out forwards 0.4s',
+          },
+          keyframes: {
+            fadeInDown: {
+              '0%': { opacity: '0', transform: 'translateY(-20px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+            fadeInUp: {
+              '0%': { opacity: '0', transform: 'translateY(20px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+            fadeIn: {
+              '0%': { opacity: '0' },
+              '100%': { opacity: '1' },
+            },
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+
+    .glass-panel {
+      background: rgba(17, 25, 40, 0.6);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .faq-item {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s ease;
+    }
+
+    .faq-toggle:checked ~ .faq-content {
+      max-height: 500px;
+      padding-top: 1rem;
+      padding-bottom: 0.5rem;
+    }
+
+    .faq-arrow {
+      transition: transform 0.3s ease;
+    }
+
+    .faq-toggle:checked ~ .faq-label .faq-arrow {
+      transform: rotate(180deg);
+    }
+
+    .scroll-fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .scroll-fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-b from-[#003A87] to-[#0A192F] font-sans antialiased text-slate-200 min-h-screen selection:bg-brand-gold selection:text-white">
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 glass-panel border-b border-white/5">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="../" class="flex items-center gap-3">
+          <img src="../assets/images/app_icon.svg" alt="Travel Document Vault" class="w-8 h-8" />
+          <span class="font-semibold text-white hidden sm:block">Travel Document Vault</span>
+        </a>
+        <div class="flex items-center gap-6 text-sm font-medium">
+          <a href="../features/" class="text-blue-200/80 hover:text-white transition-colors">Features</a>
+          <a href="../#pricing" class="text-blue-200/80 hover:text-white transition-colors">Pricing</a>
+          <a href="https://apps.apple.com" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-gold text-brand-blue font-semibold text-sm hover:bg-brand-goldHover transition-colors">
+            Download
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-12 sm:pt-32 sm:pb-20 space-y-12">
+
+    <!-- Hero -->
+    <header class="text-center animate-fade-in-down">
+      <h1 class="text-4xl sm:text-5xl font-bold tracking-tight text-white mb-4">
+        Frequently Asked Questions
+      </h1>
+      <p class="text-blue-200/70 text-lg max-w-2xl mx-auto">
+        Everything you need to know about Travel Document Vault.
+      </p>
+    </header>
+
+    <!-- Privacy & Data -->
+    <section class="scroll-fade-in">
+      <h2 class="text-xl font-bold text-white mb-4 flex items-center gap-3">
+        <span class="h-8 w-8 rounded-lg bg-brand-gold/20 flex items-center justify-center text-brand-gold">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+          </svg>
+        </span>
+        Privacy & Data
+      </h2>
+
+      <div class="glass-panel rounded-2xl overflow-hidden">
+        <div class="faq-item p-6">
+          <input type="checkbox" id="faq-1" class="faq-toggle hidden peer" />
+          <label for="faq-1" class="faq-label flex items-center justify-between cursor-pointer">
+            <span class="font-semibold text-white">Where is my data stored?</span>
+            <svg class="faq-arrow h-5 w-5 text-blue-200/60" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </label>
+          <div class="faq-content text-slate-400">
+            <p>All your data is stored <strong class="text-white">exclusively on your device</strong>. We don't have cloud servers, user accounts, or any way to access your documents. When you save a document, it stays in your phone's secure storage area.</p>
+          </div>
+        </div>
+
+        <div class="faq-item p-6">
+          <input type="checkbox" id="faq-2" class="faq-toggle hidden peer" />
+          <label for="faq-2" class="faq-label flex items-center justify-between cursor-pointer">
+            <span class="font-semibold text-white">Is my data backed up to the cloud?</span>
+            <svg class="faq-arrow h-5 w-5 text-blue-200/60" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </label>
+          <div class="faq-content text-slate-400">
+            <p><strong class="text-white">No.</strong> This is intentional — it's a privacy feature, not a limitation. Your sensitive travel documents never leave your device. If you want to preserve your data, you should back up your device using iCloud Backup or iTunes.</p>
+          </div>
+        </div>
+
+        <div class="faq-item p-6">
+          <input type="checkbox" id="faq-3" class="faq-toggle hidden peer" />
+          <label for="faq-3" class="faq-label flex items-center justify-between cursor-pointer">
+            <span class="font-semibold text-white">What happens if I lose my phone?</span>
+            <svg class="faq-arrow h-5 w-5 text-blue-200/60" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </label>
+          <div class="faq-content text-slate-400">
+            <p>If you lose your phone and don't have a device backup, <strong class="text-white">your data will be lost</strong>. This is the trade-off for true privacy — we can't recover data we never had access to. We recommend regular device backups if you want data protection.</p>
+          </div>
+        </div>
+
+        <div class="faq-item p-6">
+          <input type="checkbox" id="faq-4" class="faq-toggle hidden peer" />
+          <label for="faq-4" class="faq-label flex items-center justify-between cursor-pointer">
+            <span class="font-semibold text-white">Do you collect any analytics or tracking data?</span>
+            <svg class="faq-arrow h-5 w-5 text-blue-200/60" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </label>
+          <div class="faq-content text-slate-400">
+            <p><strong class="text-white">No.</strong> We don't use any analytics SDKs, advertising networks, or tracking services. The only external service we use is <strong class="text-white">Sentry</strong> for crash reporting (which can be disabled in settings). Crash reports contain only technical information — never your documents or personal data.</p>
+          </div>
+        </div>
+
+        <div class="faq-item p-6">
+          <input type="checkbox" id="faq-5" class="faq-toggle hidden peer" />
+          <label for="faq-5" class="faq-label flex items-center justify-between cursor-pointer">
+            <span class="font-semibold text-white">What happens when I delete the app?</span>
+            <svg class="faq-arrow h-5 w-5 text-blue-200/60" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </label>
+          <div class="faq-content text-slate-400">
+            <p>All your data is <strong class="text-white">permanently deleted</strong> when you uninstall the app. There's no way to recover it afterward since we don't store anything externally.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="scroll-fade-in">
+      <h2 class="text-xl font-bold text-white mb-4 flex items-center gap-3">
+        <span class="h-8 w-8 rounded-lg bg-blue-500/20 flex items-center justify-center text-blue-300">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+          </svg>
+        </span>
+        Features
+      </h2>
+
+      <div class="glass-panel rounded-2xl overflow-hidden">
+        <div class="faq-item p-6">
+          <input type="checkbox" id="faq-6" class="faq-toggle hidden peer" />
+          <label for="faq-6" class="faq-label flex items-center justify-between cursor-pointer">
+            <span class="font-semibold text-white">What document types can I store?</span>
+            <svg class="faq-arrow h-5 w-5 text-blue-200/60" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </label>
+          <div class="faq-content text-slate-400">
+            <p>The app supports <strong class="text-white">Passports</strong>, <strong class="text-white">National IDs</strong> (front + back), <strong class="text-white">Visas/Residence Permits</strong>, and <strong class="text-white">Airline Tickets</strong>. You can capture documents using your camera, import from your photo library, or import PDF files.</p>
+          </div>
+        </div>
+
+        <div class="faq-item p-6">
+          <input type="checkbox" id="faq-7" class="faq-toggle hidden peer" />
+          <label for="faq-7" class="faq-label flex items-center justify-between cursor-pointer">
+            <span class="font-semibold text-white">How do expiry reminders work?</span>
+            <svg class="faq-arrow h-5 w-5 text-blue-200/60" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </label>
+          <div class="faq-content text-slate-400">
+            <p>When you add an expiry date to a document, we schedule a cascade of reminders. For passports, you'll get notified at <strong class="text-white">6 months, 3 months, 6 weeks, 1 month, 2 weeks, 1 week</strong>, and on the expiry day. Different document types have different schedules optimized for their renewal timelines.</p>
+          </div>
+        </div>
+
+        <div class="faq-item p-6">
+          <input type="checkbox" id="faq-8" class="faq-toggle hidden peer" />
+          <label for="faq-8" class="faq-label flex items-center justify-between cursor-pointer">
+            <span class="font-semibold text-white">What is OCR and how does it work?</span>
+            <svg class="faq-arrow h-5 w-5 text-blue-200/60" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </label>
+          <div class="faq-content text-slate-400">
+            <p>OCR (Optical Character Recognition) automatically detects expiry dates from your documents. Point your camera at a passport or visa, and the app will try to read the expiry date. <strong class="text-white">All processing happens on your device</strong> — images are never uploaded. You always confirm detected dates before they're saved. OCR is a Pro feature.</p>
+          </div>
+        </div>
+
+        <div class="faq-item p-6">
+          <input type="checkbox" id="faq-9" class="faq-toggle hidden peer" />
+          <label for="faq-9" class="faq-label flex items-center justify-between cursor-pointer">
+            <span class="font-semibold text-white">Can I share documents with family members?</span>
+            <svg class="faq-arrow h-5 w-5 text-blue-200/60" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </label>
+          <div class="faq-content text-slate-400">
+            <p>The app uses <strong class="text-white">profiles</strong> to organize documents by family member, but all data stays on your device. There's no shared access or sync between devices. If you need to share a document, you can export it using the system share sheet and send it via AirDrop, email, or messaging.</p>
+          </div>
+        </div>
+
+        <div class="faq-item p-6">
+          <input type="checkbox" id="faq-10" class="faq-toggle hidden peer" />
+          <label for="faq-10" class="faq-label flex items-center justify-between cursor-pointer">
+            <span class="font-semibold text-white">Does the app work offline?</span>
+            <svg class="faq-arrow h-5 w-5 text-blue-200/60" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </label>
+          <div class="faq-content text-slate-400">
+            <p><strong class="text-white">Yes!</strong> The app works completely offline. You can add documents, view them, and receive reminders without any internet connection. Perfect for traveling.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing & Purchases -->
+    <section class="scroll-fade-in">
+      <h2 class="text-xl font-bold text-white mb-4 flex items-center gap-3">
+        <span class="h-8 w-8 rounded-lg bg-brand-gold/20 flex items-center justify-center text-brand-gold">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+        </span>
+        Pricing & Purchases
+      </h2>
+
+      <div class="glass-panel rounded-2xl overflow-hidden">
+        <div class="faq-item p-6">
+          <input type="checkbox" id="faq-11" class="faq-toggle hidden peer" />
+          <label for="faq-11" class="faq-label flex items-center justify-between cursor-pointer">
+            <span class="font-semibold text-white">What's the difference between Free and Pro?</span>
+            <svg class="faq-arrow h-5 w-5 text-blue-200/60" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </label>
+          <div class="faq-content text-slate-400">
+            <p><strong class="text-white">Free</strong> includes 1 profile and up to 5 documents with full functionality. <strong class="text-white">Pro</strong> ($14.99 one-time) unlocks unlimited profiles, unlimited documents, custom reminder schedules, OCR scanning, and biometric app lock.</p>
+          </div>
+        </div>
+
+        <div class="faq-item p-6">
+          <input type="checkbox" id="faq-12" class="faq-toggle hidden peer" />
+          <label for="faq-12" class="faq-label flex items-center justify-between cursor-pointer">
+            <span class="font-semibold text-white">Is Pro a subscription?</span>
+            <svg class="faq-arrow h-5 w-5 text-blue-200/60" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </label>
+          <div class="faq-content text-slate-400">
+            <p><strong class="text-white">No.</strong> Pro is a one-time purchase of $14.99. Pay once, own it forever. No recurring charges, no subscription fatigue.</p>
+          </div>
+        </div>
+
+        <div class="faq-item p-6">
+          <input type="checkbox" id="faq-13" class="faq-toggle hidden peer" />
+          <label for="faq-13" class="faq-label flex items-center justify-between cursor-pointer">
+            <span class="font-semibold text-white">Can I restore my purchase on a new device?</span>
+            <svg class="faq-arrow h-5 w-5 text-blue-200/60" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </label>
+          <div class="faq-content text-slate-400">
+            <p><strong class="text-white">Yes.</strong> Go to Settings in the app and tap "Restore Purchases." As long as you're signed into the same Apple ID, your Pro purchase will be restored. Note: your documents won't transfer — only the Pro unlock.</p>
+          </div>
+        </div>
+
+        <div class="faq-item p-6">
+          <input type="checkbox" id="faq-14" class="faq-toggle hidden peer" />
+          <label for="faq-14" class="faq-label flex items-center justify-between cursor-pointer">
+            <span class="font-semibold text-white">How do I get a refund?</span>
+            <svg class="faq-arrow h-5 w-5 text-blue-200/60" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </label>
+          <div class="faq-content text-slate-400">
+            <p>All purchases are processed through the App Store. For refunds, you'll need to request one through Apple. Go to <strong class="text-white">reportaproblem.apple.com</strong> and follow their refund process.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Troubleshooting -->
+    <section class="scroll-fade-in">
+      <h2 class="text-xl font-bold text-white mb-4 flex items-center gap-3">
+        <span class="h-8 w-8 rounded-lg bg-blue-500/20 flex items-center justify-center text-blue-300">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+          </svg>
+        </span>
+        Troubleshooting
+      </h2>
+
+      <div class="glass-panel rounded-2xl overflow-hidden">
+        <div class="faq-item p-6">
+          <input type="checkbox" id="faq-15" class="faq-toggle hidden peer" />
+          <label for="faq-15" class="faq-label flex items-center justify-between cursor-pointer">
+            <span class="font-semibold text-white">I'm not receiving reminder notifications</span>
+            <svg class="faq-arrow h-5 w-5 text-blue-200/60" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </label>
+          <div class="faq-content text-slate-400">
+            <p>Check that notifications are enabled for Travel Document Vault in your device Settings → Notifications. Also ensure you've added an expiry date to your document — reminders are only scheduled when there's an expiry date.</p>
+          </div>
+        </div>
+
+        <div class="faq-item p-6">
+          <input type="checkbox" id="faq-16" class="faq-toggle hidden peer" />
+          <label for="faq-16" class="faq-label flex items-center justify-between cursor-pointer">
+            <span class="font-semibold text-white">OCR isn't detecting my expiry date</span>
+            <svg class="faq-arrow h-5 w-5 text-blue-200/60" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </label>
+          <div class="faq-content text-slate-400">
+            <p>OCR works best with good lighting and a flat document. Try adjusting the angle or lighting. If detection fails, you can always enter the expiry date manually. OCR is assistive — it's designed to help, not replace careful data entry.</p>
+          </div>
+        </div>
+
+        <div class="faq-item p-6">
+          <input type="checkbox" id="faq-17" class="faq-toggle hidden peer" />
+          <label for="faq-17" class="faq-label flex items-center justify-between cursor-pointer">
+            <span class="font-semibold text-white">The app crashed — did I lose my data?</span>
+            <svg class="faq-arrow h-5 w-5 text-blue-200/60" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </label>
+          <div class="faq-content text-slate-400">
+            <p>Probably not. Your data is saved automatically when you add or edit documents. A crash shouldn't cause data loss. Reopen the app and check your documents. If you're seeing issues, please contact us at support@mustafahafeez.com.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Legal -->
+    <section class="scroll-fade-in">
+      <h2 class="text-xl font-bold text-white mb-4 flex items-center gap-3">
+        <span class="h-8 w-8 rounded-lg bg-brand-gold/20 flex items-center justify-center text-brand-gold">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+          </svg>
+        </span>
+        Legal & Disclaimers
+      </h2>
+
+      <div class="glass-panel rounded-2xl overflow-hidden">
+        <div class="faq-item p-6">
+          <input type="checkbox" id="faq-18" class="faq-toggle hidden peer" />
+          <label for="faq-18" class="faq-label flex items-center justify-between cursor-pointer">
+            <span class="font-semibold text-white">Is this app a replacement for official documents?</span>
+            <svg class="faq-arrow h-5 w-5 text-blue-200/60" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </label>
+          <div class="faq-content text-slate-400">
+            <p><strong class="text-white">No.</strong> Travel Document Vault is a personal organization tool only. It does not replace official documents, verify authenticity, or guarantee compliance with any immigration requirements. Always carry your original documents when traveling and verify requirements with official government sources.</p>
+          </div>
+        </div>
+
+        <div class="faq-item p-6">
+          <input type="checkbox" id="faq-19" class="faq-toggle hidden peer" />
+          <label for="faq-19" class="faq-label flex items-center justify-between cursor-pointer">
+            <span class="font-semibold text-white">What if I miss a deadline because of a reminder failure?</span>
+            <svg class="faq-arrow h-5 w-5 text-blue-200/60" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </label>
+          <div class="faq-content text-slate-400">
+            <p>Reminders are a convenience feature and should not be your only reminder system. We are not liable for missed deadlines, expired documents, or any consequences resulting from reminder failures. Please see our <a href="../terms/" class="text-blue-200 hover:text-white">Terms of Service</a> for full details.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Still have questions -->
+    <section class="scroll-fade-in glass-panel rounded-2xl p-8 text-center">
+      <h2 class="text-xl font-bold text-white mb-3">Still have questions?</h2>
+      <p class="text-slate-400 mb-6">We're here to help. Reach out and we'll get back to you as soon as possible.</p>
+      <a href="mailto:support@mustafahafeez.com" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-brand-gold text-brand-blue font-semibold hover:bg-brand-goldHover transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+        </svg>
+        Contact Support
+      </a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center pt-10 pb-6 space-y-6 border-t border-white/10">
+      <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm font-medium">
+        <a href="mailto:support@mustafahafeez.com" class="text-blue-200/60 hover:text-white transition-colors duration-200">support@mustafahafeez.com</a>
+        <span class="text-blue-200/20 hidden sm:inline">·</span>
+        <a href="../" class="text-blue-200/60 hover:text-white transition-colors duration-200">Home</a>
+        <span class="text-blue-200/20 hidden sm:inline">·</span>
+        <a href="../features/" class="text-blue-200/60 hover:text-white transition-colors duration-200">Features</a>
+        <span class="text-blue-200/20 hidden sm:inline">·</span>
+        <a href="../privacy-policy/" class="text-blue-200/60 hover:text-white transition-colors duration-200">Privacy Policy</a>
+        <span class="text-blue-200/20 hidden sm:inline">·</span>
+        <a href="../terms/" class="text-blue-200/60 hover:text-white transition-colors duration-200">Terms of Service</a>
+      </div>
+      <p class="text-blue-200/60 text-xs">© 2025 Travel Document Vault. All rights reserved.</p>
+    </footer>
+
+  </div>
+
+  <!-- Scroll Animation Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.1 });
+
+      document.querySelectorAll('.scroll-fade-in').forEach(el => observer.observe(el));
+    });
+  </script>
+</body>
+</html>

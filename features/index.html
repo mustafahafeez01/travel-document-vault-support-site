@@ -1,0 +1,542 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Features - Travel Document Vault</title>
+  <meta name="description" content="Explore all features of Travel Document Vault. Family profiles, smart reminders, document capture, OCR scanning, and more." />
+  <meta name="theme-color" content="#003A87" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:title" content="Features - Travel Document Vault" />
+  <meta property="og:description" content="Explore all features of Travel Document Vault. Family profiles, smart reminders, and more." />
+  <meta property="og:image" content="https://travelvault.mustafahafeez.com/assets/images/social-preview.png" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Features - Travel Document Vault" />
+  <meta name="twitter:description" content="Explore all features of Travel Document Vault. Family profiles, smart reminders, and more." />
+  <meta name="twitter:image" content="https://travelvault.mustafahafeez.com/assets/images/social-preview.png" />
+  <link rel="icon" type="image/svg+xml" href="../assets/images/app_icon.svg">
+  <link rel="apple-touch-icon" href="../assets/images/app_icon.svg">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              blue: '#003A87',
+              gold: '#FFB000',
+              goldHover: '#e69f00',
+              white: '#FFFFFF',
+            },
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+          },
+          boxShadow: {
+            vault: '0 28px 65px rgba(0, 0, 0, 0.35)',
+            glass: '0 8px 32px 0 rgba(0, 0, 0, 0.2)',
+          },
+          animation: {
+            'fade-in-down': 'fadeInDown 0.8s ease-out forwards',
+            'fade-in-up': 'fadeInUp 0.8s ease-out forwards 0.2s',
+            'fade-in': 'fadeIn 1s ease-out forwards 0.4s',
+          },
+          keyframes: {
+            fadeInDown: {
+              '0%': { opacity: '0', transform: 'translateY(-20px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+            fadeInUp: {
+              '0%': { opacity: '0', transform: 'translateY(20px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+            fadeIn: {
+              '0%': { opacity: '0' },
+              '100%': { opacity: '1' },
+            },
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+
+    .glass-card {
+      background: rgba(17, 25, 40, 0.6);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      transition: all 0.3s ease;
+    }
+
+    .glass-card:hover {
+      background: rgba(22, 33, 50, 0.7);
+      border-color: rgba(255, 255, 255, 0.15);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 40px -10px rgba(0,0,0,0.5);
+    }
+
+    .glass-panel {
+      background: rgba(17, 25, 40, 0.6);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .scroll-fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .scroll-fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .pro-badge {
+      background: linear-gradient(135deg, #FFB000 0%, #e69f00 100%);
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-b from-[#003A87] to-[#0A192F] font-sans antialiased text-slate-200 min-h-screen selection:bg-brand-gold selection:text-white">
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 glass-panel border-b border-white/5">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="../" class="flex items-center gap-3">
+          <img src="../assets/images/app_icon.svg" alt="Travel Document Vault" class="w-8 h-8" />
+          <span class="font-semibold text-white hidden sm:block">Travel Document Vault</span>
+        </a>
+        <div class="flex items-center gap-6 text-sm font-medium">
+          <a href="../#pricing" class="text-blue-200/80 hover:text-white transition-colors">Pricing</a>
+          <a href="../faq/" class="text-blue-200/80 hover:text-white transition-colors">FAQ</a>
+          <a href="https://apps.apple.com" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-gold text-brand-blue font-semibold text-sm hover:bg-brand-goldHover transition-colors">
+            Download
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-12 sm:pt-32 sm:pb-20 space-y-16">
+
+    <!-- Hero -->
+    <header class="text-center animate-fade-in-down">
+      <h1 class="text-4xl sm:text-5xl font-bold tracking-tight text-white mb-4">
+        All Features
+      </h1>
+      <p class="text-blue-200/70 text-lg max-w-2xl mx-auto">
+        Everything you need to organize your family's travel documents, with privacy built in from day one.
+      </p>
+    </header>
+
+    <!-- Document Management -->
+    <section class="scroll-fade-in space-y-8">
+      <div class="text-center">
+        <span class="inline-block px-3 py-1 rounded-full bg-blue-500/20 text-blue-200 text-sm font-medium mb-3">Document Management</span>
+        <h2 class="text-2xl sm:text-3xl font-bold text-white">Store Everything in One Place</h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div class="glass-card rounded-2xl p-6">
+          <div class="h-12 w-12 rounded-xl bg-blue-500/10 flex items-center justify-center border border-blue-400/20 text-brand-gold mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-white mb-2">Passports</h3>
+          <p class="text-sm text-slate-400">Store passport bio pages with spread capture support. Perfect for family trips abroad.</p>
+        </div>
+
+        <div class="glass-card rounded-2xl p-6">
+          <div class="h-12 w-12 rounded-xl bg-blue-500/10 flex items-center justify-center border border-blue-400/20 text-blue-300 mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0m-5 8a2 2 0 100-4 2 2 0 000 4zm0 0c1.306 0 2.417.835 2.83 2M9 14a3.001 3.001 0 00-2.83 2M15 11h3m-3 4h2" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-white mb-2">National IDs</h3>
+          <p class="text-sm text-slate-400">Front and back capture in a single document. Both sides stored together.</p>
+        </div>
+
+        <div class="glass-card rounded-2xl p-6">
+          <div class="h-12 w-12 rounded-xl bg-blue-500/10 flex items-center justify-center border border-blue-400/20 text-brand-gold mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-white mb-2">Visas & Permits</h3>
+          <p class="text-sm text-slate-400">A4 document support for visas, residence permits, and travel authorizations.</p>
+        </div>
+
+        <div class="glass-card rounded-2xl p-6">
+          <div class="h-12 w-12 rounded-xl bg-blue-500/10 flex items-center justify-center border border-blue-400/20 text-blue-300 mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-white mb-2">Airline Tickets</h3>
+          <p class="text-sm text-slate-400">Store boarding passes and e-tickets with ultra-frequent countdown reminders.</p>
+        </div>
+
+        <div class="glass-card rounded-2xl p-6">
+          <div class="h-12 w-12 rounded-xl bg-blue-500/10 flex items-center justify-center border border-blue-400/20 text-brand-gold mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-white mb-2">PDF Import</h3>
+          <p class="text-sm text-slate-400">Import existing PDF documents directly from Files or email attachments.</p>
+        </div>
+
+        <div class="glass-card rounded-2xl p-6">
+          <div class="h-12 w-12 rounded-xl bg-blue-500/10 flex items-center justify-center border border-blue-400/20 text-blue-300 mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-white mb-2">Photo Import</h3>
+          <p class="text-sm text-slate-400">Import from your photo library. Existing scans work perfectly.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Smart Capture -->
+    <section class="scroll-fade-in space-y-8">
+      <div class="text-center">
+        <span class="inline-block px-3 py-1 rounded-full bg-brand-gold/20 text-brand-gold text-sm font-medium mb-3">Smart Capture</span>
+        <h2 class="text-2xl sm:text-3xl font-bold text-white">Get the Perfect Shot Every Time</h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="glass-card rounded-2xl p-8">
+          <h3 class="text-xl font-semibold text-white mb-4">Visual Capture Guides</h3>
+          <p class="text-slate-400 mb-6">On-screen guides help you align your documents perfectly. Different templates for different document types:</p>
+          <ul class="space-y-3">
+            <li class="flex items-center gap-3 text-slate-300">
+              <svg class="h-5 w-5 text-brand-gold flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+              <span><strong class="text-white">Passport spread</strong> — with center divider line</span>
+            </li>
+            <li class="flex items-center gap-3 text-slate-300">
+              <svg class="h-5 w-5 text-brand-gold flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+              <span><strong class="text-white">ID card</strong> — credit card sized frame</span>
+            </li>
+            <li class="flex items-center gap-3 text-slate-300">
+              <svg class="h-5 w-5 text-brand-gold flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+              <span><strong class="text-white">A4 document</strong> — full page visas</span>
+            </li>
+            <li class="flex items-center gap-3 text-slate-300">
+              <svg class="h-5 w-5 text-brand-gold flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+              <span><strong class="text-white">Half-page ticket</strong> — boarding passes</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="glass-card rounded-2xl p-8">
+          <h3 class="text-xl font-semibold text-white mb-4">Edit Before Saving</h3>
+          <p class="text-slate-400 mb-6">Fine-tune your captures with built-in editing tools:</p>
+          <ul class="space-y-3">
+            <li class="flex items-center gap-3 text-slate-300">
+              <svg class="h-5 w-5 text-brand-gold flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+              <span><strong class="text-white">Rotate</strong> — 90° increments</span>
+            </li>
+            <li class="flex items-center gap-3 text-slate-300">
+              <svg class="h-5 w-5 text-brand-gold flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+              <span><strong class="text-white">Crop</strong> — remove excess borders</span>
+            </li>
+            <li class="flex items-center gap-3 text-slate-300">
+              <svg class="h-5 w-5 text-brand-gold flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+              <span><strong class="text-white">Zoom preview</strong> — pinch to check clarity</span>
+            </li>
+            <li class="flex items-center gap-3 text-slate-300">
+              <svg class="h-5 w-5 text-brand-gold flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+              <span><strong class="text-white">Resolution warnings</strong> — if image is too small</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Smart Reminders -->
+    <section class="scroll-fade-in space-y-8">
+      <div class="text-center">
+        <span class="inline-block px-3 py-1 rounded-full bg-blue-500/20 text-blue-200 text-sm font-medium mb-3">Smart Reminders</span>
+        <h2 class="text-2xl sm:text-3xl font-bold text-white">Never Miss a Deadline</h2>
+      </div>
+
+      <div class="glass-panel rounded-2xl p-8 max-w-3xl mx-auto">
+        <p class="text-slate-300 text-center mb-8">
+          The average passport renewal takes <strong class="text-white">6-8 weeks</strong>. We remind you <strong class="text-brand-gold">6 months early</strong> — not 6 days.
+        </p>
+
+        <div class="space-y-6">
+          <div>
+            <h4 class="text-white font-semibold mb-3">Passport Reminders</h4>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1 rounded-full bg-blue-500/20 text-blue-200 text-sm">6 months</span>
+              <span class="px-3 py-1 rounded-full bg-blue-500/20 text-blue-200 text-sm">3 months</span>
+              <span class="px-3 py-1 rounded-full bg-blue-500/20 text-blue-200 text-sm">6 weeks</span>
+              <span class="px-3 py-1 rounded-full bg-blue-500/20 text-blue-200 text-sm">1 month</span>
+              <span class="px-3 py-1 rounded-full bg-blue-500/20 text-blue-200 text-sm">2 weeks</span>
+              <span class="px-3 py-1 rounded-full bg-blue-500/20 text-blue-200 text-sm">1 week</span>
+              <span class="px-3 py-1 rounded-full bg-red-500/20 text-red-300 text-sm">Expiry day</span>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="text-white font-semibold mb-3">Visa Reminders</h4>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1 rounded-full bg-blue-500/20 text-blue-200 text-sm">3 months</span>
+              <span class="px-3 py-1 rounded-full bg-blue-500/20 text-blue-200 text-sm">6 weeks</span>
+              <span class="px-3 py-1 rounded-full bg-blue-500/20 text-blue-200 text-sm">1 month</span>
+              <span class="px-3 py-1 rounded-full bg-blue-500/20 text-blue-200 text-sm">2 weeks</span>
+              <span class="px-3 py-1 rounded-full bg-blue-500/20 text-blue-200 text-sm">1 week</span>
+              <span class="px-3 py-1 rounded-full bg-red-500/20 text-red-300 text-sm">Expiry day</span>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="text-white font-semibold mb-3">Airline Ticket Reminders</h4>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1 rounded-full bg-blue-500/20 text-blue-200 text-sm">1 week</span>
+              <span class="px-3 py-1 rounded-full bg-blue-500/20 text-blue-200 text-sm">2 days</span>
+              <span class="px-3 py-1 rounded-full bg-blue-500/20 text-blue-200 text-sm">1 day</span>
+              <span class="px-3 py-1 rounded-full bg-brand-gold/20 text-brand-gold text-sm">24 hours</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-8 pt-6 border-t border-white/10 flex items-center gap-3">
+          <span class="pro-badge px-2 py-0.5 rounded text-xs font-bold text-brand-blue">PRO</span>
+          <span class="text-slate-300 text-sm">Customize reminder schedules per document with Pro</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Family Profiles -->
+    <section class="scroll-fade-in space-y-8">
+      <div class="text-center">
+        <span class="inline-block px-3 py-1 rounded-full bg-brand-gold/20 text-brand-gold text-sm font-medium mb-3">Family Profiles</span>
+        <h2 class="text-2xl sm:text-3xl font-bold text-white">Organize by Person</h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+        <div class="glass-card rounded-2xl p-6">
+          <h3 class="text-lg font-semibold text-white mb-3">Separate Profiles</h3>
+          <p class="text-slate-400 text-sm">Create a profile for each family member. Keep everyone's documents organized and easy to find.</p>
+        </div>
+        <div class="glass-card rounded-2xl p-6">
+          <h3 class="text-lg font-semibold text-white mb-3">Profile-Scoped Views</h3>
+          <p class="text-slate-400 text-sm">View documents and reminders filtered by person. See only what's relevant.</p>
+        </div>
+        <div class="glass-card rounded-2xl p-6">
+          <h3 class="text-lg font-semibold text-white mb-3">Quick Switching</h3>
+          <p class="text-slate-400 text-sm">Switch between profiles with one tap. Perfect for managing the whole family.</p>
+        </div>
+        <div class="glass-card rounded-2xl p-6 relative">
+          <span class="absolute top-4 right-4 pro-badge px-2 py-0.5 rounded text-xs font-bold text-brand-blue">PRO</span>
+          <h3 class="text-lg font-semibold text-white mb-3">Unlimited Profiles</h3>
+          <p class="text-slate-400 text-sm">Free tier includes 1 profile. Pro unlocks unlimited profiles for the whole family.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- OCR -->
+    <section class="scroll-fade-in space-y-8">
+      <div class="text-center">
+        <span class="inline-block px-3 py-1 rounded-full bg-blue-500/20 text-blue-200 text-sm font-medium mb-3">On-Device OCR</span>
+        <h2 class="text-2xl sm:text-3xl font-bold text-white">Smart Date Detection</h2>
+      </div>
+
+      <div class="glass-panel rounded-2xl p-8 max-w-3xl mx-auto">
+        <div class="flex items-start gap-4 mb-6">
+          <div class="h-12 w-12 rounded-xl bg-blue-500/10 flex items-center justify-center border border-blue-400/20 text-brand-gold flex-shrink-0">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold text-white mb-2">Automatic Expiry Detection</h3>
+            <p class="text-slate-400">Point your camera at a document and the app automatically detects expiry dates. Works with MRZ codes on passports and printed dates on visas.</p>
+          </div>
+        </div>
+
+        <div class="space-y-4">
+          <div class="flex items-center gap-3">
+            <svg class="h-5 w-5 text-brand-gold flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+            </svg>
+            <span class="text-slate-300"><strong class="text-white">100% on-device</strong> — nothing is uploaded</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <svg class="h-5 w-5 text-brand-gold flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+            </svg>
+            <span class="text-slate-300"><strong class="text-white">User verification required</strong> — you always confirm detected dates</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <svg class="h-5 w-5 text-brand-gold flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+            </svg>
+            <span class="text-slate-300"><strong class="text-white">Confidence scoring</strong> — know how reliable the detection is</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <svg class="h-5 w-5 text-brand-gold flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+            </svg>
+            <span class="text-slate-300"><strong class="text-white">Optional</strong> — can be disabled in settings</span>
+          </div>
+        </div>
+
+        <div class="mt-6 pt-4 border-t border-white/10 flex items-center gap-3">
+          <span class="pro-badge px-2 py-0.5 rounded text-xs font-bold text-brand-blue">PRO</span>
+          <span class="text-slate-300 text-sm">OCR scanning is a Pro feature</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Privacy & Security -->
+    <section class="scroll-fade-in space-y-8">
+      <div class="text-center">
+        <span class="inline-block px-3 py-1 rounded-full bg-brand-gold/20 text-brand-gold text-sm font-medium mb-3">Privacy & Security</span>
+        <h2 class="text-2xl sm:text-3xl font-bold text-white">Your Data, Your Device</h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div class="glass-card rounded-2xl p-6">
+          <div class="h-12 w-12 rounded-xl bg-blue-500/10 flex items-center justify-center border border-blue-400/20 text-brand-gold mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-white mb-2">On-Device Only</h3>
+          <p class="text-sm text-slate-400">All data stays on your device. No cloud, no servers, no accounts.</p>
+        </div>
+
+        <div class="glass-card rounded-2xl p-6">
+          <div class="h-12 w-12 rounded-xl bg-blue-500/10 flex items-center justify-center border border-blue-400/20 text-blue-300 mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M18.364 5.636a9 9 0 010 12.728m0 0l-2.829-2.829m2.829 2.829L21 21M15.536 8.464a5 5 0 010 7.072m0 0l-2.829-2.829m-4.243 2.829a4.978 4.978 0 01-1.414-2.83m-1.414 5.658a9 9 0 01-2.167-9.238m7.824 2.167a1 1 0 111.414 1.414m-1.414-1.414L3 3m8.293 8.293l1.414 1.414" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-white mb-2">Works Offline</h3>
+          <p class="text-sm text-slate-400">No internet required. Works perfectly in airplane mode.</p>
+        </div>
+
+        <div class="glass-card rounded-2xl p-6">
+          <div class="h-12 w-12 rounded-xl bg-blue-500/10 flex items-center justify-center border border-blue-400/20 text-brand-gold mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-white mb-2">No Tracking</h3>
+          <p class="text-sm text-slate-400">No analytics. No ads. No hidden SDKs harvesting your data.</p>
+        </div>
+
+        <div class="glass-card rounded-2xl p-6">
+          <div class="h-12 w-12 rounded-xl bg-blue-500/10 flex items-center justify-center border border-blue-400/20 text-blue-300 mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-white mb-2">Private Notifications</h3>
+          <p class="text-sm text-slate-400">Reminders never reveal document details. Just "A document is expiring soon."</p>
+        </div>
+
+        <div class="glass-card rounded-2xl p-6">
+          <div class="h-12 w-12 rounded-xl bg-blue-500/10 flex items-center justify-center border border-blue-400/20 text-brand-gold mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-white mb-2">You Control Sharing</h3>
+          <p class="text-sm text-slate-400">Data only leaves when you explicitly choose to share via the system share sheet.</p>
+        </div>
+
+        <div class="glass-card rounded-2xl p-6 relative">
+          <span class="absolute top-4 right-4 pro-badge px-2 py-0.5 rounded text-xs font-bold text-brand-blue">PRO</span>
+          <div class="h-12 w-12 rounded-xl bg-blue-500/10 flex items-center justify-center border border-blue-400/20 text-blue-300 mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A13.916 13.916 0 008 11a4 4 0 118 0c0 1.017-.07 2.019-.203 3m-2.118 6.844A21.88 21.88 0 0015.171 17m3.839 1.132c.645-2.266.99-4.659.99-7.132A8 8 0 008 4.07M3 15.364c.64-1.319 1-2.8 1-4.364 0-1.457.39-2.823 1.07-4" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-white mb-2">Biometric Lock</h3>
+          <p class="text-sm text-slate-400">Lock the app with Face ID or Touch ID. Extra protection for sensitive documents.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="scroll-fade-in text-center space-y-6 pt-8">
+      <h2 class="text-3xl sm:text-4xl font-bold text-white">Ready to Get Started?</h2>
+      <p class="text-blue-200/70 text-lg max-w-xl mx-auto">Download now and organize your family's travel documents.</p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="https://apps.apple.com" target="_blank" rel="noopener noreferrer" class="group relative inline-flex items-center transition-transform active:scale-95">
+           <div class="absolute -inset-1 bg-gradient-to-r from-brand-gold to-yellow-500 rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-200"></div>
+           <img src="../assets/images/app-store-badge.svg" alt="Download on the App Store" class="relative h-[56px] w-auto" />
+        </a>
+        <a href="../#pricing" class="text-blue-200 hover:text-white transition-colors font-medium">
+          View pricing →
+        </a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center pt-10 pb-6 space-y-6 border-t border-white/10">
+      <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm font-medium">
+        <a href="mailto:support@mustafahafeez.com" class="text-blue-200/60 hover:text-white transition-colors duration-200">support@mustafahafeez.com</a>
+        <span class="text-blue-200/20 hidden sm:inline">·</span>
+        <a href="../" class="text-blue-200/60 hover:text-white transition-colors duration-200">Home</a>
+        <span class="text-blue-200/20 hidden sm:inline">·</span>
+        <a href="../faq/" class="text-blue-200/60 hover:text-white transition-colors duration-200">FAQ</a>
+        <span class="text-blue-200/20 hidden sm:inline">·</span>
+        <a href="../privacy-policy/" class="text-blue-200/60 hover:text-white transition-colors duration-200">Privacy Policy</a>
+        <span class="text-blue-200/20 hidden sm:inline">·</span>
+        <a href="../terms/" class="text-blue-200/60 hover:text-white transition-colors duration-200">Terms of Service</a>
+      </div>
+      <p class="text-blue-200/60 text-xs">© 2025 Travel Document Vault. All rights reserved.</p>
+    </footer>
+
+  </div>
+
+  <!-- Scroll Animation Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.1 });
+
+      document.querySelectorAll('.scroll-fade-in').forEach(el => observer.observe(el));
+    });
+  </script>
+</body>
+</html>
