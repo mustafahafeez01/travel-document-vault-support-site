@@ -26,7 +26,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Caveat:wght@400;500;600;700&display=swap" rel="stylesheet">
   
   <script>
     tailwind.config = {
@@ -42,6 +42,7 @@
           },
           fontFamily: {
             sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+            handwriting: ['"Caveat"', 'cursive'],
           },
           boxShadow: {
             vault: '0 28px 65px rgba(0, 0, 0, 0.35)',
@@ -166,9 +167,7 @@
       <!-- Content -->
       <div class="prose prose-lg prose-invert prose-headings:font-bold prose-headings:text-white prose-p:text-blue-100/80 prose-p:leading-relaxed prose-strong:text-brand-gold prose-a:text-brand-gold hover:prose-a:text-white prose-blockquote:border-brand-gold prose-blockquote:bg-blue-500/5 prose-blockquote:py-2 prose-blockquote:px-6 prose-blockquote:rounded-r-lg prose-li:text-blue-100/80">
         
-        <p class="lead text-xl text-blue-100 font-medium">
-          I’ve had that half-second panic the night before a trip — the same feeling you get at the airport when you open a folder and your stomach drops.
-        </p>
+          I’ve had that half-second panic the night before a trip. The same feeling you get at the airport when you open a folder and your stomach drops.
         
         <p>
           You’re lying in bed and your brain suddenly goes:<br>
@@ -180,7 +179,7 @@
         </p>
 
         <p>
-          I remember standing over a pile of documents. Passports, visas, IDs. All slightly outdated, all slightly important. Trying to remember what expired when. Trying to remember if I already checked it — or just assumed I had.
+          I remember standing over a pile of documents. Passports, visas, IDs. All slightly outdated, all slightly important. Trying to remember what expired when. Trying to remember if I already checked it. Or just assumed I had.
         </p>
         
         <p>
@@ -251,14 +250,14 @@
         </p>
         
         <p>
-          If it helps you travel a little lighter — mentally — then it did its job.
+          If it helps you travel a little lighter, mentally, then it did its job.
         </p>
       </div>
 
       <!-- Author Sig -->
-      <div class="mt-16 sm:mt-24 pt-10 border-t border-white/5">
+      <div class="mt-16 sm:mt-24 pt-10 border-t border-white/5 text-center">
         <p class="text-xs text-blue-200/30 mb-8 font-medium tracking-wide">This app was built for personal use first. It does not collect data, track users, or require an account.</p>
-        <p class="font-handwriting text-2xl text-white/90 mb-2">Mustafa</p>
+        <p class="font-handwriting text-3xl text-white/90 mb-2">Mustafa</p>
         <p class="text-blue-200/40 text-sm font-medium tracking-wide uppercase">Founder, Travel Document Vault</p>
       </div>
 
