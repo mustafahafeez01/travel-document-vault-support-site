@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Why I Built Travel Document Vault - Our Story</title>
+  <meta name="description" content="The story behind Travel Document Vault. Why I built a privacy-first, offline document organizer for families. No cloud, no accounts. Just your documents, on your phone." />
+  <meta name="theme-color" content="#003A87" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:title" content="Why I Built Travel Document Vault" />
+  <meta property="og:description" content="It started with that quiet panic before a trip — wondering if I’d missed something important." />
+  <meta property="og:image" content="https://traveldocumentvault.com/assets/images/social-preview.png" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://traveldocumentvault.com/blog/why-i-built-travel-document-vault/" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Why I Built Travel Document Vault" />
+  <meta name="twitter:description" content="It started with that quiet panic before a trip — wondering if I’d missed something important." />
+  <meta name="twitter:image" content="https://traveldocumentvault.com/assets/images/social-preview.png" />
+  
+  <link rel="icon" type="image/svg+xml" href="../assets/images/app_icon.svg">
+  <link rel="apple-touch-icon" href="../assets/images/app_icon.svg">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              blue: '#003A87',
+              gold: '#FFB000',
+              goldHover: '#e69f00',
+              white: '#FFFFFF',
+            },
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+          },
+          boxShadow: {
+            vault: '0 28px 65px rgba(0, 0, 0, 0.35)',
+            glass: '0 8px 32px 0 rgba(0, 0, 0, 0.2)',
+          },
+          animation: {
+            'fade-in': 'fadeIn 0.8s ease-out forwards',
+          },
+          keyframes: {
+            fadeIn: {
+              '0%': { opacity: '0', transform: 'translateY(10px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    
+    .glass-panel {
+      background: rgba(17, 25, 40, 0.6);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .prose p {
+      margin-bottom: 1.5em;
+      line-height: 1.8;
+    }
+    
+    .prose strong {
+      color: #FFB000;
+      font-weight: 600;
+    }
+
+    .nav-link {
+      position: relative;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #FFB000;
+      transition: width 0.3s ease;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .nav-link-active {
+      color: #FFFFFF !important;
+    }
+    
+    .nav-link-active::after {
+      width: 100%;
+    }
+  </style>
+</head>
+<body class="bg-[#0A192F] font-sans antialiased text-slate-200 min-h-screen selection:bg-brand-gold selection:text-brand-blue overflow-x-hidden">
+
+  <!-- Ambient Background -->
+  <div class="fixed inset-0 pointer-events-none">
+    <div class="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-brand-blue/20 rounded-full blur-[120px] animate-float"></div>
+    <div class="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-brand-gold/10 rounded-full blur-[120px] animate-float" style="animation-delay: -2s;"></div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 glass-panel border-b border-white/5 transition-all duration-300">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="../" class="flex items-center gap-3 group">
+          <img src="../assets/images/app_icon.svg" alt="Travel Document Vault" class="w-8 h-8 group-hover:scale-110 transition-transform duration-300" />
+          <span class="font-bold text-white hidden sm:block tracking-tight group-hover:text-blue-100 transition-colors">Travel Document Vault</span>
+        </a>
+        <div class="flex items-center gap-6 text-sm font-medium">
+          <a href="../" class="nav-link text-blue-200/60 hover:text-white transition-colors">Home</a>
+          <a href="../features/" class="nav-link text-blue-200/60 hover:text-white transition-colors">Features</a>
+          <a href="./" class="nav-link nav-link-active text-blue-200/60 hover:text-white transition-colors">Why We Built This</a>
+          <a href="../#pricing" class="nav-link text-blue-200/60 hover:text-white transition-colors">Pricing</a>
+          <a href="https://apps.apple.com" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-brand-gold to-yellow-500 text-brand-blue font-bold text-sm hover:shadow-[0_0_20px_rgba(255,176,0,0.3)] hover:-translate-y-0.5 transition-all duration-300">
+            Get the App
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="relative pt-32 pb-24 px-4 sm:px-6">
+    <article class="max-w-[680px] mx-auto animate-fade-in relative z-10">
+      
+      <!-- Header -->
+      <header class="mb-14 text-center">
+        <a href="../" class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 text-brand-gold text-xs font-bold tracking-wide border border-blue-400/20 mb-8 hover:bg-blue-500/20 transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
+          </svg>
+          FOUNDER'S STORY
+        </a>
+        
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-8 leading-[1.1] tracking-tight drop-shadow-2xl">
+          Why I Built Travel<br />
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-gold to-yellow-200">Document Vault</span>
+        </h1>
+        
+        <div class="flex items-center justify-center gap-3">
+          <div class="h-10 w-10 rounded-full bg-gradient-to-br from-brand-gold to-brand-blue p-[2px]">
+            <div class="h-full w-full rounded-full bg-[#0A192F] flex items-center justify-center text-xs font-bold text-white">
+              MH
+            </div>
+          </div>
+          <div class="text-left">
+            <p class="text-white text-sm font-semibold">Mustafa Hafeez</p>
+            <div class="flex items-center gap-2 text-blue-200/50 text-xs">
+              <time datetime="2026-01-02">Jan 2, 2026</time>
+              <span>·</span>
+              <span>3 min read</span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Content -->
+      <div class="prose prose-lg prose-invert prose-headings:font-bold prose-headings:text-white prose-p:text-blue-100/80 prose-p:leading-relaxed prose-strong:text-brand-gold prose-a:text-brand-gold hover:prose-a:text-white prose-blockquote:border-brand-gold prose-blockquote:bg-blue-500/5 prose-blockquote:py-2 prose-blockquote:px-6 prose-blockquote:rounded-r-lg prose-li:text-blue-100/80">
+        
+        <p class="lead text-xl text-blue-100 font-medium">
+          It started with that quiet panic you get before the trip — not during the packing, but later, when everything’s supposedly done.
+        </p>
+        
+        <p>
+          You’re lying in bed and your brain suddenly goes:<br>
+          <em>Wait. Did I renew the kids’ passports?</em>
+        </p>
+
+        <p>
+          Not a loud alarm. Just a knot in your stomach.
+        </p>
+
+        <p>
+          I remember standing over a pile of documents — passports, visas, IDs — all slightly outdated, all slightly important. Trying to remember what expired when. Trying to remember if I’d already checked this, or if I’d just meant to.
+        </p>
+        
+        <p>
+          Then the questions start stacking:
+        </p>
+        
+        <div class="my-8 pl-4 border-l-2 border-brand-gold/50 italic text-blue-200/60">
+          "Did I renew everyone’s passport?"<br>
+          "Is that visa still valid?"<br>
+          "Did I actually download the return tickets, or just assume I did?"
+        </div>
+
+        <p>
+          What bothered me wasn’t the kids asking questions. It was that voice in my own head that wouldn’t shut up.
+        </p>
+
+        <p>
+          <em>If this goes wrong, it’s on me.<br>
+          If we get stuck at a border, I’ll know exactly why.</em>
+        </p>
+
+        <p>
+          I didn’t want another checklist. I didn’t want another spreadsheet. I wanted to stop carrying this stuff around in my head.
+        </p>
+
+        <p>
+          So I built something for myself.
+        </p>
+
+        <h3>But here’s the part I cared about most: I didn’t want to build just another cloud app.</h3>
+        
+        <p>
+          When you’re dealing with your family’s most sensitive documents, trust isn’t a feature — it’s the entire product. And honestly, I don’t trust new apps with that kind of data. I wouldn’t expect you to either.
+        </p>
+        
+        <p>
+          So I made a hard call:
+        </p>
+        
+        <p>
+          <strong>No cloud.<br>
+          No accounts.<br>
+          Nothing quietly syncing somewhere I can’t see.</strong>
+        </p>
+        
+        <p>
+          Everything you scan. Every note you add. It stays on your phone. Not because it sounds good on a landing page — but because I didn’t want to explain to myself why I took shortcuts with something this personal.
+        </p>
+        
+        <p>
+          Maybe one day there will be cloud features. Maybe. But only if I can do it without compromising the original promise.
+        </p>
+
+        <p>
+          For now, it’s just you and your phone.
+        </p>
+
+        <p>
+          This app is for the organizers who’ve tried to make spreadsheets work. For parents holding multiple passports at immigration, flipping through them too fast. For expats juggling visas, permits, and renewal dates that never seem to line up.
+        </p>
+        
+        <p>
+          Mostly, it’s for anyone who wants to stop second-guessing themselves at 2 a.m.
+        </p>
+        
+        <p>
+          If it helps you travel a little lighter — mentally — then it did its job.
+        </p>
+      </div>
+
+      <!-- Author Sig -->
+      <div class="mt-16 sm:mt-24 pt-10 border-t border-white/5">
+        <p class="text-xs text-blue-200/30 mb-8 font-medium tracking-wide">This app was built for personal use first. It does not collect data, track users, or require an account.</p>
+        <p class="font-handwriting text-2xl text-white/90 mb-2 rotate-[-2deg]">Mustafa</p>
+        <p class="text-blue-200/40 text-sm font-medium tracking-wide uppercase">Founder, Travel Document Vault</p>
+      </div>
+
+    </article>
+  </main>
+
+  <!-- CTA -->
+  <section class="mb-20 px-4 text-center">
+    <div class="glass-panel max-w-3xl mx-auto rounded-[2.5rem] p-8 sm:p-14 relative overflow-hidden group hover:border-brand-gold/20 transition-colors duration-500">
+        <!-- Glow effect -->
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-3/4 bg-brand-blue/40 blur-[100px] rounded-full pointer-events-none group-hover:bg-brand-blue/50 transition-all duration-500"></div>
+
+        <h2 class="text-3xl sm:text-4xl font-bold text-white mb-6 relative z-10 leading-tight">Try it for your next trip</h2>
+        <p class="text-blue-200/70 mb-10 text-lg relative z-10 max-w-xl mx-auto">
+          Your documents. Your phone. That's it.
+        </p>
+        
+        <div class="relative z-10 flex flex-col items-center gap-4">
+            <a href="https://apps.apple.com" target="_blank" rel="noopener noreferrer" class="group/btn relative inline-flex items-center transition-transform active:scale-95">
+                <div class="absolute -inset-1 bg-gradient-to-r from-brand-gold to-yellow-500 rounded-lg blur opacity-40 group-hover/btn:opacity-75 transition duration-200"></div>
+                <img src="../assets/images/app-store-badge.svg" alt="Download on the App Store" class="relative h-[60px] w-auto" />
+            </a>
+            <span class="text-blue-200/40 text-xs font-semibold tracking-wider uppercase">No subscription required</span>
+        </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center pt-12 pb-8 space-y-8 border-t border-white/5 bg-[#0A192F] relative z-20">
+    <div class="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 text-sm font-medium">
+      <a href="mailto:support@traveldocumentvault.com" class="text-blue-200/60 hover:text-brand-gold transition-colors duration-200">support&#64;traveldocumentvault&#46;com</a>
+      <a href="../features/" class="text-blue-200/60 hover:text-white transition-colors duration-200">Features</a>
+      <a href="./" class="text-blue-200/60 hover:text-white transition-colors duration-200">Why We Built This</a>
+      <a href="../faq/" class="text-blue-200/60 hover:text-white transition-colors duration-200">FAQ</a>
+      <a href="../privacy-policy/" class="text-blue-200/60 hover:text-white transition-colors duration-200">Privacy Policy</a>
+      <a href="../terms/" class="text-blue-200/60 hover:text-white transition-colors duration-200">Terms of Service</a>
+    </div>
+    <div class="flex flex-col items-center gap-4">
+        <img src="../assets/images/app_icon.svg" alt="Logo" class="w-6 h-6 opacity-30 grayscale" />
+        <p class="text-blue-200/30 text-xs">© 2026 Travel Document Vault. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../assets/js/cookie-consent.js" defer></script>
+</html>
