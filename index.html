@@ -188,14 +188,22 @@
 <body class="bg-gradient-to-b from-[#003A87] to-[#0A192F] font-sans antialiased text-slate-200 min-h-screen selection:bg-brand-gold selection:text-white">
 
   <!-- Navigation -->
-  <nav class="fixed top-0 left-0 right-0 z-50 glass-panel border-b border-white/5">
+  <nav class="fixed top-0 left-0 right-0 z-[100] glass-panel border-b border-white/5">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
         <a href="/" class="flex items-center gap-3">
           <img src="assets/images/app_icon.svg" alt="Travel Document Vault" class="w-8 h-8" />
           <span class="font-semibold text-white hidden sm:block">Travel Document Vault</span>
         </a>
-        <div class="flex items-center gap-6 text-sm font-medium">
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-button" type="button" class="md:hidden p-2 text-blue-200/80 hover:text-white transition-colors" aria-controls="mobile-menu" aria-expanded="false">
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex items-center gap-6 text-sm font-medium">
           <a href="./" class="nav-link nav-link-active text-blue-200/80 hover:text-white transition-colors">Home</a>
           <a href="features/" class="nav-link text-blue-200/80 hover:text-white transition-colors">Features</a>
           <a href="blog/" class="nav-link text-blue-200/80 hover:text-white transition-colors">Why</a>
@@ -205,17 +213,89 @@
             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
               <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
             </svg>
-            Get the App
+            Download
           </a>
         </div>
       </div>
     </div>
+
   </nav>
+
+  <!-- Mobile Menu (Moved outside nav to avoid backdrop-filter clipping) -->
+  <div id="mobile-menu" class="hidden md:hidden fixed top-16 left-0 right-0 bottom-0 bg-[#0A192F]/95 backdrop-blur-xl z-[90] border-t border-white/10 p-6 space-y-6 overflow-y-auto transition-all duration-300 ease-in-out opacity-0 -translate-y-4">
+    <div class="space-y-4">
+      <a href="./" class="block text-lg font-medium text-white border-l-2 border-brand-gold pl-4 py-1">Home</a>
+      <a href="features/" class="block text-lg font-medium text-blue-200/80 hover:text-white pl-4 py-1 hover:border-l-2 hover:border-brand-gold transition-all">Features</a>
+      <a href="blog/" class="block text-lg font-medium text-blue-200/80 hover:text-white pl-4 py-1 hover:border-l-2 hover:border-brand-gold transition-all">Why</a>
+      <a href="#pricing" class="block text-lg font-medium text-blue-200/80 hover:text-white pl-4 py-1 hover:border-l-2 hover:border-brand-gold transition-all">Pricing</a>
+      <a href="faq/" class="block text-lg font-medium text-blue-200/80 hover:text-white pl-4 py-1 hover:border-l-2 hover:border-brand-gold transition-all">FAQ</a>
+    </div>
+    <div class="pt-4 border-t border-white/10">
+      <a href="https://apps.apple.com" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-3 px-6 py-4 rounded-xl bg-brand-gold text-brand-blue font-bold text-lg hover:bg-brand-goldHover transition-colors w-full shadow-lg">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+        </svg>
+        Download App
+      </a>
+    </div>
+  </div>
 
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-12 sm:pt-32 sm:pb-20 space-y-24">
 
-    <!-- Hero Section -->
-    <header class="flex flex-col items-center justify-center gap-12 animate-fade-in-down max-w-4xl mx-auto">
+    <!-- Mobile Hero (Visible only on mobile) -->
+    <header class="md:hidden flex flex-col items-center text-center gap-6 animate-fade-in-down px-4">
+      <h1 class="text-4xl font-bold tracking-tight text-white leading-tight">
+        Never Miss a <br />
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-gold to-yellow-300">Passport Renewal</span><br />
+        <span class="text-blue-200">Again</span>
+      </h1>
+      
+      <p class="text-blue-100/90 text-lg leading-relaxed">
+        Organize your family's documents securely on your phone. <br/>
+        No cloud. No tracking.
+      </p>
+
+      <div class="w-full max-w-xs space-y-3 pt-2">
+        <a href="https://apps.apple.com" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-3 px-6 py-4 rounded-xl bg-gradient-to-r from-brand-gold to-yellow-500 text-brand-blue font-bold text-lg shadow-[0_4px_20px_rgba(255,176,0,0.3)] hover:shadow-[0_4px_25px_rgba(255,176,0,0.4)] transition-all active:scale-95 w-full">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+          </svg>
+          Download App
+        </a>
+        <p class="text-blue-200/60 text-xs font-medium">Free to start · No account required</p>
+      </div>
+
+      <!-- Trust Signals (Mobile Only) -->
+      <div class="grid grid-cols-3 gap-2 w-full max-w-sm mt-6 border-t border-white/10 pt-6">
+        <div class="flex flex-col items-center gap-2">
+          <div class="p-2 rounded-full bg-blue-500/10 text-brand-gold">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+            </svg>
+          </div>
+          <span class="text-xs text-blue-100/80 font-medium">On-Device</span>
+        </div>
+        <div class="flex flex-col items-center gap-2">
+          <div class="p-2 rounded-full bg-blue-500/10 text-brand-gold">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636a9 9 0 010 12.728m0 0l-2.829-2.829m2.829 2.829L21 21M15.536 8.464a5 5 0 010 7.072m0 0l-2.829-2.829m-4.243 2.829a4.978 4.978 0 01-1.414-2.83m-1.414 5.658a9 9 0 01-2.167-9.238m7.824 2.167a1 1 0 111.414 1.414m-1.414-1.414L3 3m8.293 8.293l1.414 1.414" />
+            </svg>
+          </div>
+          <span class="text-xs text-blue-100/80 font-medium">Offline</span>
+        </div>
+        <div class="flex flex-col items-center gap-2">
+          <div class="p-2 rounded-full bg-blue-500/10 text-brand-gold">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+            </svg>
+          </div>
+          <span class="text-xs text-blue-100/80 font-medium">Family</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Desktop Hero (Hidden on mobile) -->
+    <header class="hidden md:flex flex-col items-center justify-center gap-12 animate-fade-in-down max-w-4xl mx-auto">
       <div class="flex flex-col items-center text-center gap-8">
         <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-panel text-blue-200 text-sm font-medium tracking-wide shadow-lg">
           <span class="w-2 h-2 rounded-full bg-brand-gold shadow-[0_0_10px_rgba(255,176,0,0.5)]"></span>
@@ -248,7 +328,7 @@
     </header>
 
     <!-- Privacy Statement -->
-    <section id="privacy" class="scroll-fade-in glass-panel rounded-3xl p-8 sm:p-10 text-center max-w-4xl mx-auto relative overflow-hidden">
+    <section id="privacy" class="hidden md:block scroll-fade-in glass-panel rounded-3xl p-8 sm:p-10 text-center max-w-4xl mx-auto relative overflow-hidden">
       <h2 class="text-2xl sm:text-3xl font-bold text-white mb-4">Private by Design</h2>
       <p class="text-slate-300 text-base sm:text-lg leading-relaxed max-w-xl mx-auto">
         100% offline. No accounts. No cloud. No tracking. Stored securely on your device using system protections.
@@ -284,6 +364,27 @@
       </div>
     </section>
 
+    <!-- Mobile Use Cases (Visible only on mobile) -->
+    <section class="md:hidden px-4 space-y-6">
+      <div class="glass-panel p-6 rounded-2xl border-l-4 border-brand-gold">
+        <h3 class="text-xl font-bold text-white mb-3">Travel Without Panic</h3>
+        <ul class="space-y-4 text-sm text-blue-100/80">
+          <li class="flex gap-3">
+             <span class="text-xl">✈️</span>
+             <span><strong>At the Airport:</strong> Access flight details and passport numbers instantly.</span>
+          </li>
+          <li class="flex gap-3">
+             <span class="text-xl">🏨</span>
+             <span><strong>Booking Hotels:</strong> Copy-paste passport details for the whole family in seconds.</span>
+          </li>
+          <li class="flex gap-3">
+             <span class="text-xl">🖨️</span>
+             <span><strong>Visa Applications:</strong> Export perfectly cropped PDFs ready for printing.</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
     <!-- Features Section -->
     <section id="features">
       <div class="text-center scroll-fade-in mb-10">
@@ -291,8 +392,33 @@
         <p class="text-blue-200/70 text-lg max-w-2xl mx-auto">Built for families who travel. Designed for people who value privacy.</p>
       </div>
 
-      <!-- Feature Grid -->
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5 stagger-children">
+      <!-- Mobile Condensed Features (Visible only on mobile) -->
+      <div class="md:hidden space-y-4 px-4 mb-8">
+        <div class="glass-card p-4 rounded-xl flex items-center gap-4">
+           <div class="text-brand-gold bg-blue-500/10 p-2 rounded-lg"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" /></svg></div>
+           <div>
+             <h3 class="text-white font-semibold">Smart Reminders</h3>
+             <p class="text-xs text-blue-200/60">Alerts 6 months before expiry</p>
+           </div>
+        </div>
+        <div class="glass-card p-4 rounded-xl flex items-center gap-4">
+           <div class="text-brand-gold bg-blue-500/10 p-2 rounded-lg"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" /></svg></div>
+           <div>
+             <h3 class="text-white font-semibold">Scan Guides</h3>
+             <p class="text-xs text-blue-200/60">Perfectly frame passports & IDs</p>
+           </div>
+        </div>
+        <div class="glass-card p-4 rounded-xl flex items-center gap-4">
+           <div class="text-brand-gold bg-blue-500/10 p-2 rounded-lg"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" /></svg></div>
+           <div>
+             <h3 class="text-white font-semibold">Combined Exports</h3>
+             <p class="text-xs text-blue-200/60">Print everyone's docs in one click</p>
+           </div>
+        </div>
+      </div>
+
+      <!-- Feature Grid (Hidden on Mobile) -->
+      <div class="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-5 stagger-children">
 
         <!-- Feature 1 -->
         <div class="glass-card rounded-2xl p-6 sm:p-8 flex flex-col gap-4">
@@ -432,7 +558,17 @@
         <p class="text-blue-200/70 text-lg max-w-2xl mx-auto">One-time purchase. No subscriptions. No hidden fees. No data harvesting.</p>
       </div>
 
-      <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+      <!-- Mobile Pricing Summary (Visible only on mobile) -->
+      <div class="md:hidden glass-panel p-6 rounded-2xl text-center mx-4 border border-brand-gold/30">
+        <h3 class="text-2xl font-bold text-white mb-2">Free to Start</h3>
+        <p class="text-blue-100/80 mb-4">Upgrade to Pro for just <strong class="text-brand-gold">$9.99 once</strong>.</p>
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/20 text-brand-gold text-xs font-semibold tracking-wide uppercase">
+          No Subscriptions Ever
+        </div>
+      </div>
+
+      <!-- Pricing Grid (Hidden on Mobile) -->
+      <div class="hidden md:grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
 
         <!-- Free Tier -->
         <div class="glass-card rounded-2xl p-8 flex flex-col">
@@ -571,6 +707,44 @@
       </p>
     </section>
 
+    <!-- Mobile FAQ (Visible only on mobile) -->
+    <section class="md:hidden px-4 space-y-6">
+      <h2 class="text-2xl font-bold text-white text-center mb-6">Common Questions</h2>
+      
+      <details class="glass-panel rounded-xl group" open>
+        <summary class="flex items-center justify-between p-4 cursor-pointer list-none">
+          <span class="font-medium text-white">Is it really private?</span>
+          <span class="transition group-open:rotate-180">
+            <svg fill="none" class="h-5 w-5 text-brand-gold" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </span>
+        </summary>
+        <div class="text-blue-200/80 text-sm px-4 pb-4 leading-relaxed">
+          Yes. Everything is stored 100% on your device. We have no access to your documents, and there is no cloud database.
+        </div>
+      </details>
+
+      <details class="glass-panel rounded-xl group">
+        <summary class="flex items-center justify-between p-4 cursor-pointer list-none">
+          <span class="font-medium text-white">What if I lose my phone?</span>
+          <span class="transition group-open:rotate-180">
+            <svg fill="none" class="h-5 w-5 text-brand-gold" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </span>
+        </summary>
+        <div class="text-blue-200/80 text-sm px-4 pb-4 leading-relaxed">
+          Since data is on-device, you should rely on your standard iCloud/Android device backups to restore your data on a new phone.
+        </div>
+      </details>
+
+      <div class="text-center pt-2">
+        <a href="faq/" class="inline-flex items-center gap-2 text-brand-gold hover:text-brand-goldHover text-sm font-medium transition-colors">
+          See all privacy and data answers
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+          </svg>
+        </a>
+      </div>
+    </section>
+
     <!-- Disclaimer -->
     <section class="scroll-fade-in">
       <div class="glass-panel rounded-2xl p-6 sm:p-8 text-center max-w-3xl mx-auto">
@@ -637,5 +811,6 @@
 
 
   <script src="assets/js/cookie-consent.js" defer></script>
+  <script src="assets/js/mobile-menu.js" defer></script>
 </body>
 </html>
