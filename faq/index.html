@@ -8,15 +8,7 @@
   <meta name="description" content="Common questions about on-device storage, reminders, sharing, and Pro features.">
   <link rel="canonical" href="https://traveldocumentvault.com/faq/">
 
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NDB2TZPVDS"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
 
-    gtag('config', 'G-NDB2TZPVDS');
-  </script>
 
   <!-- Open Graph / Facebook -->
   <!-- Open Graph / Facebook -->
@@ -43,7 +35,8 @@
   <link rel="preload" href="../dist/output.css" as="style">
   <link rel="stylesheet" href="../dist/output.css">
   
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"></noscript>
   <style>
     html { scroll-behavior: smooth; }
 
@@ -593,6 +586,7 @@
     </svg>
     Download on App Store
   </a>
+  <script src="../assets/js/cookie-consent.js" defer></script>
   <script src="../assets/js/mobile-menu.js" defer></script>
 </body>
 </html>
