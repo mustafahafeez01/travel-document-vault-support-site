@@ -25,9 +25,13 @@
 
   <link rel="icon" type="image/svg+xml" href="/assets/images/app_icon.svg">
   <link rel="apple-touch-icon" href="/assets/images/app_icon.svg">
-  <link rel="stylesheet" href="/dist/output.css">
+  
+  <!-- Preconnect and Preload for Performance -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="/dist/output.css" as="style">
+  <link rel="stylesheet" href="/dist/output.css">
+  
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     html { scroll-behavior: smooth; }
@@ -151,11 +155,11 @@
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
         <a href="/" class="flex items-center gap-3">
-          <img src="assets/images/app_icon.svg" alt="Travel Document Vault" class="w-8 h-8" />
+          <img src="assets/images/app_icon.svg" alt="Travel Document Vault" class="w-8 h-8" width="32" height="32" />
           <span class="font-semibold text-white hidden sm:block">Travel Document Vault</span>
         </a>
         <!-- Mobile menu button -->
-        <button id="mobile-menu-button" type="button" class="md:hidden p-2 text-blue-200/80 hover:text-white transition-colors" aria-controls="mobile-menu" aria-expanded="false">
+        <button id="mobile-menu-button" type="button" class="md:hidden p-2 text-blue-200/80 hover:text-white transition-colors" aria-controls="mobile-menu" aria-expanded="false" aria-label="Toggle menu">
           <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
@@ -198,7 +202,8 @@
     </div>
   </div>
 
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-12 sm:pt-32 sm:pb-20 space-y-24">
+  <main>
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-12 sm:pt-32 sm:pb-20 space-y-24">
 
     <!-- Mobile Hero (Visible only on mobile) -->
     <header class="md:hidden flex flex-col items-center text-center gap-6 animate-fade-in-down px-4">
@@ -285,7 +290,7 @@
         <div class="flex flex-col items-center gap-3 pt-4">
           <a href="https://apps.apple.com" target="_blank" rel="noopener noreferrer" class="group relative inline-flex items-center transition-transform active:scale-95">
              <div class="absolute -inset-1 bg-gradient-to-r from-brand-blue to-blue-600 rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-200"></div>
-             <img src="assets/images/app-store-badge.svg" alt="Download on the App Store" class="relative h-[56px] w-auto" />
+             <img src="assets/images/app-store-badge.svg" alt="Download on the App Store" class="relative h-[56px] w-auto" width="120" height="40" />
           </a>
           <span class="text-blue-200/60 text-sm font-medium">One-time purchase · No subscription</span>
         </div>

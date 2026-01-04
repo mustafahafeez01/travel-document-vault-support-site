@@ -36,9 +36,13 @@
 
   <link rel="icon" type="image/svg+xml" href="/assets/images/app_icon.svg">
   <link rel="apple-touch-icon" href="/assets/images/app_icon.svg">
-  <link rel="stylesheet" href="../dist/output.css">
+  
+  <!-- Preconnect and Preload for Performance -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="../dist/output.css" as="style">
+  <link rel="stylesheet" href="../dist/output.css">
+  
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     html { scroll-behavior: smooth; }
@@ -111,12 +115,12 @@
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
         <a href="../" class="flex items-center gap-3">
-          <img src="../assets/images/app_icon.svg" alt="Travel Document Vault" class="w-8 h-8" />
+          <img src="../assets/images/app_icon.svg" alt="Travel Document Vault" class="w-8 h-8" width="32" height="32" />
           <span class="font-semibold text-white hidden sm:block">Travel Document Vault</span>
         </a>
 
         <!-- Mobile menu button -->
-        <button id="mobile-menu-button" type="button" class="md:hidden p-2 text-blue-200/80 hover:text-white transition-colors" aria-controls="mobile-menu" aria-expanded="false">
+        <button id="mobile-menu-button" type="button" class="md:hidden p-2 text-blue-200/80 hover:text-white transition-colors" aria-controls="mobile-menu" aria-expanded="false" aria-label="Toggle menu">
           <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
@@ -160,6 +164,7 @@
   </div>
 
   <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-12 sm:pt-32 sm:pb-20 space-y-12">
+    <main class="space-y-12">
 
     <!-- Hero -->
     <header class="text-center animate-fade-in-down">
@@ -540,6 +545,8 @@
       </a>
     </section>
 
+    </main>
+
     <!-- Footer -->
     <footer class="text-center pt-10 pb-6 space-y-6 border-t border-white/10">
       <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm font-medium">
@@ -558,7 +565,7 @@
       <p class="text-blue-200/60 text-xs">© Travel Document Vault. All rights reserved.</p>
     </footer>
 
-  </div>
+  </main>
 
   <!-- Scroll Animation Script -->
   <script>

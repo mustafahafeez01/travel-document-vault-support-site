@@ -27,9 +27,13 @@
 
   <link rel="icon" type="image/svg+xml" href="/assets/images/app_icon.svg">
   <link rel="apple-touch-icon" href="/assets/images/app_icon.svg">
-  <link rel="stylesheet" href="../dist/output.css">
+  
+  <!-- Preconnect and Preload for Performance -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="../dist/output.css" as="style">
+  <link rel="stylesheet" href="../dist/output.css">
+  
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Caveat:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
@@ -94,12 +98,12 @@
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
         <a href="../" class="flex items-center gap-3 group">
-          <img src="../assets/images/app_icon.svg" alt="Travel Document Vault" class="w-8 h-8 group-hover:scale-110 transition-transform duration-300" />
+          <img src="../assets/images/app_icon.svg" alt="Travel Document Vault" class="w-8 h-8 group-hover:scale-110 transition-transform duration-300" width="32" height="32" />
           <span class="font-bold text-white hidden sm:block tracking-tight group-hover:text-blue-100 transition-colors">Travel Document Vault</span>
         </a>
 
         <!-- Mobile menu button -->
-        <button id="mobile-menu-button" type="button" class="md:hidden p-2 text-blue-200/80 hover:text-white transition-colors" aria-controls="mobile-menu" aria-expanded="false">
+        <button id="mobile-menu-button" type="button" class="md:hidden p-2 text-blue-200/80 hover:text-white transition-colors" aria-controls="mobile-menu" aria-expanded="false" aria-label="Toggle menu">
           <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
@@ -195,7 +199,7 @@
             They are small, easy to forget, and critical when you need them.
           </p>
 
-          <h3 class="text-2xl text-white mt-12 mb-6">That sinking feeling</h3>
+          <h2 class="text-2xl text-white mt-12 mb-6">That sinking feeling</h2>
 
           <p>
             If you travel, you know it.
@@ -216,7 +220,7 @@
             I wanted my family’s most important travel documents to be <strong>easy to find, easy to check, and available when it matters</strong>.
           </p>
 
-          <h3 class="text-2xl text-white mt-12 mb-6">What the app does, in real life</h3>
+          <h2 class="text-2xl text-white mt-12 mb-6">What the app does, in real life</h2>
 
           <p>
             Travel Document Vault is simple on purpose. It is the place you go when you want certainty, quickly.
@@ -243,7 +247,7 @@
             The goal is not more features. The goal is fewer late-night checks, fewer last-minute surprises, and a calmer start to every trip.
           </p>
 
-          <h3 class="text-2xl text-white mt-12 mb-6">A non-negotiable decision about privacy</h3>
+          <h2 class="text-2xl text-white mt-12 mb-6">A non-negotiable decision about privacy</h2>
 
           <p>
             Early on, I made one decision that I did not want to compromise on:<br/>
@@ -302,7 +306,7 @@
             Either way, I am not involved.
           </p>
 
-          <h3 class="text-2xl text-white mt-12 mb-6">When things go wrong</h3>
+          <h2 class="text-2xl text-white mt-12 mb-6">When things go wrong</h2>
 
           <p>
             Before I had this app, losing a physical passport meant instant panic.
@@ -321,7 +325,7 @@
 
           <hr class="border-white/10 my-12" />
 
-          <h3 class="text-2xl text-white mt-12 mb-6">Why this exists</h3>
+          <h2 class="text-2xl text-white mt-12 mb-6">Why this exists</h2>
 
           <p>
             I built Travel Document Vault because I wanted fewer of those nights.
@@ -372,7 +376,7 @@
       <div class="relative z-10 flex flex-col items-center gap-4">
         <a href="https://apps.apple.com" target="_blank" rel="noopener noreferrer" class="group/btn relative inline-flex items-center transition-transform active:scale-95">
           <div class="absolute -inset-1 bg-gradient-to-r from-brand-gold to-yellow-500 rounded-lg blur opacity-40 group-hover/btn:opacity-75 transition duration-200"></div>
-          <img src="../assets/images/app-store-badge.svg" alt="Download on the App Store" class="relative h-[60px] w-auto" />
+          <img src="../assets/images/app-store-badge.svg" alt="Download on the App Store" class="relative h-[60px] w-auto" width="120" height="40" />
         </a>
         <span class="text-blue-200/40 text-xs font-semibold tracking-wider uppercase">No subscription. One-time purchase.</span>
         <div class="mt-4 flex gap-6 text-sm">
