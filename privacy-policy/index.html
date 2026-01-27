@@ -175,10 +175,10 @@
       <section class="space-y-3">
         <h2 class="text-xl font-bold text-white">Data Storage</h2>
         <p class="text-slate-300 leading-relaxed">
-          All documents and related data are <strong>encrypted on disk</strong> locally on your device. The app scrambles your files before saving them to your device's storage. The app does not upload, sync, or back up documents to any server.
+          All documents and related data are <strong>encrypted on disk</strong> locally on your device using AES-256-GCM encryption. The app scrambles your files before saving them to your device's storage. The app does not upload, sync, or back up documents to any server.
         </p>
         <p class="text-slate-300 leading-relaxed mt-3">
-          If you have <strong class="text-white">iCloud Backup</strong> (iOS) or <strong class="text-white">Google Backup</strong> (Android) enabled, your documents are included in your encrypted device backup. This is handled by your operating system, not by the app. You can also export documents from within the app if you wish to store copies elsewhere.
+          If you have <strong class="text-white">iCloud Backup</strong> (iOS) or <strong class="text-white">Google Backup</strong> (Android) enabled, your documents are included in your encrypted device backup. This is handled by your operating system, not by the app. When you export your vault, the backup is <strong class="text-white">password-protected</strong> with AES-256-GCM encryption and PBKDF2 key derivation, ensuring your data remains encrypted even outside your device.
         </p>
       </section>
 
