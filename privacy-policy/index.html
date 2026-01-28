@@ -118,7 +118,7 @@
 
       
       <div class="space-y-4 pb-4 border-b border-white/10">
-        <p class="text-sm font-semibold text-brand-gold">Last updated: January 3, 2026</p>
+        <p class="text-sm font-semibold text-brand-gold">Last updated: January 28, 2026</p>
         <p class="text-slate-300 text-sm leading-relaxed">
           Travel Document Vault (provided by Mustafa Hafeez) ("we" or "us" or "our") respects the privacy of our users ("user" or "you"). This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our mobile application, Travel Document Vault (the "Application"). Please read this Privacy Policy carefully. <span class="font-bold text-white">IF YOU DO NOT AGREE WITH THE TERMS OF THIS PRIVACY POLICY, PLEASE DO NOT ACCESS THE APPLICATION.</span>
         </p>
@@ -233,6 +233,20 @@
         <p class="text-slate-300 leading-relaxed mt-3">
           <strong class="text-white">You can disable crash reporting</strong> at any time in the Application's Settings. All document storage and OCR processing remain entirely on the device and are never transmitted to Sentry or any external server.
         </p>
+      </section>
+
+      <section class="space-y-3">
+        <h3 class="text-lg font-semibold text-white mt-4">Biometric Authentication</h3>
+        <p class="text-slate-300 leading-relaxed">
+          The Application offers optional biometric authentication (Face ID, Touch ID, or fingerprint unlock) as a Pro feature for convenient app access. Biometric data handling is as follows:
+        </p>
+        <ul class="list-disc list-inside text-slate-300 space-y-1 ml-4">
+          <li>The Application uses your device's <strong class="text-white">native biometric APIs</strong> (iOS LocalAuthentication / Android BiometricPrompt)</li>
+          <li>We <strong class="text-white">never access, store, or process</strong> your biometric data (fingerprint, face geometry, etc.)</li>
+          <li>All biometric matching occurs entirely within your device's secure hardware (Secure Enclave on iOS, TEE on Android)</li>
+          <li>The Application only receives a pass/fail result from the operating system</li>
+          <li>Biometric authentication is optional and can be disabled at any time in Settings</li>
+        </ul>
       </section>
 
       <section class="space-y-3">
