@@ -213,7 +213,10 @@
 
         <h3 class="text-lg font-semibold text-white mt-4">Crash Reporting (Sentry)</h3>
         <p class="text-slate-300 leading-relaxed">
-          The Application uses <strong class="text-white">Sentry</strong> (sentry.io) for error and crash reporting to help us identify and fix application issues. This service may collect:
+          The Application uses <strong class="text-white">Sentry</strong> (sentry.io) for optional crash reporting to help us identify and fix critical application issues. When enabled, the Application automatically sends anonymous crash reports <strong>only when the app crashes completely and stops working</strong>.
+        </p>
+        <p class="text-slate-300 leading-relaxed mt-3">
+          <strong class="text-white">Crash reports may include:</strong>
         </p>
         <ul class="list-disc list-inside text-slate-300 space-y-1 ml-4">
           <li>Device type and model</li>
@@ -222,16 +225,20 @@
           <li>Anonymized crash stack traces</li>
         </ul>
         <p class="text-slate-300 leading-relaxed mt-3">
-          Crash reports do <strong class="text-white">not</strong> include:
+          <strong class="text-white">Crash reports never include:</strong>
         </p>
         <ul class="list-disc list-inside text-slate-300 space-y-1 ml-4">
           <li>Document images or scans</li>
-          <li>Document contents or metadata you've entered</li>
+          <li>Document contents or metadata you've entered (names, numbers, dates, expiry info)</li>
           <li>OCR data or extracted text</li>
-          <li>Any files stored within the Application</li>
+          <li>File contents or attachments</li>
+          <li>Device IDs, email addresses, or personal identifiers</li>
         </ul>
         <p class="text-slate-300 leading-relaxed mt-3">
-          <strong class="text-white">You can disable crash reporting</strong> at any time in the Application's Settings. All document storage and OCR processing remain entirely on the device and are never transmitted to Sentry or any external server.
+          <strong class="text-white">Manual error reporting:</strong> For non-fatal errors (export failures, feature issues), the app captures detailed error logs locally on your device. You can export these logs at any time via Settings > Data & Privacy > "Export Error Logs" and send them to us if you need support. <strong>Error logs never leave your device unless you explicitly export and share them.</strong>
+        </p>
+        <p class="text-slate-300 leading-relaxed mt-3">
+          <strong class="text-white">You have full control:</strong> Crash reporting is <strong>opt-in</strong> and disabled by default. You can enable or disable it at any time in Settings > Data & Privacy > "Help Improve the App". All document storage and OCR processing remain entirely on the device and are never transmitted to Sentry or any external server, regardless of this setting.
         </p>
         <p class="text-slate-300 leading-relaxed mt-3">
           <strong class="text-white">Data processing location:</strong> Crash report data may be processed by Sentry, Inc. in the United States. Sentry maintains compliance with applicable data protection frameworks. You may opt out at any time by disabling crash reporting in Settings.
