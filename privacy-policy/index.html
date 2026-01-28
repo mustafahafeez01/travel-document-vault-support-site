@@ -241,21 +241,20 @@
       <section class="space-y-3">
         <h3 class="text-lg font-semibold text-white mt-4">Biometric Authentication</h3>
         <p class="text-slate-300 leading-relaxed">
-          The Application offers optional biometric authentication (Face ID, Touch ID, or fingerprint unlock) as a Pro feature for convenient app access. Biometric data handling is as follows:
+          The Application offers optional biometric authentication (Face ID, Touch ID, or fingerprint unlock) as a Pro feature for convenient app access.
         </p>
-        <ul class="list-disc list-inside text-slate-300 space-y-1 ml-4">
-          <li>The Application uses your device's <strong class="text-white">native biometric APIs</strong> (iOS LocalAuthentication / Android BiometricPrompt)</li>
-          <li>We <strong class="text-white">never access, store, or process</strong> your biometric data (fingerprint, face geometry, etc.)</li>
-          <li>All biometric matching occurs entirely within your device's secure hardware (Secure Enclave on iOS, TEE on Android)</li>
-          <li>The Application only receives a pass/fail result from the operating system</li>
-          <li>Biometric authentication is optional and can be disabled at any time in Settings</li>
-        </ul>
+        <p class="text-slate-300 leading-relaxed mt-3">
+          <strong class="text-white">Your biometric data never leaves your device.</strong> The Application uses your device's built-in Face ID or Touch ID. We never access, store, or process your biometric data. The Application only receives a simple "unlocked" or "locked" result from your device.
+        </p>
+        <p class="text-slate-300 leading-relaxed mt-3">
+          <strong class="text-white">Requirements:</strong> To use biometric unlock, you must have Face ID or Touch ID already set up in your device settings. Biometric authentication is optional and can be disabled at any time in the Application's Settings.
+        </p>
       </section>
 
       <section class="space-y-3">
         <h2 class="text-xl font-bold text-white">Notifications</h2>
         <p class="text-slate-300 leading-relaxed">
-          Expiry reminders are managed locally via the device's notification center. The scheduling and delivery of these alerts occur entirely on-device, ensuring that your travel plans and document expiry dates are not tracked externally. Notification content is privacy-conscious and does not reveal sensitive document details by default.
+          Expiry reminders are managed locally via the device's notification center. The scheduling and delivery of these alerts occur entirely on-device, ensuring that your travel plans and document expiry dates are not tracked externally. <strong class="text-white">Notification content uses generic messages</strong> (e.g., "A document expires soon") and does not reveal passport numbers, visa details, or other sensitive information in the notification preview.
         </p>
       </section>
 
