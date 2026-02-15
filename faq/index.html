@@ -27,6 +27,50 @@
 
   <link rel="icon" type="image/svg+xml" href="/assets/images/app_icon.svg">
   <link rel="apple-touch-icon" href="/assets/images/app_icon.svg">
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [{
+      "@type": "Question",
+      "name": "Where is my data stored?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "All your data is stored exclusively on your device. We don't have cloud servers, user accounts, or any way to access your documents."
+      }
+    }, {
+      "@type": "Question",
+      "name": "Is my data backed up to the cloud?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The app does not have a cloud database. If you use iCloud Backup (iOS) or Google Backup (Android) for your whole phone, this app's data is included in that bundle and encrypted."
+      }
+    }, {
+      "@type": "Question",
+      "name": "What document types can I store?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Passports, National IDs, Visas, Residence Permits, Airline Tickets, and Other Documents. You can also add notes."
+      }
+    }, {
+      "@type": "Question",
+      "name": "How do expiry reminders work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We send cascaded reminders starting 6 months before expiry, then at 3 months, 6 weeks, 1 month, 2 weeks, 1 week, 2 days, and 1 day."
+      }
+    }, {
+      "@type": "Question",
+      "name": "Can I export my documents?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Free users can share individual documents. Pro users can export combined PDFs or encrypted ZIP backups."
+      }
+    }]
+  }
+  </script>
   
   <!-- Preconnect and Preload for Performance -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
