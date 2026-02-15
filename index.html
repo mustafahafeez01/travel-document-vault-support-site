@@ -39,11 +39,6 @@
       "price": "9.99",
       "priceCurrency": "USD"
     },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.8",
-      "ratingCount": "120"
-    },
     "description": "Store your family's passports, IDs, and visas securely on your phone. Get expiry reminders months in advance. Privacy-first, on-device storage.",
     "screenshot": "https://traveldocumentvault.com/assets/images/social-preview.png",
     "featureList": "Expiry Reminders, Offline Access, Family Profiles, Secure Enclave Encryption"
@@ -56,8 +51,8 @@
   <link rel="preload" href="/dist/output.css" as="style">
   <link rel="stylesheet" href="/dist/output.css">
   
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"></noscript>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=optional" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=optional"></noscript>
   <style>
     html { scroll-behavior: smooth; }
 
@@ -174,17 +169,18 @@
   </style>
 </head>
 <body class="bg-gradient-to-b from-[#003A87] to-[#0A192F] font-sans antialiased text-slate-200 min-h-screen selection:bg-brand-gold selection:text-white">
+<a href="#main" class="skip-link sr-only">Skip to main content</a>
 
   <!-- Navigation -->
   <nav class="fixed top-0 left-0 right-0 z-[100] glass-panel border-b border-white/5">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
         <a href="/" class="flex items-center gap-3">
-          <img src="assets/images/app_icon.svg" alt="Travel Document Vault" class="w-8 h-8" width="32" height="32" />
+          <img loading="lazy" src="assets/images/app_icon.svg" alt="Travel Document Vault" class="w-8 h-8" width="32" height="32" />
           <span class="font-semibold text-white hidden sm:block">Travel Document Vault</span>
         </a>
         <!-- Mobile menu button -->
-        <button id="mobile-menu-button" type="button" class="md:hidden p-2 text-blue-200/80 hover:text-white transition-colors" aria-controls="mobile-menu" aria-expanded="false" aria-label="Toggle menu">
+        <button id="mobile-menu-button" type="button" class="md:hidden p-2 text-slate-200 hover:text-white transition-colors" aria-controls="mobile-menu" aria-expanded="false" aria-label="Toggle menu">
           <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
@@ -192,13 +188,15 @@
 
         <!-- Desktop Menu -->
         <div class="hidden md:flex items-center gap-6 text-sm font-medium">
-          <a href="./" class="nav-link nav-link-active text-blue-200/80 hover:text-white transition-colors">Home</a>
-          <a href="features/" class="nav-link text-blue-200/80 hover:text-white transition-colors">Features</a>
-          <a href="blog/" class="nav-link text-blue-200/80 hover:text-white transition-colors">Why I Built This</a>
-          <a href="#pricing" class="nav-link text-blue-200/80 hover:text-white transition-colors">Pricing</a>
-          <a href="faq/" class="nav-link text-blue-200/80 hover:text-white transition-colors">FAQ</a>
-          <a href="privacy-policy/" class="nav-link text-blue-200/80 hover:text-white transition-colors">Privacy</a>
-          <a href="https://apps.apple.com" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-gold text-brand-blue font-semibold text-sm hover:bg-brand-goldHover transition-colors">
+          <a href="./" class="nav-link nav-link-active text-slate-200 hover:text-white transition-colors" aria-current="page">
+            <span class="sr-only">Current page: </span>Home
+          </a>
+          <a href="features/" class="nav-link text-slate-200 hover:text-white transition-colors">Features</a>
+          <a href="blog/" class="nav-link text-slate-200 hover:text-white transition-colors">Why I Built This</a>
+          <a href="#pricing" class="nav-link text-slate-200 hover:text-white transition-colors">Pricing</a>
+          <a href="faq/" class="nav-link text-slate-200 hover:text-white transition-colors">FAQ</a>
+          <a href="privacy-policy/" class="nav-link text-slate-200 hover:text-white transition-colors">Privacy</a>
+          <a href="https://apps.apple.com" target="_blank" rel="noopener noreferrer" onclick="gtag('event', 'download_click', {'event_category': 'conversion', 'event_label': 'nav_header'});" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-gold text-brand-blue font-semibold text-sm hover:bg-brand-goldHover transition-colors">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
               <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
             </svg>
@@ -213,14 +211,14 @@
   <div id="mobile-menu" class="hidden md:hidden fixed top-16 left-0 right-0 bottom-0 bg-[#0A192F] z-[90] border-t border-white/10 p-6 space-y-6 overflow-y-auto transition-opacity transition-transform duration-300 ease-in-out opacity-0 -translate-y-4">
     <div class="space-y-4">
       <a href="./" class="block text-lg font-medium text-white border-l-2 border-brand-gold pl-4 py-1">Home</a>
-      <a href="features/" class="block text-lg font-medium text-blue-200/80 hover:text-white pl-4 py-1 hover:border-l-2 hover:border-brand-gold transition-all">Features</a>
-      <a href="blog/" class="block text-lg font-medium text-blue-200/80 hover:text-white pl-4 py-1 hover:border-l-2 hover:border-brand-gold transition-all">Why I Built This</a>
-      <a href="#pricing" class="block text-lg font-medium text-blue-200/80 hover:text-white pl-4 py-1 hover:border-l-2 hover:border-brand-gold transition-all">Pricing</a>
-      <a href="faq/" class="block text-lg font-medium text-blue-200/80 hover:text-white pl-4 py-1 hover:border-l-2 hover:border-brand-gold transition-all">FAQ</a>
-      <a href="privacy-policy/" class="block text-lg font-medium text-blue-200/80 hover:text-white pl-4 py-1 hover:border-l-2 hover:border-brand-gold transition-all">Privacy</a>
+      <a href="features/" class="block text-lg font-medium text-slate-200 hover:text-white pl-4 py-1 hover:border-l-2 hover:border-brand-gold transition-all">Features</a>
+      <a href="blog/" class="block text-lg font-medium text-slate-200 hover:text-white pl-4 py-1 hover:border-l-2 hover:border-brand-gold transition-all">Why I Built This</a>
+      <a href="#pricing" class="block text-lg font-medium text-slate-200 hover:text-white pl-4 py-1 hover:border-l-2 hover:border-brand-gold transition-all">Pricing</a>
+      <a href="faq/" class="block text-lg font-medium text-slate-200 hover:text-white pl-4 py-1 hover:border-l-2 hover:border-brand-gold transition-all">FAQ</a>
+      <a href="privacy-policy/" class="block text-lg font-medium text-slate-200 hover:text-white pl-4 py-1 hover:border-l-2 hover:border-brand-gold transition-all">Privacy</a>
     </div>
     <div class="pt-4 border-t border-white/10">
-      <a href="https://apps.apple.com" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-3 px-6 py-4 rounded-xl bg-brand-gold text-brand-blue font-bold text-lg hover:bg-brand-goldHover transition-colors w-full shadow-lg">
+      <a href="https://apps.apple.com" target="_blank" rel="noopener noreferrer" onclick="gtag('event', 'download_click', {'event_category': 'conversion', 'event_label': 'mobile_menu'});" class="flex items-center justify-center gap-3 px-6 py-4 rounded-xl bg-brand-gold text-brand-blue font-bold text-lg hover:bg-brand-goldHover transition-colors w-full shadow-lg">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
           <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
         </svg>
@@ -229,16 +227,16 @@
     </div>
   </div>
 
-  <main>
+  <main id="main">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-12 sm:pt-32 sm:pb-20 space-y-24">
 
     <!-- Mobile Hero (Visible only on mobile) -->
     <header class="md:hidden flex flex-col items-center text-center gap-6 animate-fade-in-down px-4">
-      <h1 class="text-4xl font-bold tracking-tight text-white leading-tight">
+      <div class="text-4xl font-bold tracking-tight text-white leading-tight md:hidden" aria-hidden="true" role="presentation">
         One Less Thing
         <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-gold to-yellow-300">to Worry</span><br />
         <span class="text-blue-200">About</span>
-      </h1>
+      </div>
 
       <p class="text-blue-100/90 text-lg leading-relaxed">
         Your family's important documents. Tracked,<br/>
@@ -246,13 +244,13 @@
       </p>
 
       <div class="w-full max-w-xs space-y-3 pt-2">
-        <a href="https://apps.apple.com" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-3 px-6 py-4 rounded-xl bg-gradient-to-r from-brand-gold to-yellow-500 text-brand-blue font-bold text-lg shadow-[0_4px_20px_rgba(255,176,0,0.3)] hover:shadow-[0_4px_25px_rgba(255,176,0,0.4)] transition-all active:scale-95 w-full">
+        <a href="https://apps.apple.com" target="_blank" rel="noopener noreferrer" onclick="gtag('event', 'download_click', {'event_category': 'conversion', 'event_label': 'mobile_hero'});" class="flex items-center justify-center gap-3 px-6 py-4 rounded-xl bg-gradient-to-r from-brand-gold to-yellow-500 text-brand-blue font-bold text-lg shadow-[0_4px_20px_rgba(255,176,0,0.3)] hover:shadow-[0_4px_25px_rgba(255,176,0,0.4)] transition-all active:scale-95 w-full">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
             <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
           </svg>
           Download App
         </a>
-        <p class="text-blue-200/60 text-xs font-medium">Free to start · No account required</p>
+        <p class="text-slate-50 text-xs font-medium">Free to start · No account required</p>
       </div>
 
       <!-- Trust Signals (Mobile Only) -->
@@ -310,16 +308,24 @@
           Your family's passports, IDs, and visas. Stored securely, with reminders months before they expire.
         </p>
 
-        <p class="text-blue-200/60 text-sm">
+        <p class="text-slate-50 text-sm">
           Expiry dates slip past everyone. We make sure they don't slip past you.
         </p>
 
+        <!-- Important Notice -->
+        <div class="mt-4 px-4 py-3 bg-orange-900/20 border-l-4 border-orange-500 rounded-r-lg max-w-2xl mx-auto">
+          <p class="text-xs text-orange-200">
+            ⚠️ Digital copies are NOT valid for travel. Always carry originals.
+          </p>
+        </div>
+
+
         <div class="flex flex-col items-center gap-3 pt-4">
-          <a href="https://apps.apple.com" target="_blank" rel="noopener noreferrer" class="group relative inline-flex items-center transition-transform active:scale-95">
+          <a href="https://apps.apple.com" target="_blank" rel="noopener noreferrer" onclick="gtag('event', 'download_click', {'event_category': 'conversion', 'event_label': 'desktop_hero'});" class="group relative inline-flex items-center transition-transform active:scale-95">
              <div class="absolute -inset-1 bg-gradient-to-r from-brand-blue to-blue-600 rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-200"></div>
-             <img src="assets/images/app-store-badge.svg" alt="Download on the App Store" class="relative h-[56px] w-auto" width="120" height="40" />
+             <img loading="lazy" src="assets/images/app-store-badge.svg" alt="Download on the App Store" class="relative h-[56px] w-auto" width="120" height="40" />
           </a>
-          <span class="text-blue-200/60 text-sm font-medium">One-time purchase · No subscription</span>
+          <span class="text-slate-50 text-sm font-medium">One-time purchase · No subscription</span>
         </div>
       </div>
     </header>
@@ -354,7 +360,7 @@
 
       <div class="mt-8 pt-6 border-t border-white/5">
         <p class="text-brand-gold font-semibold mb-1">Why We Built This</p>
-        <a href="blog/" class="text-blue-200/60 hover:text-white transition-colors text-sm inline-flex items-center gap-1 group">
+        <a href="blog/" class="text-slate-50 hover:text-white transition-colors text-sm inline-flex items-center gap-1 group">
           Read the founder’s story: From midnight panic to total peace of mind
           <span class="group-hover:translate-x-0.5 transition-transform">→</span>
         </a>
@@ -405,7 +411,7 @@
           </div>
           <div>
             <h3 class="text-white font-semibold">Smart Reminders</h3>
-            <p class="text-xs text-blue-200/60">Alerts 6 months before expiry</p>
+            <p class="text-xs text-slate-50">Alerts 6 months before expiry</p>
           </div>
         </div>
 
@@ -417,7 +423,7 @@
           </div>
           <div>
             <h3 class="text-white font-semibold">Scan Guides</h3>
-            <p class="text-xs text-blue-200/60">Guides to frame passports and IDs</p>
+            <p class="text-xs text-slate-50">Guides to frame passports and IDs</p>
           </div>
         </div>
 
@@ -429,7 +435,7 @@
           </div>
           <div>
             <h3 class="text-white font-semibold">Combined Exports</h3>
-            <p class="text-xs text-blue-200/60">Combine documents into one PDF for printing</p>
+            <p class="text-xs text-slate-50">Combine documents into one PDF for printing</p>
           </div>
         </div>
       </div>
@@ -446,7 +452,7 @@
           </div>
           <div>
             <h3 class="text-lg font-semibold text-white mb-2">For the Whole Family</h3>
-            <p class="text-sm text-slate-400 leading-relaxed">You're the one who remembers everything. Now you have help. Organize spouses, kids, and grandparents in one safe place.</p>
+            <p class="text-sm text-slate-300 leading-relaxed">You're the one who remembers everything. Now you have help. Organize spouses, kids, and grandparents in one safe place.</p>
           </div>
         </div>
 
@@ -459,7 +465,7 @@
           </div>
           <div>
             <h3 class="text-lg font-semibold text-white mb-2">Peace of Mind, Automated</h3>
-            <p class="text-sm text-slate-400 leading-relaxed">We watch the dates so you don't have to. Get gentle nudges months in advance, so renewal is a checklist item, not an emergency.</p>
+            <p class="text-sm text-slate-300 leading-relaxed">We watch the dates so you don't have to. Get gentle nudges months in advance, so renewal is a checklist item, not an emergency.</p>
           </div>
         </div>
 
@@ -473,7 +479,7 @@
           </div>
           <div>
             <h3 class="text-lg font-semibold text-white mb-2">Capture with Confidence</h3>
-            <p class="text-sm text-slate-400 leading-relaxed">Streamlined capture. Our guides help you get a crisp, clear shot in seconds, so every number and face is readable.</p>
+            <p class="text-sm text-slate-300 leading-relaxed">Streamlined capture. Our guides help you get a crisp, clear shot in seconds, so every number and face is readable.</p>
           </div>
         </div>
 
@@ -486,7 +492,7 @@
           </div>
           <div>
             <h3 class="text-lg font-semibold text-white mb-2">Your Life, Sorted</h3>
-            <p class="text-sm text-slate-400 leading-relaxed">Passports, licenses, insurance. Securely stored, strictly private, and tracked for expiry. One place for everything that matters.</p>
+            <p class="text-sm text-slate-300 leading-relaxed">Passports, licenses, insurance. Securely stored, strictly private, and tracked for expiry. One place for everything that matters.</p>
           </div>
         </div>
 
@@ -499,7 +505,7 @@
           </div>
           <div>
             <h3 class="text-lg font-semibold text-white mb-2">Crystal Clear Details</h3>
-            <p class="text-sm text-slate-400 leading-relaxed">Zoom in on the fine print. Verify every ID number, policy date, and detail with pixel-perfect clarity.</p>
+            <p class="text-sm text-slate-300 leading-relaxed">Zoom in on the fine print. Verify every ID number, policy date, and detail with pixel-perfect clarity.</p>
           </div>
         </div>
 
@@ -512,7 +518,7 @@
           </div>
           <div>
             <h3 class="text-lg font-semibold text-white mb-2">Let the App Do the Typing</h3>
-            <p class="text-sm text-slate-400 leading-relaxed">Instant date detection saves you from tedious data entry. Fast, convenient, and kept 100% private on your phone.</p>
+            <p class="text-sm text-slate-300 leading-relaxed">Instant date detection saves you from tedious data entry. Fast, convenient, and kept 100% private on your phone.</p>
           </div>
         </div>
 
@@ -524,7 +530,7 @@
           </div>
           <div>
             <h3 class="text-lg font-semibold text-white mb-2">Your Private Vault</h3>
-            <p class="text-sm text-slate-400 leading-relaxed">What happens on your phone, stays on your phone. No cloud servers. No prying eyes. Just you.</p>
+            <p class="text-sm text-slate-300 leading-relaxed">What happens on your phone, stays on your phone. No cloud servers. No prying eyes. Just you.</p>
           </div>
         </div>
 
@@ -536,7 +542,7 @@
           </div>
           <div>
             <h3 class="text-lg font-semibold text-white mb-2">Always There When You Need It</h3>
-            <p class="text-sm text-slate-400 leading-relaxed">Spotty airport Wi-Fi? No problem. Your documents are available instantly, whichever country you're in. Works seamlessly in airplane mode.</p>
+            <p class="text-sm text-slate-300 leading-relaxed">Spotty airport Wi-Fi? No problem. Your documents are available instantly, whichever country you're in. Works seamlessly in airplane mode.</p>
           </div>
         </div>
 
@@ -548,7 +554,7 @@
           </div>
           <div>
             <h3 class="text-lg font-semibold text-white mb-2">Respecting Your Privacy</h3>
-            <p class="text-sm text-slate-400 leading-relaxed">We don't want your data. We don't sell ads. We just want to help you travel better.</p>
+            <p class="text-sm text-slate-300 leading-relaxed">We don't want your data. We don't sell ads. We just want to help you travel better.</p>
           </div>
         </div>
 
@@ -578,7 +584,7 @@
         <div class="glass-panel p-6 rounded-2xl border border-white/5">
           <div class="flex justify-between items-center mb-4">
             <h3 class="text-xl font-bold text-white">Free</h3>
-            <span class="text-blue-200/60 text-sm">Always free</span>
+            <span class="text-slate-50 text-sm">Always free</span>
           </div>
           <ul class="space-y-3 mb-6 text-sm">
             <li class="flex items-center gap-3 text-slate-300">
@@ -607,13 +613,16 @@
         <!-- Pro Card Mobile -->
         <div class="glass-panel p-6 rounded-2xl border border-brand-gold/30 relative">
           <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-brand-gold text-brand-blue text-[10px] font-bold rounded-full uppercase tracking-wide">
+            <svg class="inline w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+            </svg>
             Best Value
           </div>
           <div class="flex justify-between items-center mb-2">
             <h3 class="text-xl font-bold text-white">Pro</h3>
             <span class="text-xl font-bold text-brand-gold">$9.99</span>
           </div>
-          <p class="text-xs text-blue-200/60 mb-4">For your whole family. One-time purchase. No subscription.</p>
+          <p class="text-xs text-slate-50 mb-4">For your whole family. One-time purchase. No subscription.</p>
 
           <ul class="space-y-3 mb-6 text-sm">
             <li class="flex items-center gap-3 text-white">
@@ -645,7 +654,7 @@
             </li>
           </ul>
 
-          <a href="https://apps.apple.com" target="_blank" rel="noopener noreferrer" class="block w-full py-3 rounded-xl bg-brand-gold text-brand-blue font-bold text-center text-sm hover:bg-brand-goldHover transition-colors">
+          <a href="https://apps.apple.com" target="_blank" rel="noopener noreferrer" onclick="gtag('event', 'download_click', {'event_category': 'conversion', 'event_label': 'pricing_pro_mobile'});" class="block w-full py-3 rounded-xl bg-brand-gold text-brand-blue font-bold text-center text-sm hover:bg-brand-goldHover transition-colors">
             Get Pro
           </a>
         </div>
@@ -658,12 +667,12 @@
         <div class="glass-card rounded-2xl p-8 flex flex-col">
           <div class="mb-6">
             <h3 class="text-xl font-bold text-white mb-2">Free</h3>
-            <p class="text-blue-200/60 text-sm">Everything you need for solo travel</p>
+            <p class="text-slate-50 text-sm">Everything you need for solo travel</p>
           </div>
 
           <div class="mb-6">
             <span class="text-4xl font-bold text-white">Free</span>
-            <span class="text-blue-200/60"> always</span>
+            <span class="text-slate-50"> always</span>
           </div>
 
           <ul class="space-y-3 mb-8 flex-1">
@@ -723,7 +732,7 @@
             </li>
           </ul>
 
-          <a href="https://apps.apple.com" target="_blank" rel="noopener noreferrer" class="w-full py-3 px-6 rounded-xl border border-white/20 text-white font-semibold text-center hover:bg-white/5 transition-colors">
+          <a href="https://apps.apple.com" target="_blank" rel="noopener noreferrer" onclick="gtag('event', 'download_click', {'event_category': 'conversion', 'event_label': 'pricing_free_desktop'});" class="w-full py-3 px-6 rounded-xl border border-white/20 text-white font-semibold text-center hover:bg-white/5 transition-colors">
             Download Free
           </a>
         </div>
@@ -736,12 +745,12 @@
 
           <div class="mb-6">
             <h3 class="text-xl font-bold text-white mb-2">Pro</h3>
-            <p class="text-blue-200/60 text-sm">Unlock the full vault for your family</p>
+            <p class="text-slate-50 text-sm">Unlock the full vault for your family</p>
           </div>
 
           <div class="mb-2">
             <span class="text-4xl font-bold text-white">$9.99</span>
-            <span class="text-blue-200/60"> one-time</span>
+            <span class="text-slate-50"> one-time</span>
           </div>
 
           <div class="mb-6">
@@ -750,7 +759,7 @@
             </span>
           </div>
 
-          <p class="text-blue-200/80 text-sm mb-4 font-medium">Everything in Free, plus:</p>
+          <p class="text-slate-200 text-sm mb-4 font-medium">Everything in Free, plus:</p>
 
           <ul class="space-y-3 mb-8 flex-1">
             <li class="flex items-center gap-3 text-slate-300">
@@ -797,10 +806,10 @@
             </li>
           </ul>
 
-          <a href="https://apps.apple.com" target="_blank" rel="noopener noreferrer" class="w-full py-3 px-6 rounded-xl bg-brand-gold text-brand-blue font-semibold text-center hover:bg-brand-goldHover transition-colors">
+          <a href="https://apps.apple.com" target="_blank" rel="noopener noreferrer" onclick="gtag('event', 'download_click', {'event_category': 'conversion', 'event_label': 'pricing_pro_desktop'});" class="w-full py-3 px-6 rounded-xl bg-brand-gold text-brand-blue font-semibold text-center hover:bg-brand-goldHover transition-colors">
             Get Pro | $9.99
           </a>
-          <p class="text-center text-blue-200/60 text-xs mt-3 font-medium">No subscription. Pay once.</p>
+          <p class="text-center text-slate-50 text-xs mt-3 font-medium">No subscription. Pay once.</p>
         </div>
       </div>
 
@@ -820,7 +829,7 @@
             <svg fill="none" class="h-5 w-5 text-brand-gold" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
           </span>
         </summary>
-        <div class="text-blue-200/80 text-sm px-4 pb-4 leading-relaxed">
+        <div class="text-slate-200 text-sm px-4 pb-4 leading-relaxed">
           Yes. Everything is stored 100% on your device. We have no access to your documents, and there is no cloud database.
         </div>
       </details>
@@ -832,7 +841,7 @@
             <svg fill="none" class="h-5 w-5 text-brand-gold" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
           </span>
         </summary>
-        <div class="text-blue-200/80 text-sm px-4 pb-4 leading-relaxed">
+        <div class="text-slate-200 text-sm px-4 pb-4 leading-relaxed">
           Your vault is stored on your device. If you switch phones, restore using your usual phone backup.
         </div>
       </details>
@@ -850,8 +859,8 @@
     <!-- Disclaimer -->
     <section class="scroll-fade-in">
       <div class="glass-panel rounded-2xl p-6 sm:p-8 text-center max-w-3xl mx-auto">
-        <p class="text-blue-200/60 text-sm leading-relaxed">
-          <strong class="text-blue-200/80">Important:</strong> Travel Document Vault is a personal organization tool for storing digital copies of your documents. <strong class="text-blue-200/80">Digital copies stored in this app are NOT valid for travel.</strong> It does not verify document authenticity or provide legal or travel advice. Always carry original documents and verify all travel requirements with official government sources.
+        <p class="text-slate-50 text-sm leading-relaxed">
+          <strong class="text-slate-200">Important:</strong> Travel Document Vault is a personal organization tool for storing digital copies of your documents. <strong class="text-slate-200">Digital copies stored in this app are NOT valid for travel.</strong> It does not verify document authenticity or provide legal or travel advice. Always carry original documents and verify all travel requirements with official government sources.
         </p>
       </div>
     </section>
@@ -861,9 +870,9 @@
       <h2 class="text-3xl sm:text-4xl font-bold text-white">Stop Carrying It All in Your Head</h2>
       <p class="text-blue-200/70 text-lg max-w-xl mx-auto">Set it up tonight. Let the app remember so you don't have to.</p>
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-        <a href="https://apps.apple.com" target="_blank" rel="noopener noreferrer" class="group relative inline-flex items-center transition-transform active:scale-95">
+        <a href="https://apps.apple.com" target="_blank" rel="noopener noreferrer" onclick="gtag('event', 'download_click', {'event_category': 'conversion', 'event_label': 'final_cta'});" class="group relative inline-flex items-center transition-transform active:scale-95">
            <div class="absolute -inset-1 bg-gradient-to-r from-brand-gold to-yellow-500 rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-200"></div>
-           <img src="assets/images/app-store-badge.svg" alt="Download on the App Store" class="relative h-[56px] w-auto" width="120" height="40" />
+           <img loading="lazy" src="assets/images/app-store-badge.svg" alt="Download on the App Store" class="relative h-[56px] w-auto" width="120" height="40" />
         </a>
       </div>
     </section>
@@ -871,19 +880,19 @@
     <!-- Footer -->
     <footer class="text-center pt-10 pb-6 space-y-6 border-t border-white/10">
       <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm font-medium">
-        <a href="mailto:support@traveldocumentvault.com" class="text-blue-200/60 hover:text-white transition-colors duration-200">support&#64;traveldocumentvault&#46;com</a>
+        <a href="mailto:support@traveldocumentvault.com" class="text-slate-50 hover:text-white transition-colors duration-200">support&#64;traveldocumentvault&#46;com</a>
         <span class="text-blue-200/20 hidden sm:inline">·</span>
-        <a href="features/" class="text-blue-200/60 hover:text-white transition-colors duration-200">Features</a>
+        <a href="features/" class="text-slate-50 hover:text-white transition-colors duration-200">Features</a>
         <span class="text-blue-200/20 hidden sm:inline">·</span>
-        <a href="faq/" class="text-blue-200/60 hover:text-white transition-colors duration-200">FAQ</a>
+        <a href="faq/" class="text-slate-50 hover:text-white transition-colors duration-200">FAQ</a>
         <span class="text-blue-200/20 hidden sm:inline">·</span>
-        <a href="blog/" class="text-blue-200/60 hover:text-white transition-colors duration-200">Why We Built This</a>
+        <a href="blog/" class="text-slate-50 hover:text-white transition-colors duration-200">Why We Built This</a>
         <span class="text-blue-200/20 hidden sm:inline">·</span>
-        <a href="privacy-policy/" class="text-blue-200/60 hover:text-white transition-colors duration-200">Privacy Policy</a>
+        <a href="privacy-policy/" class="text-slate-50 hover:text-white transition-colors duration-200">Privacy Policy</a>
         <span class="text-blue-200/20 hidden sm:inline">·</span>
-        <a href="terms/" class="text-blue-200/60 hover:text-white transition-colors duration-200">Terms of Service</a>
+        <a href="terms/" class="text-slate-50 hover:text-white transition-colors duration-200">Terms of Service</a>
       </div>
-      <p class="text-blue-200/60 text-xs">© Mustafa Hafeez. All rights reserved.</p>
+      <p class="text-slate-50 text-xs">© Mustafa Hafeez. All rights reserved.</p>
     </footer>
 
   </div>

@@ -1,3 +1,122 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* ============================================
+   ACCESSIBILITY STYLES
+   ============================================ */
+
+/* Screen reader only utility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.sr-only:focus {
+  position: absolute;
+  width: auto;
+  height: auto;
+  padding: 0.75rem 1.5rem;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+}
+
+/* Global focus styles for accessibility */
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible,
+[role="button"]:focus-visible {
+  outline: 2px solid #FFB000 !important;
+  outline-offset: 2px !important;
+  border-radius: 4px;
+}
+
+.bg-brand-gold:focus-visible {
+  outline: 2px solid #FFFFFF !important;
+  outline-offset: 2px !important;
+}
+
+.skip-link:focus {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 200;
+  padding: 0.75rem 1.5rem;
+  background-color: #FFB000;
+  color: #003A87;
+  font-weight: bold;
+  border-radius: 0.75rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .scroll-fade-in,
+  .scroll-fade-in-left,
+  .scroll-fade-in-right,
+  .stagger-children > * {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  #mobile-menu {
+    transition: none !important;
+  }
+}
+
+/* ============================================
+   PRINT STYLES FOR LEGAL PAGES
+   ============================================ */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+
+  nav,
+  footer,
+  #mobile-menu,
+  .mobile-menu-button {
+    display: none !important;
+  }
+
+  .glass-panel,
+  .glass-card {
+    background: white !important;
+    border: 1px solid #ccc !important;
+    backdrop-filter: none !important;
+  }
+
+  a {
+    color: black !important;
+    text-decoration: underline !important;
+  }
+
+  h1, h2, h3, h4, h5, h6, p, li, span {
+    color: black !important;
+  }
+
+  h2 {
+    page-break-after: avoid;
+  }
+
+  p {
+    page-break-inside: avoid;
+  }
+}

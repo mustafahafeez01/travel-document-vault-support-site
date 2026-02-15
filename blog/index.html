@@ -7,7 +7,7 @@
 
   <!-- SEO metadata-->
   <title>Why I Built Travel Document Vault: A Dad’s Fix for Travel Document Stress</title>
-  <meta name="description" content="I built Travel Document Vault after a middle-of-the-night pre-flight panic. One secure vault for your family's passports, IDs, visas, licences, and insurance. Expiry reminders months in advance. No accounts. No cloud.">
+  <meta name="description" content="The personal story behind Travel Document Vault: A privacy-first app to help families track passports and visas, born from pre-flight panic.">
   <link rel="canonical" href="https://traveldocumentvault.com/blog/">
 
   <!-- Open Graph / Facebook -->
@@ -62,8 +62,8 @@
   <link rel="preload" href="../dist/output.css" as="style">
   <link rel="stylesheet" href="../dist/output.css">
   
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Caveat:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Caveat:wght@400;500;600;700&display=swap"></noscript>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Caveat:wght@400;500;600;700&display=optional" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Caveat:wght@400;500;600;700&display=optional"></noscript>
 
   <style>
     html { scroll-behavior: smooth; }
@@ -115,6 +115,7 @@
 </head>
 
 <body class="bg-gradient-to-b from-[#003A87] to-[#0A192F] font-sans antialiased text-slate-200 min-h-screen selection:bg-brand-gold selection:text-brand-blue overflow-x-hidden">
+<a href="#main" class="skip-link sr-only">Skip to main content</a>
 
   <!-- Ambient Background -->
   <div class="fixed inset-0 pointer-events-none hidden md:block">
@@ -127,12 +128,12 @@
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
         <a href="../" class="flex items-center gap-3 group">
-          <img src="../assets/images/app_icon.svg" alt="Travel Document Vault" class="w-8 h-8 group-hover:scale-110 transition-transform duration-300" width="32" height="32" />
+          <img loading="lazy" src="../assets/images/app_icon.svg" alt="Travel Document Vault" class="w-8 h-8 group-hover:scale-110 transition-transform duration-300" width="32" height="32" />
           <span class="font-bold text-white hidden sm:block tracking-tight group-hover:text-blue-100 transition-colors">Travel Document Vault</span>
         </a>
 
         <!-- Mobile menu button -->
-        <button id="mobile-menu-button" type="button" class="md:hidden p-2 text-blue-200/80 hover:text-white transition-colors" aria-controls="mobile-menu" aria-expanded="false" aria-label="Toggle menu">
+        <button id="mobile-menu-button" type="button" class="md:hidden p-2 text-slate-200 hover:text-white transition-colors" aria-controls="mobile-menu" aria-expanded="false" aria-label="Toggle menu">
           <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
@@ -140,11 +141,11 @@
 
         <!-- Desktop Menu -->
         <div class="hidden md:flex items-center gap-6 text-sm font-medium">
-          <a href="../" class="nav-link text-blue-200/60 hover:text-white transition-colors">Home</a>
-          <a href="../features/" class="nav-link text-blue-200/60 hover:text-white transition-colors">Features</a>
-          <a href="./" class="nav-link nav-link-active text-blue-200/60 hover:text-white transition-colors">Why I Built This</a>
-          <a href="../#pricing" class="nav-link text-blue-200/60 hover:text-white transition-colors">Pricing</a>
-          <a href="../faq/" class="nav-link text-blue-200/60 hover:text-white transition-colors">FAQ</a>
+          <a href="../" class="nav-link text-slate-50 hover:text-white transition-colors">Home</a>
+          <a href="../features/" class="nav-link text-slate-50 hover:text-white transition-colors">Features</a>
+          <a href="./" class="nav-link nav-link-active text-slate-50 hover:text-white transition-colors">Why I Built This</a>
+          <a href="../#pricing" class="nav-link text-slate-50 hover:text-white transition-colors">Pricing</a>
+          <a href="../faq/" class="nav-link text-slate-50 hover:text-white transition-colors">FAQ</a>
           <a href="https://apps.apple.com" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-brand-gold to-yellow-500 text-brand-blue font-bold text-sm hover:shadow-[0_0_20px_rgba(255,176,0,0.3)] hover:-translate-y-0.5 transition-all duration-300">
             Get the App
           </a>
@@ -156,11 +157,11 @@
   <!-- Mobile Menu -->
   <div id="mobile-menu" class="hidden md:hidden fixed top-16 left-0 right-0 bottom-0 bg-[#0A192F] z-[90] border-t border-white/10 p-6 space-y-6 overflow-y-auto transition-opacity transition-transform duration-300 ease-in-out opacity-0 -translate-y-4">
     <div class="space-y-4">
-      <a href="../" class="block text-lg font-medium text-blue-200/80 hover:text-white pl-4 py-1 hover:border-l-2 hover:border-brand-gold transition-all">Home</a>
-      <a href="../features/" class="block text-lg font-medium text-blue-200/80 hover:text-white pl-4 py-1 hover:border-l-2 hover:border-brand-gold transition-all">Features</a>
+      <a href="../" class="block text-lg font-medium text-slate-200 hover:text-white pl-4 py-1 hover:border-l-2 hover:border-brand-gold transition-all">Home</a>
+      <a href="../features/" class="block text-lg font-medium text-slate-200 hover:text-white pl-4 py-1 hover:border-l-2 hover:border-brand-gold transition-all">Features</a>
       <a href="./" class="block text-lg font-medium text-white border-l-2 border-brand-gold pl-4 py-1">Why I Built This</a>
-      <a href="../#pricing" class="block text-lg font-medium text-blue-200/80 hover:text-white pl-4 py-1 hover:border-l-2 hover:border-brand-gold transition-all">Pricing</a>
-      <a href="../faq/" class="block text-lg font-medium text-blue-200/80 hover:text-white pl-4 py-1 hover:border-l-2 hover:border-brand-gold transition-all">FAQ</a>
+      <a href="../#pricing" class="block text-lg font-medium text-slate-200 hover:text-white pl-4 py-1 hover:border-l-2 hover:border-brand-gold transition-all">Pricing</a>
+      <a href="../faq/" class="block text-lg font-medium text-slate-200 hover:text-white pl-4 py-1 hover:border-l-2 hover:border-brand-gold transition-all">FAQ</a>
     </div>
     <div class="pt-4 border-t border-white/10">
       <a href="https://apps.apple.com" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-3 px-6 py-4 rounded-xl bg-brand-gold text-brand-blue font-bold text-lg hover:bg-brand-goldHover transition-colors w-full shadow-lg">
@@ -172,7 +173,15 @@
     </div>
   </div>
 
-  <main class="relative pt-32 pb-24 px-4 sm:px-6">
+  <!-- Legal Disclaimer -->
+  <div class="bg-orange-900/20 border-l-4 border-orange-500 p-4 mb-8 max-w-6xl mx-auto">
+    <p class="text-sm text-orange-200">
+      ⚠️ <strong>Important:</strong> Digital copies stored in this app are NOT valid for travel. Always carry original documents. <a href="/terms/" class="underline hover:text-orange-100">Learn more</a>
+    </p>
+  </div>
+
+
+  <main id="main" class="relative pt-32 pb-24 px-4 sm:px-6">
     <article class="max-w-[720px] mx-auto relative z-10">
 
       <!-- Header -->
@@ -389,13 +398,13 @@
       <div class="relative z-10 flex flex-col items-center gap-4">
         <a href="https://apps.apple.com" target="_blank" rel="noopener noreferrer" class="group/btn relative inline-flex items-center transition-transform active:scale-95">
           <div class="absolute -inset-1 bg-gradient-to-r from-brand-gold to-yellow-500 rounded-lg blur opacity-40 group-hover/btn:opacity-75 transition duration-200"></div>
-          <img src="../assets/images/app-store-badge.svg" alt="Download on the App Store" class="relative h-[60px] w-auto" width="120" height="40" />
+          <img loading="lazy" src="../assets/images/app-store-badge.svg" alt="Download on the App Store" class="relative h-[60px] w-auto" width="120" height="40" />
         </a>
         <span class="text-blue-200/40 text-xs font-semibold tracking-wider uppercase">No subscription. One-time purchase.</span>
         <div class="mt-4 flex gap-6 text-sm">
-          <a href="../features/" class="text-blue-200/60 hover:text-white transition-colors">Explore Features</a>
+          <a href="../features/" class="text-slate-50 hover:text-white transition-colors">Explore Features</a>
           <span class="text-blue-200/20">|</span>
-          <a href="../privacy-policy/" class="text-blue-200/60 hover:text-white transition-colors">Privacy Policy</a>
+          <a href="../privacy-policy/" class="text-slate-50 hover:text-white transition-colors">Privacy Policy</a>
         </div>
       </div>
     </div>
@@ -404,15 +413,15 @@
   <!-- Footer -->
   <footer class="text-center pt-12 pb-8 space-y-8 border-t border-white/5 bg-[#0A192F] relative z-20">
     <div class="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 text-sm font-medium">
-      <a href="mailto:support@traveldocumentvault.com" class="text-blue-200/60 hover:text-brand-gold transition-colors duration-200">support&#64;traveldocumentvault&#46;com</a>
-      <a href="../features/" class="text-blue-200/60 hover:text-white transition-colors duration-200">Features</a>
-      <a href="./" class="text-blue-200/60 hover:text-white transition-colors duration-200">Why We Built This</a>
-      <a href="../faq/" class="text-blue-200/60 hover:text-white transition-colors duration-200">FAQ</a>
-      <a href="../privacy-policy/" class="text-blue-200/60 hover:text-white transition-colors duration-200">Privacy Policy</a>
-      <a href="../terms/" class="text-blue-200/60 hover:text-white transition-colors duration-200">Terms of Service</a>
+      <a href="mailto:support@traveldocumentvault.com" class="text-slate-50 hover:text-brand-gold transition-colors duration-200">support&#64;traveldocumentvault&#46;com</a>
+      <a href="../features/" class="text-slate-50 hover:text-white transition-colors duration-200">Features</a>
+      <a href="./" class="text-slate-50 hover:text-white transition-colors duration-200">Why We Built This</a>
+      <a href="../faq/" class="text-slate-50 hover:text-white transition-colors duration-200">FAQ</a>
+      <a href="../privacy-policy/" class="text-slate-50 hover:text-white transition-colors duration-200">Privacy Policy</a>
+      <a href="../terms/" class="text-slate-50 hover:text-white transition-colors duration-200">Terms of Service</a>
     </div>
     <div class="flex flex-col items-center gap-4">
-      <img src="../assets/images/app_icon.svg" alt="Logo" class="w-6 h-6 opacity-30 grayscale" />
+      <img loading="lazy" src="../assets/images/app_icon.svg" alt="Logo" class="w-6 h-6 opacity-30 grayscale" />
       <p class="text-blue-200/30 text-xs">© Mustafa Hafeez. All rights reserved.</p>
     </div>
   </footer>
