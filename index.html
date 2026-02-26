@@ -188,14 +188,15 @@
 
         <!-- Desktop Menu -->
         <div class="hidden md:flex items-center gap-8 text-sm font-medium">
-          <a href="./" class="nav-link nav-link-active text-slate-200 hover:text-white transition-colors" aria-current="page">
-            <span class="sr-only">Current page: </span>Home
+          <a href="./" class="nav-link nav-link-active text-slate-200 hover:text-white transition-colors" aria-current="page" aria-label="Home page, current page">
+            Home
           </a>
-          <a href="features/" class="nav-link text-slate-200 hover:text-white transition-colors">Features</a>
-          <a href="blog/" class="nav-link text-slate-200 hover:text-white transition-colors">Why I Built This</a>
-          <a href="#pricing" class="nav-link text-slate-200 hover:text-white transition-colors">Pricing</a>
-          <a href="faq/" class="nav-link text-slate-200 hover:text-white transition-colors">FAQ</a>
-          <a href="privacy-policy/" class="nav-link text-slate-200 hover:text-white transition-colors">Privacy</a>
+          <a href="features/" class="nav-link text-slate-200 hover:text-white transition-colors" aria-label="Features page">Features</a>
+          <a href="why-us/" class="nav-link text-slate-200 hover:text-white transition-colors" aria-label="Why Us page">Why Us</a>
+          <a href="blog/" class="nav-link text-slate-200 hover:text-white transition-colors" aria-label="Why I Built This page">Why I Built This</a>
+          <a href="#pricing" class="nav-link text-slate-200 hover:text-white transition-colors" aria-label="Jump to Pricing section">Pricing</a>
+          <a href="faq/" class="nav-link text-slate-200 hover:text-white transition-colors" aria-label="FAQ page">FAQ</a>
+          <a href="privacy-policy/" class="nav-link text-slate-200 hover:text-white transition-colors" aria-label="Privacy Policy page">Privacy</a>
         </div>
       </div>
     </div>
@@ -204,12 +205,13 @@
   <!-- Mobile Menu (Moved outside nav to avoid backdrop-filter clipping) -->
   <div id="mobile-menu" class="hidden md:hidden fixed top-16 left-0 right-0 bottom-0 bg-[#0A192F] z-[90] border-t border-white/10 p-6 space-y-6 overflow-y-auto transition-opacity transition-transform duration-300 ease-in-out opacity-0 -translate-y-4">
     <div class="space-y-4">
-      <a href="./" class="block text-lg font-medium text-white border-l-2 border-brand-gold pl-4 py-1">Home</a>
-      <a href="features/" class="block text-lg font-medium text-slate-200 hover:text-white pl-4 py-1 hover:border-l-2 hover:border-brand-gold transition-all">Features</a>
-      <a href="blog/" class="block text-lg font-medium text-slate-200 hover:text-white pl-4 py-1 hover:border-l-2 hover:border-brand-gold transition-all">Why I Built This</a>
-      <a href="#pricing" class="block text-lg font-medium text-slate-200 hover:text-white pl-4 py-1 hover:border-l-2 hover:border-brand-gold transition-all">Pricing</a>
-      <a href="faq/" class="block text-lg font-medium text-slate-200 hover:text-white pl-4 py-1 hover:border-l-2 hover:border-brand-gold transition-all">FAQ</a>
-      <a href="privacy-policy/" class="block text-lg font-medium text-slate-200 hover:text-white pl-4 py-1 hover:border-l-2 hover:border-brand-gold transition-all">Privacy</a>
+      <a href="./" class="block text-lg font-medium text-white border-l-2 border-brand-gold pl-4 py-1" aria-label="Home page, current page" aria-current="page">Home</a>
+      <a href="features/" class="block text-lg font-medium text-slate-200 hover:text-white pl-4 py-1 hover:border-l-2 hover:border-brand-gold transition-all" aria-label="Features page">Features</a>
+      <a href="why-us/" class="block text-lg font-medium text-slate-200 hover:text-white pl-4 py-1 hover:border-l-2 hover:border-brand-gold transition-all" aria-label="Why Us page">Why Us</a>
+      <a href="blog/" class="block text-lg font-medium text-slate-200 hover:text-white pl-4 py-1 hover:border-l-2 hover:border-brand-gold transition-all" aria-label="Why I Built This page">Why I Built This</a>
+      <a href="#pricing" class="block text-lg font-medium text-slate-200 hover:text-white pl-4 py-1 hover:border-l-2 hover:border-brand-gold transition-all" aria-label="Jump to Pricing section">Pricing</a>
+      <a href="faq/" class="block text-lg font-medium text-slate-200 hover:text-white pl-4 py-1 hover:border-l-2 hover:border-brand-gold transition-all" aria-label="FAQ page">FAQ</a>
+      <a href="privacy-policy/" class="block text-lg font-medium text-slate-200 hover:text-white pl-4 py-1 hover:border-l-2 hover:border-brand-gold transition-all" aria-label="Privacy Policy page">Privacy</a>
     </div>
     <div class="pt-4 border-t border-white/10 space-y-3">
       <a href="https://apps.apple.com/app/travel-document-vault/id6757014877" target="_blank" rel="noopener noreferrer" onclick="gtag('event', 'download_click', {'event_category': 'conversion', 'event_label': 'mobile_menu_appstore'});" class="flex items-center justify-center gap-3 px-6 py-4 rounded-xl bg-brand-gold text-brand-blue font-bold text-base hover:bg-brand-goldHover transition-colors w-full shadow-lg">
@@ -228,11 +230,15 @@
   </div>
 
   <main id="main">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-12 sm:pt-32 sm:pb-20 space-y-24">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-12 sm:pt-32 sm:pb-20">
 
     <!-- Mobile Hero (Visible only on mobile) -->
-    <header class="md:hidden flex flex-col items-center text-center gap-8 animate-fade-in-down px-4">
-      <div class="text-4xl font-bold tracking-tight text-white leading-tight md:hidden" aria-hidden="true" role="presentation">
+    <header class="md:hidden flex flex-col items-center text-center animate-fade-in-down px-4">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-panel text-blue-200 text-sm font-medium tracking-wide shadow-lg mb-6">
+        <span class="w-2 h-2 rounded-full bg-brand-gold shadow-[0_0_10px_rgba(255,176,0,0.5)]"></span>
+        Privacy-first. On-device only. No accounts needed.
+      </div>
+      <div class="text-4xl font-bold tracking-tight text-white leading-tight mb-6" aria-hidden="true" role="presentation">
         One Less Thing
         <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-gold to-yellow-300">to Worry</span><br />
         <span class="text-blue-200">About</span>
@@ -302,14 +308,14 @@
     </header>
 
     <!-- Desktop Hero (Hidden on mobile) -->
-    <header class="hidden md:flex flex-col items-center justify-center gap-12 animate-fade-in-down max-w-4xl mx-auto">
-      <div class="flex flex-col items-center text-center gap-8">
-        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-panel text-blue-200 text-sm font-medium tracking-wide shadow-lg">
+    <header class="hidden md:flex flex-col items-center justify-center animate-fade-in-down max-w-4xl mx-auto">
+      <div class="flex flex-col items-center text-center">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-panel text-blue-200 text-sm font-medium tracking-wide shadow-lg mb-6">
           <span class="w-2 h-2 rounded-full bg-brand-gold shadow-[0_0_10px_rgba(255,176,0,0.5)]"></span>
-          Privacy-first · On-device only
+          Privacy-first. On-device only. No accounts needed.
         </div>
 
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white drop-shadow-xl leading-[1.1]">
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white drop-shadow-xl leading-[1.1] mb-6">
           One Less Thing <br />
           <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-gold to-yellow-300">to Worry</span><br />
           <span class="text-blue-200">About</span>
@@ -320,16 +326,8 @@
         </p>
 
         <p class="text-slate-50 text-sm">
-          Expiry dates slip past everyone. We make sure they don't slip past you.
+          Expiry dates are easy to miss. We help you stay ahead.
         </p>
-
-        <!-- Important Notice -->
-        <div class="mt-4 px-4 py-3 bg-orange-900/20 border-l-4 border-orange-500 rounded-r-lg max-w-2xl mx-auto">
-          <p class="text-xs text-orange-200">
-            ⚠️ Digital copies are for reference only and may not be accepted for travel or identification. Always carry original documents.
-          </p>
-        </div>
-
 
         <div class="flex flex-col items-center gap-3 pt-4">
           <div class="flex flex-col sm:flex-row gap-8 items-center">
@@ -355,6 +353,8 @@
       </div>
     </header>
 
+    <!-- Content Sections -->
+    <div class="space-y-16">
     <!-- Privacy Statement (Desktop only) -->
     <section id="privacy" class="hidden md:block scroll-fade-in glass-panel rounded-3xl p-8 sm:p-10 text-center max-w-4xl mx-auto relative overflow-hidden">
       <h2 class="text-2xl sm:text-3xl font-bold text-white">Your Data. Your Device. Private Offline Storage.</h2>
@@ -386,7 +386,7 @@
       <div class="mt-8 pt-6 border-t border-white/5">
         <p class="text-brand-gold font-semibold mb-1">Why We Built This</p>
         <a href="blog/" class="text-slate-50 hover:text-white transition-colors text-sm inline-flex items-center gap-1 group">
-          Read the founder’s story: From midnight panic to total peace of mind
+          Read the founder's story: Why I built an app to carry one less thing in my head
           <span class="group-hover:translate-x-0.5 transition-transform">→</span>
         </a>
       </div>
@@ -586,13 +586,15 @@
       </div>
 
       <!-- More Features Link -->
-      <div class="text-center mt-3">
+      <div class="text-center mt-3 space-y-2">
         <a href="features/" class="inline-flex items-center gap-2 text-brand-gold hover:text-brand-goldHover font-medium transition-colors">
           See all features
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
           </svg>
         </a>
+        <br>
+        <a href="why-us/" class="text-slate-300 hover:text-white text-sm transition-colors">Not sure? See why families are switching →</a>
       </div>
     </section>
 
@@ -915,7 +917,15 @@
     </section>
 
     <!-- Footer -->
+    </div>
+    <!-- End Content Sections -->
+
     <footer class="text-center pt-10 pb-6 space-y-6 border-t border-white/10">
+      <div class="bg-orange-900/20 border-l-4 border-orange-500 p-4 max-w-3xl mx-auto mb-6">
+        <p class="text-sm text-orange-200">
+          ⚠️ <strong>Important:</strong> Digital copies stored in this app are NOT valid for travel. Always carry original documents. <a href="terms/" class="underline hover:text-orange-100">Learn more</a>
+        </p>
+      </div>
       <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm font-medium">
         <a href="mailto:support@traveldocumentvault.com" class="text-slate-50 hover:text-white transition-colors duration-200">support&#64;traveldocumentvault&#46;com</a>
         <span class="text-blue-200/20 hidden sm:inline">·</span>
