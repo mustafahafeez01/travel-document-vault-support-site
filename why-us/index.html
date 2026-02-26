@@ -654,18 +654,19 @@
     </div>
 
     <!-- Footer -->
+    </div>
+    <!-- End Content Sections -->
+
     <footer class="text-center pt-20 pb-8 space-y-6">
       <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm font-medium">
         <a href="mailto:support@traveldocumentvault.com" class="text-slate-50 hover:text-white transition-colors duration-200">support&#64;traveldocumentvault&#46;com</a>
-        <span class="text-blue-200/20 hidden sm:inline">&middot;</span>
-        <a href="../" class="text-slate-50 hover:text-white transition-colors duration-200">Home</a>
-        <span class="text-blue-200/20 hidden sm:inline">&middot;</span>
+        <span class="text-blue-200/20 hidden sm:inline">·</span>
         <a href="../features/" class="text-slate-50 hover:text-white transition-colors duration-200">Features</a>
-        <span class="text-blue-200/20 hidden sm:inline">&middot;</span>
-        <a href="../blog/" class="text-slate-50 hover:text-white transition-colors duration-200">Why We Built This</a>
-        <span class="text-blue-200/20 hidden sm:inline">&middot;</span>
+        <span class="text-blue-200/20 hidden sm:inline">·</span>
         <a href="../faq/" class="text-slate-50 hover:text-white transition-colors duration-200">FAQ</a>
-        <span class="text-blue-200/20 hidden sm:inline">&middot;</span>
+        <span class="text-blue-200/20 hidden sm:inline">·</span>
+        <a href="../blog/" class="text-slate-50 hover:text-white transition-colors duration-200">Why We Built This</a>
+        <span class="text-blue-200/20 hidden sm:inline">·</span>
         <a href="../privacy-policy/" class="text-slate-50 hover:text-white transition-colors duration-200">Privacy Policy</a>
         <span class="text-blue-200/20 hidden sm:inline">&middot;</span>
         <a href="../terms/" class="text-slate-50 hover:text-white transition-colors duration-200">Terms of Service</a>
@@ -690,20 +691,44 @@
 
   <!-- Scroll Animation + Carousel Script -->
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // Scroll animations
+    // Initialize scroll animations with immediate viewport detection
+    function initScrollAnimations() {
+      var observerOptions = {
+        root: null,
+        rootMargin: '50px', // Triggers 50px before entering viewport
+        threshold: 0.1
+      };
+
       var observer = new IntersectionObserver(function(entries) {
         entries.forEach(function(entry) {
           if (entry.isIntersecting) {
             entry.target.classList.add('visible');
           }
         });
-      }, { root: null, rootMargin: '0px', threshold: 0.1 });
+      }, observerOptions);
 
-      var selectors = '.scroll-fade-in, .scroll-fade-in-left, .stagger-children, .screenshot-reveal, .slide-in-right, .timeline-step, .gold-line-grow';
-      document.querySelectorAll(selectors).forEach(function(el) {
-        observer.observe(el);
-      });
+      // Small delay to ensure layout is complete
+      setTimeout(function() {
+        var selectors = '.scroll-fade-in, .scroll-fade-in-left, .stagger-children, .screenshot-reveal, .slide-in-right, .timeline-step, .gold-line-grow';
+        var animatedElements = document.querySelectorAll(selectors);
+
+        animatedElements.forEach(function(el) {
+          // Immediately show elements already in viewport on page load
+          var rect = el.getBoundingClientRect();
+          var isInViewport = rect.top < window.innerHeight && rect.bottom > 0;
+
+          if (isInViewport) {
+            el.classList.add('visible');
+          }
+
+          observer.observe(el);
+        });
+      }, 100);
+    }
+
+    // Initialize on DOM ready
+    document.addEventListener('DOMContentLoaded', function() {
+      initScrollAnimations();
 
       // Sticky CTA: show after pain section, hide at final CTA
       var stickyCta = document.getElementById('sticky-cta');
@@ -797,6 +822,13 @@
           if (e.key === 'ArrowRight') { scrollToItem(currentIndex + 1); e.preventDefault(); }
           if (e.key === 'ArrowLeft') { scrollToItem(currentIndex - 1); e.preventDefault(); }
         });
+      }
+    });
+
+    // Re-check on page show (handles browser back/forward navigation)
+    window.addEventListener('pageshow', function(event) {
+      if (event.persisted) {
+        initScrollAnimations();
       }
     });
   </script>

@@ -185,7 +185,10 @@
             </div>
           </div>
         </div>
-        <span class="text-slate-50 text-sm font-medium">One-time purchase · No subscription</span>
+        <span class="text-slate-50 text-sm font-medium">One-time purchase · No subscription*</span>
+        <p class="text-slate-400 text-xs max-w-2xl mx-auto pt-1">
+          * Applies to current version (v1.x). See <a href="../pricing-policy/#version-policy" class="text-brand-gold hover:text-white underline">Pricing Policy</a> for full details.
+        </p>
       </div>
     </section>
 
@@ -759,6 +762,8 @@
         <a href="../privacy-policy/" class="text-slate-50 hover:text-white transition-colors duration-200">Privacy Policy</a>
         <span class="text-blue-200/20 hidden sm:inline">·</span>
         <a href="../terms/" class="text-slate-50 hover:text-white transition-colors duration-200">Terms of Service</a>
+        <span class="text-blue-200/20 hidden sm:inline">·</span>
+        <a href="../pricing-policy/" class="text-slate-50 hover:text-white transition-colors duration-200">Pricing Policy</a>
       </div>
       <p class="text-slate-50 text-xs">© Mustafa Hafeez. All rights reserved.</p>
     </footer>
@@ -767,16 +772,47 @@
 
   <!-- Scroll Animation Script -->
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    function initScrollAnimations() {
+      const observerOptions = {
+        root: null,
+        rootMargin: '50px',
+        threshold: 0.1
+      };
+
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             entry.target.classList.add('visible');
           }
         });
-      }, { threshold: 0.1 });
+      }, observerOptions);
 
-      document.querySelectorAll('.scroll-fade-in').forEach(el => observer.observe(el));
+      // Small delay to ensure layout is complete
+      setTimeout(() => {
+        const animatedElements = document.querySelectorAll('.scroll-fade-in');
+
+        animatedElements.forEach(el => {
+          // Immediately show elements already in viewport on page load
+          const rect = el.getBoundingClientRect();
+          const isInViewport = rect.top < window.innerHeight && rect.bottom > 0;
+
+          if (isInViewport) {
+            el.classList.add('visible');
+          }
+
+          observer.observe(el);
+        });
+      }, 100);
+    }
+
+    // Initialize on DOM ready
+    document.addEventListener('DOMContentLoaded', initScrollAnimations);
+
+    // Re-check on page show (handles browser back/forward navigation)
+    window.addEventListener('pageshow', function(event) {
+      if (event.persisted) {
+        initScrollAnimations();
+      }
     });
   </script>
 
