@@ -283,8 +283,20 @@
           <p class="text-slate-400 text-sm mt-1"><strong class="text-slate-300">Falls short:</strong> Until it doesn't. And it usually fails the night before a flight, when it's too late to fix anything.</p>
         </div>
       </div>
-      <div class="glass-panel rounded-2xl p-6 mt-8 max-w-3xl mx-auto scroll-fade-in">
-        <p class="text-slate-200 text-sm leading-relaxed italic">"I used most of these myself. The camera roll. The shared drive. The 'I'll just remember' approach. Here's what I kept wishing existed."</p>
+      <!-- Founder Quote with Attribution -->
+      <div class="glass-panel rounded-2xl p-6 sm:p-8 mt-8 max-w-3xl mx-auto scroll-fade-in">
+        <div class="flex items-start gap-4 mb-4">
+          <div class="w-16 h-16 rounded-full bg-gradient-to-br from-brand-gold/20 to-blue-500/20 border-2 border-brand-gold/30 flex items-center justify-center flex-shrink-0">
+            <span class="text-2xl font-bold text-brand-gold">MH</span>
+          </div>
+          <div>
+            <p class="text-white font-semibold">Mustafa Hafeez</p>
+            <p class="text-slate-400 text-sm">Founder, Travel Document Vault</p>
+          </div>
+        </div>
+        <blockquote class="text-slate-200 text-base sm:text-lg leading-relaxed italic">
+          "I used most of these myself. The camera roll. The shared drive. The 'I'll just remember' approach. Here's what I kept wishing existed."
+        </blockquote>
       </div>
     </section>
 
@@ -298,22 +310,37 @@
     <!-- What Makes TDV Different -->
     <section aria-labelledby="different-heading" class="scroll-fade-in space-y-8">
       <div class="text-center space-y-4">
-        <h2 id="different-heading" class="text-3xl sm:text-4xl font-bold text-white">What I Built <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-gold to-yellow-300">Instead</span></h2>
-        <p class="text-blue-200/80 max-w-xl mx-auto">Five things that make Travel Document Vault different from everything else.</p>
+        <h2 id="different-heading" class="text-3xl sm:text-4xl font-bold text-white">One App. <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-gold to-yellow-300">Five Things Off Your Mind.</span></h2>
+        <p class="text-blue-200/80 max-w-xl mx-auto">Built by a parent who needed relief, not another list to manage.</p>
       </div>
 
       <div class="space-y-10">
       <!-- Pillar 1: Privacy (Hero card - largest, most prominent) -->
-      <div class="glass-card rounded-2xl p-8 sm:p-10 max-w-4xl mx-auto scroll-fade-in border-l-4 border-brand-gold/40">
+      <div class="glass-card rounded-2xl p-8 sm:p-10 max-w-4xl mx-auto scroll-fade-in border-l-4 border-brand-gold">
         <div class="flex items-center gap-3 mb-4">
           <div class="w-10 h-10 rounded-xl bg-brand-gold/15 flex items-center justify-center flex-shrink-0">
             <svg class="w-5 h-5 text-brand-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
           </div>
           <h3 class="text-2xl sm:text-3xl font-bold text-white">Your Phone. Your Documents. Nobody Else.</h3>
         </div>
-        <p class="text-slate-200 leading-relaxed mb-5">I could have built cloud sync. Every other app does. But I kept coming back to the same question: would I trust a stranger's server with photos of my kids' passports? Travel Document Vault stores everything on your device with AES-256 encryption. No servers. No accounts. No one between you and your family's documents. This isn't a privacy "mode" you toggle on. It's the foundation the entire app is built on.</p>
-        <div class="glass-panel rounded-xl p-5 border-l-4 border-brand-gold/50">
-          <p class="text-slate-300 text-sm leading-relaxed">I made a deliberate choice: no cloud, no analytics, no tracking SDKs, no ads, no accounts. Your documents are encrypted with AES-256 and protected by the Secure Enclave on your device. I can't see your data. I don't want to. <a href="../privacy-policy/" class="text-brand-gold hover:text-brand-goldHover transition-colors">Read our full privacy policy</a>.</p>
+
+        <!-- Short, punchy paragraphs -->
+        <p class="text-slate-200 text-base leading-relaxed mb-4">
+          I could have built cloud sync. Every other app does.
+        </p>
+        <p class="text-slate-200 text-base leading-relaxed mb-4">
+          But I kept asking: would I trust a stranger's server with photos of my kids' passports? No.
+        </p>
+        <p class="text-slate-200 text-base leading-relaxed mb-6">
+          <strong class="text-white">Travel Document Vault stores everything on your device.</strong> AES-256 encryption. No servers. No accounts. No one between you and your family's documents.
+        </p>
+
+        <!-- Pull out key claim as visual callout -->
+        <div class="bg-brand-gold/10 border-l-4 border-brand-gold rounded-lg p-5">
+          <p class="text-white font-semibold mb-2">I can't see your data. I don't want to.</p>
+          <p class="text-slate-300 text-sm leading-relaxed">
+            No cloud. No analytics. No tracking SDKs. No ads. No accounts. Your documents are encrypted with AES-256 and protected by the Secure Enclave. <a href="../privacy-policy/" class="text-brand-gold hover:text-brand-goldHover transition-colors underline">Read our full privacy policy</a>.
+          </p>
         </div>
       </div>
 
@@ -349,8 +376,8 @@
           <div class="w-9 h-9 rounded-lg bg-brand-gold/15 flex items-center justify-center mb-3">
             <svg class="w-5 h-5 text-brand-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 8h6m-5 0a3 3 0 110 6H9l3 3m-3-6h6m6 1a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
           </div>
-          <h3 class="text-xl font-bold text-white mb-3">One Price. No Subscriptions. Ever.</h3>
-          <p class="text-slate-300 text-sm leading-relaxed">Pro costs $9.99. Once. Not per month, not per year. Most document apps charge $4-10 monthly - that's $48-120 per year. I charge less than a single month of what others charge annually. Free tier gives you 1 profile, 5 documents, OCR, reminders, and PIN lock.</p>
+          <h3 class="text-xl font-bold text-white mb-3">$9.99 Once. $0 Forever.</h3>
+          <p class="text-slate-300 text-sm leading-relaxed">One payment. Unlimited documents. Unlimited profiles. Lifetime access. Most apps charge $4-10/month ($48-120/year). You pay less than what they charge in one month—and never pay again. Free tier gives you 1 profile, 5 documents, OCR, reminders, and PIN lock.</p>
         </div>
       </div>
       </div>
