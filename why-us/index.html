@@ -187,9 +187,10 @@
     </div>
   </div>
 
-  <main id="main" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-12 sm:pt-32 sm:pb-20">
+  <main id="main">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-12 sm:pt-32 sm:pb-20 space-y-20">
 
-    <!-- Hero -->
+    <!-- SECTION 1: Hero -->
     <section aria-labelledby="hero-heading" class="scroll-fade-in text-center max-w-3xl mx-auto">
       <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-panel text-blue-200 text-sm font-medium tracking-wide shadow-lg mb-8">
         <span class="w-2 h-2 rounded-full bg-brand-gold shadow-[0_0_10px_rgba(255,176,0,0.5)]" aria-hidden="true"></span>
@@ -200,7 +201,7 @@
         <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-gold to-yellow-300">Than a Camera Roll</span>
       </h1>
       <p class="text-blue-100/80 text-lg sm:text-xl leading-relaxed max-w-2xl mx-auto mb-6">
-        One app instead of scattered across Photos, Drive, and email. Expiry reminders months ahead. Your whole family's documents organized and ready.
+        One app to store, organize, and track every travel document your family owns. Private. Offline. No accounts. Stop carrying it all in your head.
       </p>
       <div class="flex flex-col items-center gap-3 pt-4">
         <div class="flex flex-col sm:flex-row gap-8 items-center">
@@ -222,9 +223,7 @@
       </div>
     </section>
 
-    <!-- Content Sections -->
-    <div class="space-y-16 pt-32 md:pt-40 lg:pt-48">
-    <!-- Pain Scenarios -->
+    <!-- SECTION 2: Pain Scenarios -->
     <section id="pain-section" aria-labelledby="pain-heading" class="scroll-fade-in">
       <h2 id="pain-heading" class="text-2xl sm:text-3xl font-bold text-white text-center mb-10">Sound Familiar?</h2>
       <ul class="grid sm:grid-cols-2 gap-8 stagger-children max-w-4xl mx-auto" role="list">
@@ -555,18 +554,9 @@
       </div>
     </section>
 
-    <!-- Disclaimer -->
-    <section class="scroll-fade-in">
-      <div class="glass-panel rounded-2xl p-6 sm:p-8 text-center max-w-3xl mx-auto">
-        <p class="text-slate-50 text-sm leading-relaxed">
-          <strong class="text-slate-200">Important:</strong> Travel Document Vault is a personal organization tool for storing digital copies of your documents. <strong class="text-slate-200">Digital copies stored in this app are NOT valid for travel.</strong> It does not verify document authenticity or provide legal or travel advice. Always carry original documents and verify all travel requirements with official government sources.
-        </p>
-      </div>
-    </section>
-
-    <!-- Final CTA -->
-    <section aria-labelledby="cta-heading" id="final-cta" class="scroll-fade-in text-center space-y-6 pt-8 pb-24">
-      <h2 id="cta-heading" class="text-3xl sm:text-4xl font-bold text-white">Built for Families Like Yours</h2>
+    <!-- SECTION 8: Final CTA -->
+    <section aria-labelledby="cta-heading" id="final-cta" class="scroll-fade-in text-center space-y-6 pt-8">
+      <h2 id="cta-heading" class="text-3xl sm:text-4xl font-bold text-white">One Less Thing to Worry About</h2>
       <p class="text-blue-100/80 text-lg max-w-2xl mx-auto leading-relaxed">You recognized the problem. You've seen the alternatives. Travel Document Vault exists because I needed it - and I built it the way I'd want it built: private, simple, and honest.</p>
       <p class="text-slate-300 text-sm max-w-xl mx-auto">Most document apps charge $4-10 per month. That's $48-120 per year. Pro is <strong class="text-brand-gold">$9.99 once</strong>.</p>
       <p class="text-white font-semibold mb-4">Free to start. No account required.</p>
@@ -588,60 +578,15 @@
         </div>
         <span class="text-slate-50 text-sm font-medium">One-time purchase · No subscription</span>
       </div>
+      <div class="mt-6 px-4 py-3 bg-orange-900/20 border-l-4 border-orange-500 rounded-r-lg max-w-2xl mx-auto">
+        <p class="text-xs text-orange-200">Digital copies are not valid replacements for physical travel documents. Always carry originals.</p>
+      </div>
     </section>
-    </div>
-    <!-- End Content Sections -->
 
     <!-- Footer -->
-    <footer class="text-center pt-20 pb-8 space-y-6">
-      <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm font-medium">
-        <a href="mailto:support@traveldocumentvault.com" class="text-slate-50 hover:text-white transition-colors duration-200">support&#64;traveldocumentvault&#46;com</a>
-        <span class="text-blue-200/20 hidden sm:inline">·</span>
-        <a href="../" class="text-slate-50 hover:text-white transition-colors duration-200">Home</a>
-        <span class="text-blue-200/20 hidden sm:inline">·</span>
-        <a href="../features/" class="text-slate-50 hover:text-white transition-colors duration-200">Features</a>
-        <span class="text-blue-200/20 hidden sm:inline">·</span>
-        <a href="../faq/" class="text-slate-50 hover:text-white transition-colors duration-200">FAQ</a>
-        <span class="text-blue-200/20 hidden sm:inline">·</span>
-        <a href="../blog/" class="text-slate-50 hover:text-white transition-colors duration-200">Why We Built This</a>
-        <span class="text-blue-200/20 hidden sm:inline">·</span>
-        <a href="../privacy-policy/" class="text-slate-50 hover:text-white transition-colors duration-200">Privacy Policy</a>
-        <span class="text-blue-200/20 hidden sm:inline">·</span>
-        <a href="../terms/" class="text-slate-50 hover:text-white transition-colors duration-200">Terms of Service</a>
-      </div>
-      <p class="text-slate-50 text-xs">© Mustafa Hafeez. All rights reserved.</p>
-    </footer>
-
-  </main>
-
-  <!-- Sticky bottom CTA (mobile only) -->
-  <div id="sticky-cta" class="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-brand-blue/95 backdrop-blur-md border-t border-brand-gold/30 transform translate-y-full transition-transform duration-300">
-    <div class="flex items-center justify-between gap-3 p-3">
-      <div class="flex-1">
-        <p class="text-white font-semibold text-sm">Stop Searching. Start Tracking.</p>
-        <p class="text-blue-100 text-xs">Free to start · No account</p>
-      </div>
-      <a href="https://apps.apple.com/app/travel-document-vault/id6757014877" target="_blank" rel="noopener noreferrer" class="flex-shrink-0">
-        <img loading="lazy" src="../assets/images/app-store-badge-black.svg" alt="Download on the App Store" class="h-10 w-auto" width="120" height="40" />
-      </a>
-    </div>
-  </div>
-
-  <!-- Scroll Animation Script -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const fadeElements = document.querySelectorAll('.scroll-fade-in');
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-          }
-        });
-      }, { threshold: 0.1 });
-      fadeElements.forEach(el => observer.observe(el));
-    });
-
-    // Sticky CTA: show after pain section, hide at final CTA
+    <footer class="text-center pt-10 pb-6 space-y-6 border-t border-white/10">
+      <div class="bg-orange-900/20 border-l-4 border-orange-500 p-4 max-w-3xl mx-auto mb-6">
+        <p class="text-sm text-orange-200">
           ⚠️ <strong>Important:</strong> Digital copies stored in this app are NOT valid for travel. Always carry original documents. <a href="../terms/" class="underline hover:text-orange-100">Learn more</a>
         </p>
       </div>
