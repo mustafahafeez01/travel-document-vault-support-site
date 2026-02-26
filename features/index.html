@@ -163,7 +163,7 @@
 
 
   <!-- Legal Disclaimer -->
-  <main id="main" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-12 sm:pt-32 sm:pb-20 space-y-16">
+  <main id="main" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-12 sm:pt-32 sm:pb-20">
 
     <!-- Hero -->
     <section aria-labelledby="hero-heading" class="scroll-fade-in text-center max-w-3xl mx-auto">
@@ -172,7 +172,7 @@
         Privacy-first. On-device only. No accounts needed.
       </div>
       <h1 id="hero-heading" class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.1] mb-6">
-        Stop Carrying It All <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-gold to-yellow-300">in Your Head</span>
+        Track Everything. <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-gold to-yellow-300">Remember Nothing.</span>
       </h1>
       <p class="text-blue-100/80 text-lg sm:text-xl leading-relaxed max-w-2xl mx-auto mb-6">
         Every family document, tracked and ready. One app. One less thing to worry about.
@@ -197,8 +197,10 @@
       </div>
     </section>
 
+    <!-- Content Sections -->
+    <div class="space-y-16 pt-32 md:pt-40 lg:pt-48">
     <!-- Document Management -->
-    <section class="scroll-fade-in space-y-8 pt-32 md:pt-40 lg:pt-48">
+    <section class="scroll-fade-in space-y-8">
       <div class="text-center">
         <span class="inline-block px-3 py-1 rounded-full bg-blue-500/20 text-blue-200 text-sm font-medium mb-3">Document Management</span>
         <h2 class="text-2xl sm:text-3xl font-bold text-white">Guided Capture</h2>
@@ -438,7 +440,7 @@
     <!-- OCR -->
     <section class="scroll-fade-in space-y-8">
       <div class="text-center">
-        <span class="inline-block px-3 py-1 rounded-full bg-blue-500/20 text-blue-200 text-sm font-medium mb-3">On-Device OCR</span>
+        <span class="inline-block px-3 py-1 rounded-full bg-blue-500/20 text-blue-200 text-sm font-medium mb-3">Smart Scanning</span>
         <h2 class="text-2xl sm:text-3xl font-bold text-white">Smart Date Detection</h2>
       </div>
 
@@ -489,6 +491,8 @@
         </div>
 
       </div>
+    </section>
+
     <!-- Native Experience -->
     <section class="scroll-fade-in space-y-8">
       <div class="text-center">
@@ -617,6 +621,16 @@
           <h3 class="text-lg font-semibold text-white mb-2">Screen Capture Protection</h3>
           <p class="text-sm text-slate-300">Document screens are automatically protected from screenshots and screen recordings. Your sensitive information stays on-screen, not in someone's camera roll.</p>
         </div>
+
+        <div class="glass-card rounded-2xl p-6">
+          <div class="h-12 w-12 rounded-xl bg-blue-500/10 flex items-center justify-center border border-blue-400/20 text-blue-300 mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-white mb-2">Encrypted Storage</h3>
+          <p class="text-sm text-slate-300">Documents are encrypted at rest using industry-standard AES-256. Your data is protected even if your device is compromised.</p>
+        </div>
       </div>
     </section>
 
@@ -676,9 +690,18 @@
       </div>
     </section>
 
-    <!-- CTA -->
-    <section class="scroll-fade-in text-center space-y-6 pt-8">
-      <h2 class="text-3xl sm:text-4xl font-bold text-white">Stop Carrying It All in Your Head</h2>
+    <!-- Disclaimer -->
+    <section class="scroll-fade-in">
+      <div class="glass-panel rounded-2xl p-6 sm:p-8 text-center max-w-3xl mx-auto">
+        <p class="text-slate-50 text-sm leading-relaxed">
+          <strong class="text-slate-200">Important:</strong> Travel Document Vault is a personal organization tool for storing digital copies of your documents. <strong class="text-slate-200">Digital copies stored in this app are NOT valid for travel.</strong> It does not verify document authenticity or provide legal or travel advice. Always carry original documents and verify all travel requirements with official government sources.
+        </p>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="scroll-fade-in text-center space-y-6 pt-8 pb-24">
+      <h2 class="text-3xl sm:text-4xl font-bold text-white">Ready to Get Started?</h2>
       <p class="text-blue-200/70 text-lg max-w-xl mx-auto">Set it up tonight. Let the app remember so you don't have to.</p>
       <div class="flex flex-col sm:flex-row items-center justify-center gap-8">
         <a href="https://apps.apple.com/app/travel-document-vault/id6757014877" target="_blank" rel="noopener noreferrer" onclick="gtag('event', 'download_click', {'event_category': 'conversion', 'event_label': 'features_bottom_cta_appstore'});" class="group relative inline-flex items-center transition-transform active:scale-95">
@@ -686,7 +709,7 @@
            <img loading="lazy" src="../assets/images/app-store-badge-black.svg" alt="Download on the App Store" class="relative h-[56px] w-auto" />
         </a>
         <div class="inline-flex items-center gap-3 h-[56px]">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-emerald-400/80 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-emerald-400/80 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor">
             <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/>
           </svg>
           <div class="flex flex-col justify-center gap-0.5">
@@ -695,24 +718,13 @@
           </div>
         </div>
       </div>
-      <div class="flex items-center justify-center gap-6">
-        <a href="../#pricing" class="text-blue-200 hover:text-white transition-colors font-medium">
-          View pricing →
-        </a>
-        <span class="text-blue-200/20 hidden sm:inline">&middot;</span>
-        <a href="../why-us/" class="text-blue-200 hover:text-white transition-colors font-medium">
-          See what makes us different →
-        </a>
-      </div>
     </section>
 
     <!-- Footer -->
-    <footer class="text-center pt-10 pb-6 space-y-6 border-t border-white/10">
-      <div class="bg-orange-900/20 border-l-4 border-orange-500 p-4 max-w-3xl mx-auto mb-6">
-        <p class="text-sm text-orange-200">
-          ⚠️ <strong>Important:</strong> Digital copies stored in this app are NOT valid for travel. Always carry original documents. <a href="../terms/" class="underline hover:text-orange-100">Learn more</a>
-        </p>
-      </div>
+    </div>
+    <!-- End Content Sections -->
+
+    <footer class="text-center pt-20 pb-8 space-y-6">
       <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm font-medium">
         <a href="mailto:support@traveldocumentvault.com" class="text-slate-50 hover:text-white transition-colors duration-200">support&#64;traveldocumentvault&#46;com</a>
         <span class="text-blue-200/20 hidden sm:inline">·</span>
