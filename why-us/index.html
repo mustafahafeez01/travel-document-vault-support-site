@@ -85,6 +85,8 @@
     html { scroll-behavior: smooth; }
     .glass-card { background: rgba(17, 25, 40, 0.75); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.15); box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); }
     .glass-panel { background: rgba(17, 25, 40, 0.75); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.12); }
+    .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+    .scrollbar-hide::-webkit-scrollbar { display: none; }
     .nav-link-active { color: white !important; border-bottom: 2px solid #FFB000; padding-bottom: 2px; }
     .nav-link { position: relative; }
     .nav-link::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 2px; background: #FFB000; transition: width 0.3s ease; }
@@ -195,16 +197,17 @@
         Privacy-first. On-device only. No accounts needed.
       </div>
       <h1 id="hero-heading" class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.1] mb-8">
-        Your Passports Deserve Better<br class="hidden sm:block">
-        <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-gold to-yellow-300">Than a Camera Roll</span>
+        How Much Time Do You<br class="hidden sm:block">
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-gold to-yellow-300">Lose Finding Documents?</span>
       </h1>
-      <p class="text-blue-100/90 text-lg sm:text-xl leading-relaxed max-w-2xl mx-auto mb-8">
-        Family passports. Visa dates. License renewals. <strong class="text-white">You track it all so no one else has to.</strong>
+      <p class="text-blue-100/90 text-lg sm:text-xl leading-relaxed max-w-2xl mx-auto mb-6">
+        Immigration counters. Visa applications. Insurance forms. <strong class="text-white">Every search eats 5-10 minutes you'll never get back.</strong>
       </p>
-      <p class="text-blue-200/80 text-base sm:text-lg leading-relaxed max-w-xl mx-auto mb-6">
-        One app. On your phone. <strong class="text-white">One less thing to worry about.</strong>
+      <p class="text-blue-200/80 text-base sm:text-lg leading-relaxed max-w-xl mx-auto mb-8">
+        <strong class="text-white">What if they were always ready?</strong>
       </p>
-      <div class="flex flex-col items-center gap-3 pt-4">
+      <div class="flex flex-col items-center gap-4 pt-4">
+        <p class="text-white text-lg font-semibold">Download free. No account. No subscription.</p>
         <div class="flex flex-col sm:flex-row gap-8 items-center">
           <a href="https://apps.apple.com/app/travel-document-vault/id6757014877" target="_blank" rel="noopener noreferrer" class="group relative inline-flex items-center transition-transform active:scale-95">
             <div class="absolute -inset-1 bg-gradient-to-r from-brand-gold to-yellow-500 rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-200"></div>
@@ -227,7 +230,7 @@
     <!-- Content Sections -->
     <div class="space-y-16 pt-32 md:pt-40 lg:pt-48">
     <!-- Pain Scenarios -->
-    <section id="pain-section" aria-labelledby="pain-heading" class="scroll-fade-in space-y-10">
+    <section id="pain-section" aria-labelledby="pain-heading" class="scroll-fade-in space-y-8">
       <div class="text-center space-y-3">
         <h2 id="pain-heading" class="text-3xl sm:text-4xl font-bold text-white">Sound Familiar?</h2>
         <p class="text-blue-200/80 text-base max-w-xl mx-auto">You're not the only one who's been here.</p>
@@ -235,22 +238,22 @@
       <ul class="grid sm:grid-cols-2 gap-8 stagger-children max-w-4xl mx-auto" role="list">
         <li class="glass-panel rounded-2xl p-8 sm:p-10 border-l-4 border-brand-gold">
           <p class="text-brand-gold text-sm font-semibold uppercase tracking-wider mb-4">At the gate</p>
-          <p class="text-slate-100 text-base leading-relaxed">You're at the immigration counter. The officer asks for your visa.</p>
-          <p class="text-slate-300 text-base leading-relaxed mt-3">You're scrolling through 4,000 photos, heart pounding, while the queue builds behind you.</p>
+          <p class="text-slate-100 text-base leading-relaxed">Immigration counter. The officer asks for your visa.</p>
+          <p class="text-slate-300 text-base leading-relaxed mt-3">What if you could open one app and have it right there? No searching. No switching apps. Just instant access.</p>
         </li>
         <li class="glass-panel rounded-2xl p-8 sm:p-10 border-l-4 border-brand-gold">
           <p class="text-brand-gold text-sm font-semibold uppercase tracking-wider mb-4">The 6-month trap</p>
-          <p class="text-slate-100 text-base leading-relaxed">Your passport says 2027. Plenty of time, right?</p>
-          <p class="text-slate-300 text-base leading-relaxed mt-3">Most countries reject passports expiring within 6 months of travel. That 2027 passport may already be invalid for your summer trip.</p>
+          <p class="text-slate-100 text-base leading-relaxed">Your passport expires next year. Plenty of time, right?</p>
+          <p class="text-slate-300 text-base leading-relaxed mt-3">Most countries reject passports expiring within 6 months of travel. That passport may already be invalid for your upcoming trip.</p>
         </li>
         <li class="glass-panel rounded-2xl p-8 sm:p-10 border-l-4 border-brand-gold">
           <p class="text-brand-gold text-sm font-semibold uppercase tracking-wider mb-4">Renewal chaos</p>
           <p class="text-slate-100 text-base leading-relaxed">A renewal notice arrives. You have no idea when you last renewed, what documents you need, or whether the kids' passports expire at the same time.</p>
         </li>
         <li class="glass-panel rounded-2xl p-8 sm:p-10 border-l-4 border-brand-gold">
-          <p class="text-brand-gold text-sm font-semibold uppercase tracking-wider mb-4">Scattered everywhere</p>
-          <p class="text-slate-100 text-base leading-relaxed mb-3">Passport photo in your camera roll. Insurance PDF in Google Drive. Licence in an old email. Kids' vaccination cards in Notes.</p>
-          <p class="text-slate-300 text-base leading-relaxed">Every document in a different place. Some out of date. Some missing entirely.</p>
+          <p class="text-brand-gold text-sm font-semibold uppercase tracking-wider mb-4">Everything together</p>
+          <p class="text-slate-100 text-base leading-relaxed mb-3">Passport. Visa. Driver's license. Insurance. Travel bookings. Kids' documents.</p>
+          <p class="text-slate-300 text-base leading-relaxed">All in one place. At your fingertips. Ready when you need them.</p>
         </li>
       </ul>
     </section>
@@ -426,156 +429,128 @@
       <h2 class="text-2xl sm:text-3xl font-bold text-white text-center mb-4">See It in Action</h2>
       <p class="text-blue-200/80 text-center mb-10 max-w-md mx-auto">Swipe to explore the app</p>
 
-      <div class="relative max-w-5xl mx-auto">
+      <div class="relative max-w-6xl mx-auto px-4">
         <!-- Carousel Track -->
-        <div id="carousel" class="carousel-track flex gap-4 overflow-x-auto pb-6 px-8 sm:px-4 scroll-smooth" role="region" aria-label="Screenshot carousel" tabindex="0">
-          <div class="carousel-item flex-shrink-0 w-[180px] sm:w-[200px] lg:w-[220px]">
-            <img loading="lazy" src="../assets/images/screenshots-marketing/01.png" alt="One Vault for all your documents - documents list showing family profiles with expiry dates" class="rounded-xl shadow-2xl w-full" width="220" />
+        <div id="carousel" class="carousel-track flex gap-6 overflow-x-auto pb-6 scroll-smooth snap-x snap-mandatory scrollbar-hide" role="region" aria-label="Screenshot carousel" tabindex="0" style="-webkit-overflow-scrolling: touch;">
+          <div class="carousel-item flex-shrink-0 w-[85vw] sm:w-[70vw] md:w-[55vw] lg:w-[45vw] xl:w-[35vw] snap-center">
+            <img loading="lazy" decoding="async" fetchpriority="low" src="../assets/images/screenshots-appstore/01.png" alt="One Vault for all your documents - documents list showing family profiles with expiry dates" class="rounded-xl shadow-2xl w-full h-auto mx-auto bg-slate-800/50" width="600" height="1303" style="max-width: 100%;" />
           </div>
-          <div class="carousel-item flex-shrink-0 w-[180px] sm:w-[200px] lg:w-[220px]">
-            <img loading="lazy" src="../assets/images/screenshots-marketing/04.png" alt="All your docs - passport, visa, ID, airline ticket, and more document types" class="rounded-xl shadow-2xl w-full" width="220" />
+          <div class="carousel-item flex-shrink-0 w-[85vw] sm:w-[70vw] md:w-[55vw] lg:w-[45vw] xl:w-[35vw] snap-center">
+            <img loading="lazy" decoding="async" fetchpriority="low" src="../assets/images/screenshots-appstore/04.png" alt="All your docs - passport, visa, ID, airline ticket, and more document types" class="rounded-xl shadow-2xl w-full h-auto mx-auto bg-slate-800/50" width="600" height="1303" style="max-width: 100%;" />
           </div>
-          <div class="carousel-item flex-shrink-0 w-[180px] sm:w-[200px] lg:w-[220px]">
-            <img loading="lazy" src="../assets/images/screenshots-marketing/02.png" alt="Never miss renewal - smart reminders with 6 weeks notice notification" class="rounded-xl shadow-2xl w-full" width="220" />
+          <div class="carousel-item flex-shrink-0 w-[85vw] sm:w-[70vw] md:w-[55vw] lg:w-[45vw] xl:w-[35vw] snap-center">
+            <img loading="lazy" decoding="async" fetchpriority="low" src="../assets/images/screenshots-appstore/02.png" alt="Never miss renewal - smart reminders with 6 weeks notice notification" class="rounded-xl shadow-2xl w-full h-auto mx-auto bg-slate-800/50" width="600" height="1303" style="max-width: 100%;" />
           </div>
-          <div class="carousel-item flex-shrink-0 w-[180px] sm:w-[200px] lg:w-[220px]">
-            <img loading="lazy" src="../assets/images/screenshots-marketing/03.png" alt="Your family protected - family profiles for Emma, Lucas, Oliver, and Sophie" class="rounded-xl shadow-2xl w-full" width="220" />
+          <div class="carousel-item flex-shrink-0 w-[85vw] sm:w-[70vw] md:w-[55vw] lg:w-[45vw] xl:w-[35vw] snap-center">
+            <img loading="lazy" decoding="async" fetchpriority="low" src="../assets/images/screenshots-appstore/03.png" alt="Your family protected - family profiles for Emma, Lucas, Oliver, and Sophie" class="rounded-xl shadow-2xl w-full h-auto mx-auto bg-slate-800/50" width="600" height="1303" style="max-width: 100%;" />
           </div>
-          <div class="carousel-item flex-shrink-0 w-[180px] sm:w-[200px] lg:w-[220px]">
-            <img loading="lazy" src="../assets/images/screenshots-marketing/05.png" alt="Every detail - document detail view with passport attachment and metadata" class="rounded-xl shadow-2xl w-full" width="220" />
+          <div class="carousel-item flex-shrink-0 w-[85vw] sm:w-[70vw] md:w-[55vw] lg:w-[45vw] xl:w-[35vw] snap-center">
+            <img loading="lazy" decoding="async" fetchpriority="low" src="../assets/images/screenshots-appstore/05.png" alt="Every detail - document detail view with passport attachment and metadata" class="rounded-xl shadow-2xl w-full h-auto mx-auto bg-slate-800/50" width="600" height="1303" style="max-width: 100%;" />
           </div>
-          <div class="carousel-item flex-shrink-0 w-[180px] sm:w-[200px] lg:w-[220px]">
-            <img loading="lazy" src="../assets/images/screenshots-marketing/06.png" alt="Stays on your device - PIN lock screen for privacy you can trust" class="rounded-xl shadow-2xl w-full" width="220" />
+          <div class="carousel-item flex-shrink-0 w-[85vw] sm:w-[70vw] md:w-[55vw] lg:w-[45vw] xl:w-[35vw] snap-center">
+            <img loading="lazy" decoding="async" fetchpriority="low" src="../assets/images/screenshots-appstore/06.png" alt="Stays on your device - PIN lock screen for privacy you can trust" class="rounded-xl shadow-2xl w-full h-auto mx-auto bg-slate-800/50" width="600" height="1303" style="max-width: 100%;" />
           </div>
         </div>
 
         <!-- Navigation arrows (desktop) -->
-        <button id="carousel-prev" aria-label="Previous screenshot" class="hidden md:flex absolute left-[-20px] top-1/2 -translate-y-1/2 w-11 h-11 rounded-full glass-panel items-center justify-center text-white hover:text-brand-gold transition-colors z-10">
-          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" /></svg>
+        <button id="carousel-prev" aria-label="Previous screenshot" class="hidden lg:flex absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-brand-blue/90 backdrop-blur-sm border border-brand-gold/30 items-center justify-center text-brand-gold hover:bg-brand-gold hover:text-brand-blue transition-all duration-200 z-20 shadow-lg hover:scale-110">
+          <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" /></svg>
         </button>
-        <button id="carousel-next" aria-label="Next screenshot" class="hidden md:flex absolute right-[-20px] top-1/2 -translate-y-1/2 w-11 h-11 rounded-full glass-panel items-center justify-center text-white hover:text-brand-gold transition-colors z-10">
-          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+        <button id="carousel-next" aria-label="Next screenshot" class="hidden lg:flex absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-brand-blue/90 backdrop-blur-sm border border-brand-gold/30 items-center justify-center text-brand-gold hover:bg-brand-gold hover:text-brand-blue transition-all duration-200 z-20 shadow-lg hover:scale-110">
+          <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
         </button>
 
         <!-- Dot indicators -->
-        <div id="carousel-dots" class="flex items-center justify-center gap-2 mt-4" role="tablist" aria-label="Screenshot navigation">
-          <button class="carousel-dot active w-6 h-2 rounded-full bg-brand-gold" role="tab" aria-selected="true" aria-label="Screenshot 1"></button>
-          <button class="carousel-dot w-2 h-2 rounded-full bg-white/30" role="tab" aria-selected="false" aria-label="Screenshot 2"></button>
-          <button class="carousel-dot w-2 h-2 rounded-full bg-white/30" role="tab" aria-selected="false" aria-label="Screenshot 3"></button>
-          <button class="carousel-dot w-2 h-2 rounded-full bg-white/30" role="tab" aria-selected="false" aria-label="Screenshot 4"></button>
-          <button class="carousel-dot w-2 h-2 rounded-full bg-white/30" role="tab" aria-selected="false" aria-label="Screenshot 5"></button>
-          <button class="carousel-dot w-2 h-2 rounded-full bg-white/30" role="tab" aria-selected="false" aria-label="Screenshot 6"></button>
+        <div id="carousel-dots" class="flex items-center justify-center gap-2 mt-6" role="tablist" aria-label="Screenshot navigation">
+          <button class="carousel-dot active w-6 h-2 rounded-full bg-brand-gold transition-all duration-300" role="tab" aria-selected="true" aria-label="Screenshot 1"></button>
+          <button class="carousel-dot w-2 h-2 rounded-full bg-white/30 hover:bg-white/50 transition-all duration-300" role="tab" aria-selected="false" aria-label="Screenshot 2"></button>
+          <button class="carousel-dot w-2 h-2 rounded-full bg-white/30 hover:bg-white/50 transition-all duration-300" role="tab" aria-selected="false" aria-label="Screenshot 3"></button>
+          <button class="carousel-dot w-2 h-2 rounded-full bg-white/30 hover:bg-white/50 transition-all duration-300" role="tab" aria-selected="false" aria-label="Screenshot 4"></button>
+          <button class="carousel-dot w-2 h-2 rounded-full bg-white/30 hover:bg-white/50 transition-all duration-300" role="tab" aria-selected="false" aria-label="Screenshot 5"></button>
+          <button class="carousel-dot w-2 h-2 rounded-full bg-white/30 hover:bg-white/50 transition-all duration-300" role="tab" aria-selected="false" aria-label="Screenshot 6"></button>
         </div>
       </div>
     </section>
 
     <!-- SECTION 5: How It Works -->
     <section aria-labelledby="howitworks-heading" class="scroll-fade-in">
-      <div class="text-center space-y-3 mb-12">
-        <h2 id="howitworks-heading" class="text-3xl sm:text-4xl font-bold text-white">Three Steps. That's It.</h2>
-        <p class="text-blue-200/80 text-base max-w-md mx-auto">Scan. Set. Forget.</p>
-      </div>
+      <h2 id="howitworks-heading" class="text-3xl sm:text-4xl font-bold text-white text-center mb-4">Three Steps. That's It.</h2>
+      <p class="text-blue-200/80 text-lg text-center mb-10 max-w-md mx-auto">Scan. Set. Forget.</p>
 
-      <div class="max-w-2xl mx-auto space-y-10">
+      <div class="max-w-3xl mx-auto space-y-12">
         <!-- Step 1 -->
         <div class="flex items-start gap-6 scroll-fade-in">
           <div class="flex flex-col items-center flex-shrink-0">
-            <div class="w-12 h-12 rounded-full bg-brand-gold text-brand-blue font-bold flex items-center justify-center text-xl shadow-lg">1</div>
-            <div class="w-0.5 h-full bg-brand-gold/20 mt-3"></div>
+            <div class="font-bold flex items-center justify-center text-2xl shadow-lg" style="width: 56px; height: 56px; min-width: 56px; min-height: 56px; border-radius: 50%; background-color: #FFB000; color: #003A87;">1</div>
+            <div class="w-0.5 h-full mt-4" style="background-color: rgba(255, 176, 0, 0.2);"></div>
           </div>
-          <div class="pb-6">
-            <h3 class="text-xl font-semibold text-white mb-3">Scan or Import</h3>
-            <p class="text-slate-200 text-base leading-relaxed mb-3">Open the camera, use the guided overlay, and capture your document. Or import an existing photo or PDF.</p>
-            <p class="text-slate-400 text-sm">OCR detects the expiry date — you just confirm.</p>
+          <div class="pb-8 pt-1">
+            <h3 class="text-2xl font-bold text-white mb-4">Scan or Import</h3>
+            <p class="text-slate-100 text-base leading-relaxed mb-4">Open the camera, use the guided overlay, and capture your document. Or import an existing one from your photo library.</p>
+            <p class="text-slate-300 text-base leading-relaxed">The app detects the expiry date — you just confirm.</p>
           </div>
         </div>
 
         <!-- Step 2 -->
         <div class="flex items-start gap-6 scroll-fade-in">
           <div class="flex flex-col items-center flex-shrink-0">
-            <div class="w-12 h-12 rounded-full bg-brand-gold text-brand-blue font-bold flex items-center justify-center text-xl shadow-lg">2</div>
-            <div class="w-0.5 h-full bg-brand-gold/20 mt-3"></div>
+            <div class="font-bold flex items-center justify-center text-2xl shadow-lg" style="width: 56px; height: 56px; min-width: 56px; min-height: 56px; border-radius: 50%; background-color: #FFB000; color: #003A87;">2</div>
+            <div class="w-0.5 h-full mt-4" style="background-color: rgba(255, 176, 0, 0.2);"></div>
           </div>
-          <div class="pb-6">
-            <h3 class="text-xl font-semibold text-white mb-3">Set the Expiry and Forget</h3>
-            <p class="text-slate-200 text-base leading-relaxed mb-3">The app schedules cascading reminders automatically.</p>
-            <p class="text-slate-400 text-sm">Six months, three months, six weeks... all the way to expiry day and beyond.</p>
+          <div class="pb-8 pt-1">
+            <h3 class="text-2xl font-bold text-white mb-4">Set the Expiry and Forget</h3>
+            <p class="text-slate-100 text-base leading-relaxed mb-4">The app schedules cascading reminders automatically.</p>
+            <p class="text-slate-300 text-base leading-relaxed">Six months, three months, six weeks... all the way to expiry day and beyond.</p>
           </div>
         </div>
 
         <!-- Step 3 -->
         <div class="flex items-start gap-6 scroll-fade-in">
           <div class="flex flex-col items-center flex-shrink-0">
-            <div class="w-12 h-12 rounded-full bg-brand-gold text-brand-blue font-bold flex items-center justify-center text-xl shadow-lg">3</div>
+            <div class="font-bold flex items-center justify-center text-2xl shadow-lg" style="width: 56px; height: 56px; min-width: 56px; min-height: 56px; border-radius: 50%; background-color: #FFB000; color: #003A87;">3</div>
           </div>
-          <div>
-            <h3 class="text-xl font-semibold text-white mb-3">Always Ready When You Need It</h3>
-            <p class="text-slate-200 text-base leading-relaxed">At immigration, filling forms, applying for visas. Your documents are organized, searchable, and always on your phone.</p>
-          </div>
-        </div>
-      </div>
-
-        <!-- Mid-page CTA -->
-        <div class="text-center mt-12 scroll-fade-in">
-          <p class="text-white font-semibold text-lg mb-6">Ready to try it? Free to start, no account required.</p>
-          <div class="flex flex-col items-center gap-3 pt-4">
-            <div class="flex flex-col sm:flex-row gap-8 items-center">
-              <a href="https://apps.apple.com/app/travel-document-vault/id6757014877" target="_blank" rel="noopener noreferrer" class="group relative inline-flex items-center transition-transform active:scale-95">
-                <div class="absolute -inset-1 bg-gradient-to-r from-brand-gold to-yellow-500 rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-200"></div>
-                <img loading="lazy" src="../assets/images/app-store-badge-black.svg" alt="Download on the App Store" class="relative h-[56px] w-auto" width="120" height="40" />
-              </a>
-              <div class="inline-flex items-center gap-3 h-[56px]">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-emerald-400/80 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/>
-                </svg>
-                <div class="flex flex-col justify-center gap-0.5">
-                  <span class="text-[11px] font-medium text-slate-400 uppercase tracking-wide leading-tight">Coming Early 2026</span>
-                  <span class="text-[15px] font-semibold text-slate-100 leading-tight">Android</span>
-                </div>
-              </div>
-            </div>
-            <span class="text-slate-50 text-sm font-medium">One-time purchase · No subscription</span>
+          <div class="pt-1">
+            <h3 class="text-2xl font-bold text-white mb-4">Always Ready When You Need It</h3>
+            <p class="text-slate-100 text-base leading-relaxed">At immigration, filling forms, applying for visas. Your documents are organized, searchable, and always on your phone.</p>
           </div>
         </div>
       </div>
     </section>
 
-
     <!-- SECTION 6: Who This Is For -->
     <section aria-labelledby="audience-heading" class="scroll-fade-in">
-      <div class="text-center space-y-3 mb-10">
-        <h2 id="audience-heading" class="text-3xl sm:text-4xl font-bold text-white">Built for People Who...</h2>
-        <p class="text-blue-200/80 text-base max-w-md mx-auto">If any of these sound like you, this app was made for you.</p>
-      </div>
-      <div class="glass-panel rounded-2xl p-10 max-w-2xl mx-auto">
-        <ul class="space-y-5 stagger-children" role="list">
-          <li class="text-slate-200 text-base flex items-start gap-4">
-            <span class="text-brand-gold text-xl font-bold mt-0.5 flex-shrink-0">•</span>
-            <span><strong class="text-white">Carry the mental load</strong> for their family's documents</span>
+      <h2 id="audience-heading" class="text-3xl sm:text-4xl font-bold text-white text-center mb-4">Built for People Who...</h2>
+      <p class="text-blue-200/80 text-base text-center mb-10 max-w-md mx-auto">If any of these sound like you, this app was made for you.</p>
+
+      <div class="glass-panel rounded-2xl p-8 sm:p-10 max-w-2xl mx-auto">
+        <ul class="space-y-4 stagger-children" role="list">
+          <li class="text-slate-100 text-base leading-relaxed flex items-start gap-3">
+            <span class="flex-shrink-0 w-2 h-2 rounded-full mt-2" style="background-color: #FFB000;"></span>
+            <span><strong class="text-white font-semibold">Carry the mental load</strong> for their family's documents</span>
           </li>
-          <li class="text-slate-200 text-base flex items-start gap-4">
-            <span class="text-brand-gold text-xl font-bold mt-0.5 flex-shrink-0">•</span>
-            <span><strong class="text-white">Travel internationally</strong> and need documents at their fingertips</span>
+          <li class="text-slate-100 text-base leading-relaxed flex items-start gap-3">
+            <span class="flex-shrink-0 w-2 h-2 rounded-full mt-2" style="background-color: #FFB000;"></span>
+            <span><strong class="text-white font-semibold">Travel internationally</strong> and need documents at their fingertips</span>
           </li>
-          <li class="text-slate-200 text-base flex items-start gap-4">
-            <span class="text-brand-gold text-xl font-bold mt-0.5 flex-shrink-0">•</span>
-            <span><strong class="text-white">Value privacy</strong> and won't trust cloud storage with passport photos</span>
+          <li class="text-slate-100 text-base leading-relaxed flex items-start gap-3">
+            <span class="flex-shrink-0 w-2 h-2 rounded-full mt-2" style="background-color: #FFB000;"></span>
+            <span><strong class="text-white font-semibold">Value privacy</strong> and won't trust cloud storage with passport photos</span>
           </li>
-          <li class="text-slate-200 text-base flex items-start gap-4">
-            <span class="text-brand-gold text-xl font-bold mt-0.5 flex-shrink-0">•</span>
-            <span><strong class="text-white">Hate subscriptions</strong> and prefer to pay once</span>
+          <li class="text-slate-100 text-base leading-relaxed flex items-start gap-3">
+            <span class="flex-shrink-0 w-2 h-2 rounded-full mt-2" style="background-color: #FFB000;"></span>
+            <span><strong class="text-white font-semibold">Hate subscriptions</strong> and prefer to pay once</span>
           </li>
-          <li class="text-slate-200 text-base flex items-start gap-4">
-            <span class="text-brand-gold text-xl font-bold mt-0.5 flex-shrink-0">•</span>
-            <span><strong class="text-white">Want simplicity</strong> — scan, set, forget</span>
+          <li class="text-slate-100 text-base leading-relaxed flex items-start gap-3">
+            <span class="flex-shrink-0 w-2 h-2 rounded-full mt-2" style="background-color: #FFB000;"></span>
+            <span><strong class="text-white font-semibold">Want simplicity</strong> — scan, set, forget</span>
           </li>
-          <li class="text-slate-200 text-base flex items-start gap-4">
-            <span class="text-brand-gold text-xl font-bold mt-0.5 flex-shrink-0">•</span>
-            <span><strong class="text-white">Manage visas for multiple countries</strong> as expats or digital nomads</span>
+          <li class="text-slate-100 text-base leading-relaxed flex items-start gap-3">
+            <span class="flex-shrink-0 w-2 h-2 rounded-full mt-2" style="background-color: #FFB000;"></span>
+            <span><strong class="text-white font-semibold">Manage visas for multiple countries</strong> as expats or digital nomads</span>
           </li>
-          <li class="text-slate-200 text-base flex items-start gap-4">
-            <span class="text-brand-gold text-xl font-bold mt-0.5 flex-shrink-0">•</span>
-            <span><strong class="text-white">Have had "that moment"</strong> at immigration, scrambling through photos</span>
+          <li class="text-slate-100 text-base leading-relaxed flex items-start gap-3">
+            <span class="flex-shrink-0 w-2 h-2 rounded-full mt-2" style="background-color: #FFB000;"></span>
+            <span><strong class="text-white font-semibold">Have had "that moment"</strong> at immigration, scrambling through photos</span>
           </li>
         </ul>
       </div>
@@ -583,10 +558,8 @@
 
     <!-- SECTION 7: FAQ -->
     <section aria-labelledby="faq-heading" class="scroll-fade-in">
-      <div class="text-center space-y-3 mb-10">
-        <h2 id="faq-heading" class="text-3xl sm:text-4xl font-bold text-white">Quick Answers</h2>
-        <p class="text-blue-200/80 text-base max-w-md mx-auto">The questions we hear most often.</p>
-      </div>
+      <h2 id="faq-heading" class="text-3xl sm:text-4xl font-bold text-white text-center mb-4">Quick Answers</h2>
+      <p class="text-blue-200/80 text-base text-center mb-10 max-w-md mx-auto">The questions we hear most often.</p>
       <div class="max-w-3xl mx-auto space-y-4">
         <details class="glass-panel rounded-xl group" open>
           <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
@@ -629,25 +602,23 @@
       </div>
     </section>
 
+    <!-- Disclaimer -->
+    <section class="scroll-fade-in">
+      <div class="glass-panel rounded-2xl p-6 sm:p-8 text-center max-w-3xl mx-auto">
+        <p class="text-slate-50 text-sm leading-relaxed">
+          <strong class="text-slate-200">Important:</strong> Travel Document Vault is a personal organization tool for storing digital copies of your documents. <strong class="text-slate-200">Digital copies stored in this app are NOT valid for travel.</strong> It does not verify document authenticity or provide legal or travel advice. Always carry original documents and verify all travel requirements with official government sources.
+        </p>
+      </div>
+    </section>
+
     <!-- SECTION 8: Final CTA -->
-    <section aria-labelledby="cta-heading" id="final-cta" class="scroll-fade-in text-center space-y-8 pt-8">
-      <h2 id="cta-heading" class="text-4xl sm:text-5xl font-bold text-white leading-tight">One Less Thing<br class="hidden sm:block"> to Worry About</h2>
-
-      <div class="space-y-4 max-w-2xl mx-auto">
-        <p class="text-blue-100/90 text-lg sm:text-xl leading-relaxed">You recognized the problem. You've seen the alternatives.</p>
-
-        <p class="text-slate-200 text-base sm:text-lg leading-relaxed">Travel Document Vault exists because I needed it — and I built it the way I'd want it built: <strong class="text-white">private, simple, and honest.</strong></p>
-      </div>
-
-      <div class="glass-panel rounded-2xl p-6 max-w-xl mx-auto">
-        <p class="text-slate-200 text-base leading-relaxed mb-2">Most document apps charge $4-10 per month. That's <span class="text-slate-100 font-semibold">$48-120 per year.</span></p>
-        <p class="text-brand-gold text-xl font-bold">Pro is $9.99 once. Forever.</p>
-      </div>
-
-      <p class="text-white text-lg font-semibold">Free to start. No account required.</p>
-      <div class="flex flex-col items-center gap-3 pt-4">
+    <section aria-labelledby="cta-heading" class="scroll-fade-in text-center space-y-6 pt-8 pb-24">
+      <h2 id="cta-heading" class="text-3xl sm:text-4xl font-bold text-white">Download Free. No Subscription.</h2>
+      <p class="text-blue-200/70 text-lg max-w-xl mx-auto">Set it up tonight. Let the app remember so you don't have to.</p>
+      <div class="flex flex-col items-center gap-5 pt-2">
+        <div class="flex flex-col items-center gap-5">
         <div class="flex flex-col sm:flex-row gap-8 items-center">
-          <a href="https://apps.apple.com/app/travel-document-vault/id6757014877" target="_blank" rel="noopener noreferrer" class="group relative inline-flex items-center transition-transform active:scale-95">
+          <a href="https://apps.apple.com/app/travel-document-vault/id6757014877" target="_blank" rel="noopener noreferrer" onclick="gtag('event', 'download_click', {'event_category': 'conversion', 'event_label': 'whyus_bottom_cta_appstore'});" class="group relative inline-flex items-center transition-transform active:scale-95">
             <div class="absolute -inset-1 bg-gradient-to-r from-brand-gold to-yellow-500 rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-200"></div>
             <img loading="lazy" src="../assets/images/app-store-badge-black.svg" alt="Download on the App Store" class="relative h-[56px] w-auto" width="120" height="40" />
           </a>
@@ -663,19 +634,11 @@
         </div>
         <span class="text-slate-50 text-sm font-medium">One-time purchase · No subscription</span>
       </div>
-      <div class="mt-6 px-4 py-3 bg-orange-900/20 border-l-4 border-orange-500 rounded-r-lg max-w-2xl mx-auto">
-        <p class="text-xs text-orange-200">Digital copies are not valid replacements for physical travel documents. Always carry originals.</p>
-      </div>
     </section>
     </div>
 
     <!-- Footer -->
-    <footer class="text-center pt-10 pb-6 space-y-6 border-t border-white/10">
-      <div class="bg-orange-900/20 border-l-4 border-orange-500 p-4 max-w-3xl mx-auto mb-6">
-        <p class="text-sm text-orange-200">
-          ⚠️ <strong>Important:</strong> Digital copies stored in this app are NOT valid for travel. Always carry original documents. <a href="../terms/" class="underline hover:text-orange-100">Learn more</a>
-        </p>
-      </div>
+    <footer class="text-center pt-20 pb-8 space-y-6">
       <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm font-medium">
         <a href="mailto:support@traveldocumentvault.com" class="text-slate-50 hover:text-white transition-colors duration-200">support&#64;traveldocumentvault&#46;com</a>
         <span class="text-blue-200/20 hidden sm:inline">&middot;</span>
@@ -793,7 +756,7 @@
           clearTimeout(scrollTimeout);
           scrollTimeout = setTimeout(function() {
             var scrollLeft = carousel.scrollLeft;
-            var itemWidth = items[0].offsetWidth + 16; // 16 = gap-4
+            var itemWidth = items[0].offsetWidth + 24; // 24 = gap-6
             var newIndex = Math.round(scrollLeft / itemWidth);
             if (newIndex !== currentIndex && newIndex >= 0 && newIndex < itemCount) {
               currentIndex = newIndex;
