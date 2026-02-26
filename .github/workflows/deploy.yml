@@ -42,9 +42,11 @@ jobs:
           cp -r dist _site/
           cp -r blog _site/
           cp -r features _site/
+          cp -r why-us _site/
           cp -r faq _site/
           cp -r privacy-policy _site/
           cp -r terms _site/
+          cp -r pricing-policy _site/
           msg="Build complete. Contents of _site:"
           echo "$msg"
           ls -R _site
