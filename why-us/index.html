@@ -115,13 +115,130 @@
     .gold-line-grow.visible { transform: scaleY(1); }
     .sticky-cta { position: fixed; bottom: 0; left: 0; right: 0; z-index: 80; transform: translateY(100%); transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); background: rgba(10, 25, 47, 0.95); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-top: 1px solid rgba(255, 255, 255, 0.1); padding-bottom: env(safe-area-inset-bottom, 0); }
     .sticky-cta.visible { transform: translateY(0); }
-    /* Carousel */
-    .carousel-track { scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; }
-    .carousel-track::-webkit-scrollbar { display: none; }
-    .carousel-track { -ms-overflow-style: none; scrollbar-width: none; }
-    .carousel-item { scroll-snap-align: center; }
+    /* Carousel base — legacy scroll-track rules removed; cross-fade stage replaces them */
     .carousel-dot { transition: all 0.3s ease; }
     .carousel-dot.active { background: #FFB000; width: 24px; }
+    /* Screenshot carousel — gold standard */
+    .carousel-stage {
+      position: relative;
+      height: calc(80vw * 2.17 + 70px);
+    }
+    @media (min-width: 640px) { .carousel-stage { height: 770px; } }
+    @media (min-width: 1024px) { .carousel-stage { height: 870px; } }
+
+    .carousel-slide {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      /* flex-start so labels sit at top, image follows immediately with no gap */
+      justify-content: flex-start;
+      opacity: 0;
+      pointer-events: none;
+      /* Cross-fade transition — smooth like Apple */
+      transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .carousel-slide.is-active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .carousel-slide.is-exiting {
+      opacity: 0;
+    }
+
+    /* Phone image: width-driven sizing, crisp rendering */
+    .carousel-slide img {
+      display: block;
+      width: 80vw;
+      height: auto;
+      max-width: 360px;
+      flex-shrink: 0;
+      image-rendering: -webkit-optimize-contrast;
+      image-rendering: crisp-edges;
+      /* Force GPU compositing for sharper rendering */
+      transform: translateZ(0);
+      -webkit-transform: translateZ(0);
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+    }
+    @media (min-width: 640px) { .carousel-slide img { width: 340px; max-width: 340px; } }
+    @media (min-width: 1024px) { .carousel-slide img { width: 400px; max-width: 400px; } }
+
+    /* Slide text labels */
+    .carousel-label-title {
+      /* Reset browser default <p> margin, then apply intentional spacing */
+      margin-top: 0;
+      margin-bottom: 2px;
+      font-size: 1.5rem;       /* 24px — premium weight, Apple-scale */
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+      color: #FFB000;
+      text-align: center;
+    }
+    @media (min-width: 640px)  { .carousel-label-title { font-size: 1.75rem; } }  /* 28px */
+    @media (min-width: 1024px) { .carousel-label-title { font-size: 2rem;    } }  /* 32px */
+
+    .carousel-label-sub {
+      /* Reset browser default <p> margin, then 8px gap before the image */
+      margin-top: 0;
+      margin-bottom: 8px;
+      font-size: 0.9375rem;    /* 15px */
+      font-weight: 400;
+      color: rgba(186, 214, 255, 0.85);
+      text-align: center;
+      letter-spacing: 0.005em;
+    }
+    @media (min-width: 640px) { .carousel-label-sub { font-size: 1rem; } }
+
+    /* Nav controls row */
+    .carousel-controls {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 16px;
+    }
+    .carousel-arrow { display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%; background: rgba(0,58,135,0.85); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border: 1px solid rgba(255,176,0,0.35); color: #FFB000; cursor: pointer; transition: background 0.2s ease, border-color 0.2s ease, transform 0.15s ease, opacity 0.2s ease; flex-shrink: 0; }
+    .carousel-arrow:hover { background: #FFB000; color: #003A87; border-color: #FFB000; transform: scale(1.08); }
+    .carousel-arrow:active { transform: scale(0.96); }
+    .carousel-arrow:focus-visible { outline: 2px solid #FFB000; outline-offset: 2px; }
+    .carousel-arrow:disabled, .carousel-arrow[aria-disabled="true"] { opacity: 0.3; cursor: default; transform: none; }
+    .carousel-arrow:disabled:hover, .carousel-arrow[aria-disabled="true"]:hover { background: rgba(0,58,135,0.85); color: #FFB000; border-color: rgba(255,176,0,0.35); }
+    .carousel-dots-row { display: flex; align-items: center; gap: 8px; }
+    /* Mobile: minimal chevrons, no circle background */
+    @media (max-width: 639px) {
+      .carousel-arrow-mobile {
+        width: 28px;
+        height: 28px;
+        background: none;
+        border: none;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        color: rgba(255,176,0,0.7);
+      }
+      .carousel-arrow-mobile:hover {
+        background: none;
+        border: none;
+        color: #FFB000;
+      }
+      .carousel-arrow-mobile:disabled,
+      .carousel-arrow-mobile[aria-disabled="true"] {
+        color: rgba(255,255,255,0.15);
+        background: none;
+        border: none;
+      }
+      .carousel-arrow-mobile:disabled:hover,
+      .carousel-arrow-mobile[aria-disabled="true"]:hover {
+        background: none;
+        border: none;
+        color: rgba(255,255,255,0.15);
+      }
+    }
+    /* Lazy-load blur-up placeholder */
+    .carousel-slide img[data-src] { filter: blur(8px); transition: filter 0.4s ease; }
+    .carousel-slide img.loaded { filter: none; }
     /* Skip link focus */
     .skip-link:focus { position: fixed; top: 0; left: 0; right: 0; z-index: 9999; padding: 1rem; background: #003A87; color: white; text-align: center; clip: auto; width: auto; height: auto; overflow: visible; }
     /* Focus visible for keyboard nav */
@@ -134,7 +251,9 @@
         opacity: 1 !important; transform: none !important; transition: none !important; animation: none !important;
       }
       .sticky-cta { transition: none !important; }
-      .carousel-track { scroll-behavior: auto; }
+      /* Carousel: instant cross-fade for reduced motion */
+      .carousel-slide { transition: opacity 0.15s ease !important; }
+      .carousel-slide.is-exiting { opacity: 0 !important; }
       html { scroll-behavior: auto; }
     }
   </style>
@@ -435,52 +554,130 @@
       </div>
     </section>
 
-    <!-- SCREENSHOT CAROUSEL SHOWCASE -->
-    <section aria-label="App screenshots" class="scroll-fade-in">
-      <h2 class="text-2xl sm:text-3xl font-bold text-white text-center mb-4">See It in Action</h2>
-      <p class="text-blue-200/80 text-center mb-10 max-w-md mx-auto">Swipe to explore the app</p>
-
-      <div class="relative max-w-6xl mx-auto px-4">
-        <!-- Carousel Track -->
-        <div id="carousel" class="carousel-track flex gap-6 overflow-x-auto pb-6 scroll-smooth snap-x snap-mandatory scrollbar-hide" role="region" aria-label="Screenshot carousel" tabindex="0" style="-webkit-overflow-scrolling: touch;">
-          <div class="carousel-item flex-shrink-0 w-[85vw] sm:w-[70vw] md:w-[55vw] lg:w-[45vw] xl:w-[35vw] snap-center">
-            <img loading="lazy" decoding="async" fetchpriority="low" src="../assets/images/screenshots-appstore/01.png" alt="One Vault for all your documents - documents list showing family profiles with expiry dates" class="rounded-xl shadow-2xl w-full h-auto mx-auto bg-slate-800/50" width="600" height="1303" style="max-width: 100%;" />
-          </div>
-          <div class="carousel-item flex-shrink-0 w-[85vw] sm:w-[70vw] md:w-[55vw] lg:w-[45vw] xl:w-[35vw] snap-center">
-            <img loading="lazy" decoding="async" fetchpriority="low" src="../assets/images/screenshots-appstore/04.png" alt="All your docs - passport, visa, ID, airline ticket, and more document types" class="rounded-xl shadow-2xl w-full h-auto mx-auto bg-slate-800/50" width="600" height="1303" style="max-width: 100%;" />
-          </div>
-          <div class="carousel-item flex-shrink-0 w-[85vw] sm:w-[70vw] md:w-[55vw] lg:w-[45vw] xl:w-[35vw] snap-center">
-            <img loading="lazy" decoding="async" fetchpriority="low" src="../assets/images/screenshots-appstore/02.png" alt="Never miss renewal - smart reminders with 6 weeks notice notification" class="rounded-xl shadow-2xl w-full h-auto mx-auto bg-slate-800/50" width="600" height="1303" style="max-width: 100%;" />
-          </div>
-          <div class="carousel-item flex-shrink-0 w-[85vw] sm:w-[70vw] md:w-[55vw] lg:w-[45vw] xl:w-[35vw] snap-center">
-            <img loading="lazy" decoding="async" fetchpriority="low" src="../assets/images/screenshots-appstore/03.png" alt="Your family protected - family profiles for Emma, Lucas, Oliver, and Sophie" class="rounded-xl shadow-2xl w-full h-auto mx-auto bg-slate-800/50" width="600" height="1303" style="max-width: 100%;" />
-          </div>
-          <div class="carousel-item flex-shrink-0 w-[85vw] sm:w-[70vw] md:w-[55vw] lg:w-[45vw] xl:w-[35vw] snap-center">
-            <img loading="lazy" decoding="async" fetchpriority="low" src="../assets/images/screenshots-appstore/05.png" alt="Every detail - document detail view with passport attachment and metadata" class="rounded-xl shadow-2xl w-full h-auto mx-auto bg-slate-800/50" width="600" height="1303" style="max-width: 100%;" />
-          </div>
-          <div class="carousel-item flex-shrink-0 w-[85vw] sm:w-[70vw] md:w-[55vw] lg:w-[45vw] xl:w-[35vw] snap-center">
-            <img loading="lazy" decoding="async" fetchpriority="low" src="../assets/images/screenshots-appstore/06.png" alt="Stays on your device - PIN lock screen for privacy you can trust" class="rounded-xl shadow-2xl w-full h-auto mx-auto bg-slate-800/50" width="600" height="1303" style="max-width: 100%;" />
-          </div>
-        </div>
-
-        <!-- Navigation arrows (desktop) -->
-        <button id="carousel-prev" aria-label="Previous screenshot" class="hidden lg:flex absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-brand-blue/90 backdrop-blur-sm border border-brand-gold/30 items-center justify-center text-brand-gold hover:bg-brand-gold hover:text-brand-blue transition-all duration-200 z-20 shadow-lg hover:scale-110">
-          <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" /></svg>
-        </button>
-        <button id="carousel-next" aria-label="Next screenshot" class="hidden lg:flex absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-brand-blue/90 backdrop-blur-sm border border-brand-gold/30 items-center justify-center text-brand-gold hover:bg-brand-gold hover:text-brand-blue transition-all duration-200 z-20 shadow-lg hover:scale-110">
-          <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
-        </button>
-
-        <!-- Dot indicators -->
-        <div id="carousel-dots" class="flex items-center justify-center gap-2 mt-6" role="tablist" aria-label="Screenshot navigation">
-          <button class="carousel-dot active w-6 h-2 rounded-full bg-brand-gold transition-all duration-300" role="tab" aria-selected="true" aria-label="Screenshot 1"></button>
-          <button class="carousel-dot w-2 h-2 rounded-full bg-white/30 hover:bg-white/50 transition-all duration-300" role="tab" aria-selected="false" aria-label="Screenshot 2"></button>
-          <button class="carousel-dot w-2 h-2 rounded-full bg-white/30 hover:bg-white/50 transition-all duration-300" role="tab" aria-selected="false" aria-label="Screenshot 3"></button>
-          <button class="carousel-dot w-2 h-2 rounded-full bg-white/30 hover:bg-white/50 transition-all duration-300" role="tab" aria-selected="false" aria-label="Screenshot 4"></button>
-          <button class="carousel-dot w-2 h-2 rounded-full bg-white/30 hover:bg-white/50 transition-all duration-300" role="tab" aria-selected="false" aria-label="Screenshot 5"></button>
-          <button class="carousel-dot w-2 h-2 rounded-full bg-white/30 hover:bg-white/50 transition-all duration-300" role="tab" aria-selected="false" aria-label="Screenshot 6"></button>
-        </div>
+    <!-- SCREENSHOT CAROUSEL SHOWCASE (hidden on very small screens) -->
+    <section aria-label="App screenshots" class="scroll-fade-in hidden xs:block" style="display: none;">
+    <style>@media (min-width: 390px) { section[aria-label="App screenshots"] { display: block !important; } }</style>
+      <!-- Section heading: tighter, more premium -->
+      <div class="text-center mb-10">
+        <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight mb-3">See It in Action</h2>
+        <p class="text-blue-200/70 text-base sm:text-lg max-w-sm mx-auto leading-relaxed">Every screen, purpose-built for clarity.</p>
       </div>
+
+      <!-- Outer wrapper: slightly wider than image so arrows have breathing room -->
+      <div class="mx-auto" style="max-width: 460px; width: 92vw;">
+
+        <!-- Stage wrapper: position:relative so arrows can be absolute inside -->
+        <div style="position: relative;">
+
+          <!-- Left arrow: absolute, centered on image (label ~60px tall) -->
+          <button id="carousel-prev" class="carousel-arrow carousel-arrow-mobile" aria-label="Previous screenshot" aria-disabled="true"
+                  style="position: absolute; left: 0; top: calc(60px + (100% - 60px) / 2); transform: translateY(-50%) translateX(-50%); z-index: 10;">
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+
+          <!-- Phone stage (full width of outer wrapper) -->
+          <div style="width: 100%;">
+            <div id="carousel"
+                 class="carousel-stage"
+                 role="region"
+                 aria-label="Screenshot carousel"
+                 aria-live="polite"
+                 tabindex="0">
+
+          <!-- Screenshot 1 -->
+          <div class="carousel-slide is-active" role="group" aria-label="Screenshot 1 of 6" aria-roledescription="slide">
+            <p class="carousel-label-title">One Vault.</p>
+            <p class="carousel-label-sub">For All Your Documents</p>
+            <img src="../assets/images/screenshots-appstore/01.png"
+                 decoding="async"
+                 alt="Documents list showing family profiles with expiry dates"
+                 class="loaded"
+                 width="1260" height="2736" />
+          </div>
+
+          <!-- Screenshot 2 -->
+          <div class="carousel-slide" role="group" aria-label="Screenshot 2 of 6" aria-roledescription="slide">
+            <p class="carousel-label-title">All Your Docs.</p>
+            <p class="carousel-label-sub">Passports, Visas, IDs, and More</p>
+            <img src="../assets/images/screenshots-appstore/04.png"
+                 decoding="async"
+                 alt="Document types including passport, visa, ID, airline ticket"
+                 class="loaded"
+                 width="1260" height="2736" />
+          </div>
+
+          <!-- Screenshot 3 -->
+          <div class="carousel-slide" role="group" aria-label="Screenshot 3 of 6" aria-roledescription="slide">
+            <p class="carousel-label-title">Never Miss a Renewal.</p>
+            <p class="carousel-label-sub">Smart Reminders Months Early</p>
+            <img data-src="../assets/images/screenshots-appstore/02.png"
+                 decoding="async"
+                 alt="Smart reminders with 6 weeks notice notification"
+                 width="1260" height="2736" />
+          </div>
+
+          <!-- Screenshot 4 -->
+          <div class="carousel-slide" role="group" aria-label="Screenshot 4 of 6" aria-roledescription="slide">
+            <p class="carousel-label-title">Your Family. Protected.</p>
+            <p class="carousel-label-sub">One Profile Per Family Member</p>
+            <img data-src="../assets/images/screenshots-appstore/03.png"
+                 decoding="async"
+                 alt="Family profiles for Emma, Lucas, Oliver, and Sophie"
+                 width="1260" height="2736" />
+          </div>
+
+          <!-- Screenshot 5 -->
+          <div class="carousel-slide" role="group" aria-label="Screenshot 5 of 6" aria-roledescription="slide">
+            <p class="carousel-label-title">Every Detail. Captured.</p>
+            <p class="carousel-label-sub">Photos, Dates, and Notes</p>
+            <img data-src="../assets/images/screenshots-appstore/05.png"
+                 decoding="async"
+                 alt="Document detail view with passport attachment and metadata"
+                 width="1260" height="2736" />
+          </div>
+
+          <!-- Screenshot 6 -->
+          <div class="carousel-slide" role="group" aria-label="Screenshot 6 of 6" aria-roledescription="slide">
+            <p class="carousel-label-title">Stays on Your Device.</p>
+            <p class="carousel-label-sub">PIN Lock. No Cloud. No Accounts.</p>
+            <img data-src="../assets/images/screenshots-appstore/06.png"
+                 decoding="async"
+                 alt="PIN lock screen for privacy you can trust"
+                 width="1260" height="2736" />
+          </div>
+
+            </div>
+            <!-- /carousel-stage -->
+          </div>
+          <!-- /phone stage -->
+
+          <!-- Right arrow: absolute, centered on image -->
+          <button id="carousel-next" class="carousel-arrow carousel-arrow-mobile" aria-label="Next screenshot"
+                  style="position: absolute; right: 0; top: calc(60px + (100% - 60px) / 2); transform: translateY(-50%) translateX(50%); z-index: 10;">
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+
+        </div>
+        <!-- /stage wrapper -->
+
+        <!-- Dot indicators below -->
+        <div class="carousel-controls" role="group" aria-label="Carousel navigation">
+          <div id="carousel-dots" class="carousel-dots-row" role="tablist" aria-label="Screenshot navigation">
+            <button class="carousel-dot active w-6 h-2 rounded-full bg-brand-gold" role="tab" aria-selected="true"  aria-label="Screenshot 1" style="min-width:8px;"></button>
+            <button class="carousel-dot w-2 h-2 rounded-full"                      role="tab" aria-selected="false" aria-label="Screenshot 2" style="min-width:8px; background:rgba(255,255,255,0.3);"></button>
+            <button class="carousel-dot w-2 h-2 rounded-full"                      role="tab" aria-selected="false" aria-label="Screenshot 3" style="min-width:8px; background:rgba(255,255,255,0.3);"></button>
+            <button class="carousel-dot w-2 h-2 rounded-full"                      role="tab" aria-selected="false" aria-label="Screenshot 4" style="min-width:8px; background:rgba(255,255,255,0.3);"></button>
+            <button class="carousel-dot w-2 h-2 rounded-full"                      role="tab" aria-selected="false" aria-label="Screenshot 5" style="min-width:8px; background:rgba(255,255,255,0.3);"></button>
+            <button class="carousel-dot w-2 h-2 rounded-full"                      role="tab" aria-selected="false" aria-label="Screenshot 6" style="min-width:8px; background:rgba(255,255,255,0.3);"></button>
+          </div>
+        </div>
+
+      </div>
+      <!-- /outer wrapper -->
     </section>
 
     <!-- SECTION 5: How It Works -->
@@ -761,71 +958,142 @@
         }, { passive: true });
       }
 
-      // Carousel
-      var carousel = document.getElementById('carousel');
-      var dots = document.querySelectorAll('.carousel-dot');
-      var prevBtn = document.getElementById('carousel-prev');
-      var nextBtn = document.getElementById('carousel-next');
-      var items = document.querySelectorAll('.carousel-item');
+      // ── Carousel lazy-load: defer screenshots 3-6 until section is near viewport ──
+      (function () {
+        var section      = document.querySelector('section[aria-label="App screenshots"]');
+        var deferredImgs = section ? section.querySelectorAll('img[data-src]') : [];
 
-      if (carousel && dots.length && items.length) {
-        var currentIndex = 0;
-        var itemCount = items.length;
+        if (!deferredImgs.length) return;
 
-        function scrollToItem(index) {
-          if (index < 0) index = 0;
-          if (index >= itemCount) index = itemCount - 1;
-          currentIndex = index;
-          items[index].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
-          updateDots();
-        }
-
-        function updateDots() {
-          dots.forEach(function(dot, i) {
-            if (i === currentIndex) {
-              dot.classList.add('active');
-              dot.style.width = '24px';
-              dot.style.background = '#FFB000';
-              dot.setAttribute('aria-selected', 'true');
-            } else {
-              dot.classList.remove('active');
-              dot.style.width = '8px';
-              dot.style.background = 'rgba(255,255,255,0.3)';
-              dot.setAttribute('aria-selected', 'false');
+        function loadDeferredImages() {
+          deferredImgs.forEach(function (img) {
+            if (img.dataset.src) {
+              img.src = img.dataset.src;
+              img.removeAttribute('data-src');
+              img.addEventListener('load', function () {
+                img.classList.add('loaded');
+              }, { once: true });
             }
           });
         }
 
-        // Scroll listener to update dots on manual swipe
-        var scrollTimeout;
-        carousel.addEventListener('scroll', function() {
-          clearTimeout(scrollTimeout);
-          scrollTimeout = setTimeout(function() {
-            var scrollLeft = carousel.scrollLeft;
-            var itemWidth = items[0].offsetWidth + 24; // 24 = gap-6
-            var newIndex = Math.round(scrollLeft / itemWidth);
-            if (newIndex !== currentIndex && newIndex >= 0 && newIndex < itemCount) {
-              currentIndex = newIndex;
-              updateDots();
-            }
-          }, 50);
-        }, { passive: true });
+        if ('IntersectionObserver' in window) {
+          var sectionObserver = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                loadDeferredImages();
+                sectionObserver.disconnect();
+              }
+            });
+          }, { rootMargin: '400px' });
+          if (section) sectionObserver.observe(section);
+        } else {
+          loadDeferredImages();
+        }
+      }());
 
-        // Arrow buttons
-        if (prevBtn) prevBtn.addEventListener('click', function() { scrollToItem(currentIndex - 1); });
-        if (nextBtn) nextBtn.addEventListener('click', function() { scrollToItem(currentIndex + 1); });
+      // ── Carousel: cross-fade implementation ──
+      (function () {
+        var stage    = document.getElementById('carousel');
+        var slides   = stage ? Array.prototype.slice.call(stage.querySelectorAll('.carousel-slide')) : [];
+        var dots     = Array.prototype.slice.call(document.querySelectorAll('.carousel-dot'));
+        var prevBtn  = document.getElementById('carousel-prev');
+        var nextBtn  = document.getElementById('carousel-next');
+
+        if (!stage || !slides.length) return;
+
+        var currentIndex = 0;
+        var itemCount    = slides.length;
+        var isAnimating  = false;
+
+        // Touch/swipe state
+        var touchStartX = 0;
+        var touchStartY = 0;
+
+        function updateArrows() {
+          var atStart = currentIndex === 0;
+          var atEnd   = currentIndex === itemCount - 1;
+          if (prevBtn) { prevBtn.disabled = atStart; prevBtn.setAttribute('aria-disabled', atStart ? 'true' : 'false'); }
+          if (nextBtn) { nextBtn.disabled = atEnd;   nextBtn.setAttribute('aria-disabled', atEnd   ? 'true' : 'false'); }
+        }
+
+        function updateDots(index) {
+          dots.forEach(function (dot, i) {
+            var active = i === index;
+            dot.classList.toggle('active', active);
+            dot.style.width      = active ? '24px' : '8px';
+            dot.style.background = active ? '#FFB000' : 'rgba(255,255,255,0.3)';
+            dot.setAttribute('aria-selected', active ? 'true' : 'false');
+          });
+        }
+
+        function goTo(index) {
+          if (isAnimating) return;
+          if (index < 0 || index >= itemCount || index === currentIndex) return;
+
+          isAnimating = true;
+          var outgoing = slides[currentIndex];
+          var incoming = slides[index];
+
+          // Mark outgoing as exiting — triggers exit keyframe
+          outgoing.classList.add('is-exiting');
+
+          // Bring incoming to z=1 but still transparent (let CSS handle fade-in)
+          incoming.style.zIndex = '1';
+          outgoing.style.zIndex = '2';
+
+          // After the transition duration, swap classes cleanly
+          var DURATION = 450; // must match CSS transition duration in ms
+          setTimeout(function () {
+            outgoing.classList.remove('is-active', 'is-exiting');
+            outgoing.style.zIndex = '';
+            incoming.classList.add('is-active');
+            incoming.style.zIndex = '';
+            currentIndex = index;
+            isAnimating  = false;
+            updateDots(currentIndex);
+            updateArrows();
+            // Update live region for screen readers
+            stage.setAttribute('aria-label', 'Screenshot carousel — slide ' + (currentIndex + 1) + ' of ' + itemCount);
+          }, DURATION);
+        }
+
+        // Prev / Next
+        if (prevBtn) prevBtn.addEventListener('click', function () { if (!prevBtn.disabled) goTo(currentIndex - 1); });
+        if (nextBtn) nextBtn.addEventListener('click', function () { if (!nextBtn.disabled) goTo(currentIndex + 1); });
 
         // Dot clicks
-        dots.forEach(function(dot, i) {
-          dot.addEventListener('click', function() { scrollToItem(i); });
+        dots.forEach(function (dot, i) {
+          dot.addEventListener('click', function () { goTo(i); });
         });
 
-        // Keyboard nav on carousel
-        carousel.addEventListener('keydown', function(e) {
-          if (e.key === 'ArrowRight') { scrollToItem(currentIndex + 1); e.preventDefault(); }
-          if (e.key === 'ArrowLeft') { scrollToItem(currentIndex - 1); e.preventDefault(); }
+        // Keyboard navigation on the stage
+        stage.addEventListener('keydown', function (e) {
+          if (e.key === 'ArrowRight' || e.key === 'ArrowDown') { goTo(currentIndex + 1); e.preventDefault(); }
+          if (e.key === 'ArrowLeft'  || e.key === 'ArrowUp')   { goTo(currentIndex - 1); e.preventDefault(); }
+          if (e.key === 'Home') { goTo(0); e.preventDefault(); }
+          if (e.key === 'End')  { goTo(itemCount - 1); e.preventDefault(); }
         });
-      }
+
+        // Touch swipe support
+        stage.addEventListener('touchstart', function (e) {
+          touchStartX = e.changedTouches[0].clientX;
+          touchStartY = e.changedTouches[0].clientY;
+        }, { passive: true });
+
+        stage.addEventListener('touchend', function (e) {
+          var dx = e.changedTouches[0].clientX - touchStartX;
+          var dy = e.changedTouches[0].clientY - touchStartY;
+          // Only treat as horizontal swipe if horizontal delta dominates
+          if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 40) {
+            if (dx < 0) goTo(currentIndex + 1);
+            else        goTo(currentIndex - 1);
+          }
+        }, { passive: true });
+
+        // Initialise
+        updateArrows();
+      }());
     });
 
     // Re-check on page show (handles browser back/forward navigation)
