@@ -44,6 +44,7 @@ jobs:
           cp -r features _site/
           cp -r why-us _site/
           cp -r faq _site/
+          cp -r accessibility _site/
           cp -r privacy-policy _site/
           cp -r terms _site/
           cp -r pricing-policy _site/
