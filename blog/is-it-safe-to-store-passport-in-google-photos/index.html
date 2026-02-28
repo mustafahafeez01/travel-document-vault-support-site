@@ -503,6 +503,14 @@
             Google has a strong security record. But no cloud provider can promise your data is breach-proof forever. For most photos, that's a fine trade-off. For identity documents, some people reasonably want a setup where the data never touches a server at all.
           </p>
 
+          <!-- What this means in practice callout -->
+          <div style="background: rgba(59,130,246,0.06); border: 1px solid rgba(59,130,246,0.25); border-radius: 10px; padding: 1.1rem 1.4rem; margin: 2rem 0;">
+            <p style="margin: 0 0 0.4rem 0; font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(147,197,253,0.7);">What this means in practice</p>
+            <p style="margin: 0; font-size: 0.95rem; color: rgba(219,234,254,0.9); line-height: 1.65;">
+              Say your Google account password was reused on a site that suffered a breach two years ago. You've forgotten about it. A credential-stuffing bot tries it against Google — and it works. In the next few minutes, everything in your Google Photos is accessible: holiday snapshots, screenshots, and your passport scan. The attacker now has your full legal name, date of birth, nationality, passport number, and your photo. That's enough to open a credit account in your name or run a targeted phishing attack that's hard to spot because it uses your real details. The account breach is the realistic threat — not Google itself.
+            </p>
+          </div>
+
           <h2 class="text-2xl text-white mt-12 mb-6">What Is the Safest Way to Store a Passport Photo? Google Photos vs iCloud vs Dedicated Vault</h2>
 
           <div class="table-wrapper"><table class="risk-table">
@@ -623,8 +631,8 @@
             <h2 class="text-2xl text-white mb-6">Frequently Asked Questions</h2>
 
             <div class="faq-item">
-              <h3>Is it safe to store passport scans in Google Photos?</h3>
-              <p>It's convenient, but Google Photos wasn't built for sensitive identity documents. Your scan lives on Google's servers, gets processed by their automated systems, and is protected by whatever security your Google account has. If your account gets compromised, so does your passport scan. For a document this sensitive, a dedicated encrypted storage option is a smarter choice.</p>
+              <h3>Is it safe to store a passport photo in Google Photos?</h3>
+              <p>It's convenient, but Google Photos wasn't built for sensitive identity documents. Your scan lives on Google's servers, gets processed by their automated systems, and is protected by whatever security your Google account has. If your account gets compromised — through phishing, a reused password, or a data breach elsewhere — so does your passport scan. For a document this sensitive, a dedicated encrypted storage option is a smarter choice. If you do use Google Photos, turn on two-factor authentication and use a unique password on your Google account.</p>
             </div>
 
             <div class="faq-item">
@@ -640,6 +648,11 @@
             <div class="faq-item">
               <h3>Can someone steal my identity from a passport scan?</h3>
               <p>Yes, realistically. Your name, date of birth, nationality, passport number, and expiry date together are enough to attempt identity fraud, apply for credit in your name, or run a very convincing phishing attack. The risk goes up if that data gets combined with other personal details from separate breaches - which happens more than most people expect.</p>
+            </div>
+
+            <div class="faq-item">
+              <h3>Is iCloud safer than Google Photos for storing passport scans?</h3>
+              <p>At a structural level, they're very similar. Both store photos on cloud servers managed by the provider and both process images through automated systems. Apple's Advanced Data Protection (iOS 16.2+) extends end-to-end encryption to iCloud Photos when enabled, which does raise the bar meaningfully - but it's off by default and most users haven't turned it on. The bigger factor for both platforms is your account password and whether two-factor authentication is active. For passport storage specifically, a dedicated on-device encrypted app remains the stronger option on either platform.</p>
             </div>
 
           </div>

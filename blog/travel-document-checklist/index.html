@@ -522,35 +522,72 @@
 
           <h2 class="text-2xl text-white mt-12 mb-6">Checklist by Trip Type</h2>
 
-          <p>Different trips need different document sets. Here is a quick reference.</p>
+          <p>Different trips need different document sets. Here is a quick reference:</p>
 
-          <p><strong>Solo international trip</strong></p>
-          <ul>
-            <li>Passport (validity checked against destination requirements)</li>
-            <li>Visa if required</li>
-            <li>Travel insurance</li>
-            <li>Booking confirmations</li>
-            <li>Emergency contacts written down offline</li>
-          </ul>
-
-          <p><strong>Family trip</strong></p>
-          <ul>
-            <li>Passports for all family members (each checked individually)</li>
-            <li>Visas for all family members</li>
-            <li>Travel insurance covering all travellers</li>
-            <li>Child consent letters if applicable</li>
-            <li>Birth certificates if required by the destination</li>
-            <li>Booking confirmations</li>
-          </ul>
-
-          <p><strong>Business trip</strong></p>
-          <ul>
-            <li>Work passport confirmed (if dual nationality - check which has the visa)</li>
-            <li>Corporate visa confirmed on the correct passport</li>
-            <li>Travel insurance (check whether employer covers this or you need your own)</li>
-            <li>Booking confirmations</li>
-            <li>Any required work authorisation letters</li>
-          </ul>
+          <div style="overflow-x:auto; margin: 1.5rem 0;">
+            <table style="width:100%; border-collapse:collapse; font-size:0.88rem; color:rgba(219,234,254,0.85);">
+              <thead>
+                <tr style="border-bottom:1px solid rgba(255,176,0,0.3);">
+                  <th style="text-align:left; padding:0.6rem 0.75rem; color:#FFB000; font-weight:700;">Document</th>
+                  <th style="text-align:center; padding:0.6rem 0.75rem; color:#FFB000; font-weight:700;">Solo</th>
+                  <th style="text-align:center; padding:0.6rem 0.75rem; color:#FFB000; font-weight:700;">Family</th>
+                  <th style="text-align:center; padding:0.6rem 0.75rem; color:#FFB000; font-weight:700;">Business</th>
+                  <th style="text-align:left; padding:0.6rem 0.75rem; color:#FFB000; font-weight:700;">Notes</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+                  <td style="padding:0.6rem 0.75rem; font-weight:600; color:#fff;">Passport</td>
+                  <td style="padding:0.6rem 0.75rem; text-align:center;">✅</td>
+                  <td style="padding:0.6rem 0.75rem; text-align:center;">✅ each member</td>
+                  <td style="padding:0.6rem 0.75rem; text-align:center;">✅</td>
+                  <td style="padding:0.6rem 0.75rem; color:rgba(219,234,254,0.6);">Check validity against destination — not just expiry date</td>
+                </tr>
+                <tr style="border-bottom:1px solid rgba(255,255,255,0.05); background:rgba(255,255,255,0.02);">
+                  <td style="padding:0.6rem 0.75rem; font-weight:600; color:#fff;">Visa (if required)</td>
+                  <td style="padding:0.6rem 0.75rem; text-align:center;">✅</td>
+                  <td style="padding:0.6rem 0.75rem; text-align:center;">✅ each member</td>
+                  <td style="padding:0.6rem 0.75rem; text-align:center;">✅ corporate</td>
+                  <td style="padding:0.6rem 0.75rem; color:rgba(219,234,254,0.6);">Business: confirm visa is in the correct passport</td>
+                </tr>
+                <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+                  <td style="padding:0.6rem 0.75rem; font-weight:600; color:#fff;">Travel insurance</td>
+                  <td style="padding:0.6rem 0.75rem; text-align:center;">✅</td>
+                  <td style="padding:0.6rem 0.75rem; text-align:center;">✅ all covered</td>
+                  <td style="padding:0.6rem 0.75rem; text-align:center;">✅ check employer covers you</td>
+                  <td style="padding:0.6rem 0.75rem; color:rgba(219,234,254,0.6);">Confirm coverage before each trip, not just at purchase</td>
+                </tr>
+                <tr style="border-bottom:1px solid rgba(255,255,255,0.05); background:rgba(255,255,255,0.02);">
+                  <td style="padding:0.6rem 0.75rem; font-weight:600; color:#fff;">Booking confirmations</td>
+                  <td style="padding:0.6rem 0.75rem; text-align:center;">✅</td>
+                  <td style="padding:0.6rem 0.75rem; text-align:center;">✅</td>
+                  <td style="padding:0.6rem 0.75rem; text-align:center;">✅</td>
+                  <td style="padding:0.6rem 0.75rem; color:rgba(219,234,254,0.6);">Offline copy — don't rely on email access at borders</td>
+                </tr>
+                <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+                  <td style="padding:0.6rem 0.75rem; font-weight:600; color:#fff;">Child consent letter</td>
+                  <td style="padding:0.6rem 0.75rem; text-align:center; color:rgba(219,234,254,0.4);">—</td>
+                  <td style="padding:0.6rem 0.75rem; text-align:center;">✅ if applicable</td>
+                  <td style="padding:0.6rem 0.75rem; text-align:center; color:rgba(219,234,254,0.4);">—</td>
+                  <td style="padding:0.6rem 0.75rem; color:rgba(219,234,254,0.6);">Required in many countries if one parent absent</td>
+                </tr>
+                <tr style="border-bottom:1px solid rgba(255,255,255,0.05); background:rgba(255,255,255,0.02);">
+                  <td style="padding:0.6rem 0.75rem; font-weight:600; color:#fff;">Birth certificates</td>
+                  <td style="padding:0.6rem 0.75rem; text-align:center; color:rgba(219,234,254,0.4);">—</td>
+                  <td style="padding:0.6rem 0.75rem; text-align:center;">✅ if required</td>
+                  <td style="padding:0.6rem 0.75rem; text-align:center; color:rgba(219,234,254,0.4);">—</td>
+                  <td style="padding:0.6rem 0.75rem; color:rgba(219,234,254,0.6);">Some countries require for children under 18</td>
+                </tr>
+                <tr>
+                  <td style="padding:0.6rem 0.75rem; font-weight:600; color:#fff;">Work authorisation letter</td>
+                  <td style="padding:0.6rem 0.75rem; text-align:center; color:rgba(219,234,254,0.4);">—</td>
+                  <td style="padding:0.6rem 0.75rem; text-align:center; color:rgba(219,234,254,0.4);">—</td>
+                  <td style="padding:0.6rem 0.75rem; text-align:center;">✅ if required</td>
+                  <td style="padding:0.6rem 0.75rem; color:rgba(219,234,254,0.6);">Some destinations require employer letters for business travellers</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
 
           <!-- FAQ Section -->
           <div class="faq-section">
