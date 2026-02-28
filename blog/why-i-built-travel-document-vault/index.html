@@ -1,0 +1,583 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#003A87">
+
+  <!-- SEO metadata-->
+  <title>Why I Built Travel Document Vault: For the Parent Who Remembers Everything</title>
+  <meta name="description" content="I built Travel Document Vault because I was tired of checking five different apps before every family trip. One app for everyone's documents. Offline. Encrypted. No subscription.">
+  <link rel="canonical" href="https://traveldocumentvault.com/blog/why-i-built-travel-document-vault/">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:title" content="Why I Built Travel Document Vault: For the Parent Who Remembers Everything">
+  <meta property="og:description" content="I built Travel Document Vault because I was tired of checking five different apps before every family trip. One app for everyone's documents. Offline. Encrypted. No subscription.">
+  <meta property="og:image" content="https://traveldocumentvault.com/assets/images/social-preview.png">
+  <meta property="og:url" content="https://traveldocumentvault.com/blog/why-i-built-travel-document-vault/">
+  <meta property="og:type" content="article">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Why I Built Travel Document Vault: For the Parent Who Remembers Everything">
+  <meta name="twitter:description" content="I built Travel Document Vault because I was tired of checking five different apps before every family trip. One app for everyone's documents. Offline. Encrypted. No subscription.">
+  <meta name="twitter:image" content="https://traveldocumentvault.com/assets/images/social-preview.png">
+
+  <link rel="icon" type="image/svg+xml" href="/assets/images/app_icon.svg">
+  <link rel="apple-touch-icon" href="/assets/images/app_icon.svg">
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Why I Built Travel Document Vault: For the Parent Who Remembers Everything",
+    "description": "I built Travel Document Vault because I was tired of checking five different apps before every family trip. One app for everyone's documents. Offline. Encrypted. No subscription.",
+    "image": "https://traveldocumentvault.com/assets/images/social-preview.png",
+    "author": {
+      "@type": "Person",
+      "name": "Mustafa Hafeez"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Travel Document Vault",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://traveldocumentvault.com/assets/images/app_icon.svg"
+      }
+    },
+    "datePublished": "2026-01-03",
+    "dateModified": "2026-02-28",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://traveldocumentvault.com/blog/why-i-built-travel-document-vault/"
+    }
+  }
+  </script>
+  
+  <!-- Breadcrumb Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://traveldocumentvault.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://traveldocumentvault.com/blog/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Why I Built Travel Document Vault",
+        "item": "https://traveldocumentvault.com/blog/why-i-built-travel-document-vault/"
+      }
+    ]
+  }
+  </script>
+
+  <!-- Preconnect and Preload for Performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="../../dist/output.css" as="style">
+  <link rel="stylesheet" href="../../dist/output.css">
+  
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Caveat:wght@400;500;600;700&display=optional" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Caveat:wght@400;500;600;700&display=optional"></noscript>
+
+  <style>
+    html { scroll-behavior: smooth; }
+
+    .glass-panel {
+      background: rgba(17, 25, 40, 0.6);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .prose p {
+      margin-bottom: 1.5em;
+      line-height: 1.8;
+    }
+
+    .prose strong {
+      color: #FFB000;
+      font-weight: 600;
+    }
+
+    .nav-link {
+      position: relative;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #FFB000;
+      transition: width 0.3s ease;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .nav-link-active {
+      color: #FFFFFF !important;
+    }
+
+    .nav-link-active::after {
+      width: 100%;
+    }
+
+    .post-card {
+      background: rgba(17, 25, 40, 0.6);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      transition: border-color 0.2s ease, transform 0.2s ease;
+      text-decoration: none;
+      display: block;
+    }
+    .post-card:hover {
+      border-color: rgba(255, 176, 0, 0.3);
+      transform: translateY(-2px);
+    }
+    .tag-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.3rem 0.8rem;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .tag-passport { background: rgba(59,130,246,0.15); color: #93c5fd; border: 1px solid rgba(59,130,246,0.2); }
+    .tag-organisation { background: rgba(52,211,153,0.12); color: #6ee7b7; border: 1px solid rgba(52,211,153,0.2); }
+    .tag-renewal { background: rgba(251,191,36,0.12); color: #fcd34d; border: 1px solid rgba(251,191,36,0.2); }
+    .tag-privacy { background: rgba(167,139,250,0.12); color: #c4b5fd; border: 1px solid rgba(167,139,250,0.2); }
+    .tag-story { background: rgba(255,176,0,0.1); color: #FFB000; border: 1px solid rgba(255,176,0,0.2); }
+  </style>
+</head>
+
+<body class="bg-gradient-to-b from-[#003A87] to-[#0A192F] font-sans antialiased text-slate-200 min-h-screen selection:bg-brand-gold selection:text-brand-blue overflow-x-hidden">
+<a href="#main" class="skip-link sr-only">Skip to main content</a>
+
+  <!-- Ambient Background -->
+  <div class="fixed inset-0 pointer-events-none hidden md:block">
+    <div class="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-brand-blue/20 rounded-full blur-[120px] animate-float"></div>
+    <div class="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-brand-gold/10 rounded-full blur-[120px] animate-float" style="animation-delay: -2s;"></div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-[100] glass-panel border-b border-white/5 transition-all duration-300">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="../../" class="flex items-center gap-3 group">
+          <img loading="lazy" src="../../assets/images/app_icon.svg" alt="Travel Document Vault" class="w-8 h-8 group-hover:scale-110 transition-transform duration-300" width="32" height="32" />
+          <span class="font-bold text-white hidden sm:block tracking-tight group-hover:text-blue-100 transition-colors">Travel Document Vault</span>
+        </a>
+
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-button" type="button" class="md:hidden p-2 text-slate-200 hover:text-white transition-colors" aria-controls="mobile-menu" aria-expanded="false" aria-label="Toggle menu">
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex items-center gap-6 text-sm font-medium">
+          <a href="../../" class="nav-link text-slate-50 hover:text-white transition-colors" aria-label="Home page">Home</a>
+          <a href="../../features/" class="nav-link text-slate-50 hover:text-white transition-colors" aria-label="Features page">Features</a>
+          <a href="../../why-us/" class="nav-link text-slate-50 hover:text-white transition-colors" aria-label="Why Us page">Why Us</a>
+          <a href="./" class="nav-link nav-link-active text-slate-50 hover:text-white transition-colors" aria-label="Why I Built This page, current page" aria-current="page">Why I Built This</a>
+          <a href="../" class="nav-link text-slate-50 hover:text-white transition-colors" aria-label="Blog page">Blog</a>
+          <a href="../../#pricing" class="nav-link text-slate-50 hover:text-white transition-colors" aria-label="Jump to Pricing section">Pricing</a>
+          <a href="../../faq/" class="nav-link text-slate-50 hover:text-white transition-colors" aria-label="FAQ page">FAQ</a>
+          <a href="../../privacy-policy/" class="nav-link text-slate-50 hover:text-white transition-colors" aria-label="Privacy Policy page">Privacy</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden md:hidden fixed top-16 left-0 right-0 bottom-0 bg-[#0A192F] z-[90] border-t border-white/10 p-6 space-y-6 overflow-y-auto transition-opacity transition-transform duration-300 ease-in-out opacity-0 -translate-y-4">
+    <div class="space-y-4">
+      <a href="../../" class="block text-lg font-medium text-slate-200 hover:text-white pl-4 py-1 hover:border-l-2 hover:border-brand-gold transition-all" aria-label="Home page">Home</a>
+      <a href="../../features/" class="block text-lg font-medium text-slate-200 hover:text-white pl-4 py-1 hover:border-l-2 hover:border-brand-gold transition-all" aria-label="Features page">Features</a>
+      <a href="../../why-us/" class="block text-lg font-medium text-slate-200 hover:text-white pl-4 py-1 hover:border-l-2 hover:border-brand-gold transition-all" aria-label="Why Us page">Why Us</a>
+      <a href="./" class="block text-lg font-medium text-white border-l-2 border-brand-gold pl-4 py-1" aria-label="Why I Built This page, current page" aria-current="page">Why I Built This</a>
+      <a href="../" class="block text-lg font-medium text-slate-200 hover:text-white pl-4 py-1 hover:border-l-2 hover:border-brand-gold transition-all" aria-label="Blog page">Blog</a>
+      <a href="../../#pricing" class="block text-lg font-medium text-slate-200 hover:text-white pl-4 py-1 hover:border-l-2 hover:border-brand-gold transition-all" aria-label="Jump to Pricing section">Pricing</a>
+      <a href="../../faq/" class="block text-lg font-medium text-slate-200 hover:text-white pl-4 py-1 hover:border-l-2 hover:border-brand-gold transition-all" aria-label="FAQ page">FAQ</a>
+    </div>
+    <div class="pt-4 border-t border-white/10 space-y-3">
+      <a href="https://apps.apple.com/app/travel-document-vault/id6757014877" target="_blank" rel="noopener noreferrer" onclick="gtag('event', 'download_click', {'event_category': 'conversion', 'event_label': 'mobile_menu_appstore'});" class="flex items-center justify-center gap-3 px-6 py-4 rounded-xl bg-brand-gold text-brand-blue font-bold text-lg hover:bg-brand-goldHover transition-colors w-full shadow-lg">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+        </svg>
+        Download on App Store
+      </a>
+    </div>
+  </div>
+
+  <main id="main" class="relative pt-24 pb-12 sm:pt-32 sm:pb-20 px-4 sm:px-6">
+    <article class="max-w-[720px] mx-auto relative z-10">
+
+      <!-- Breadcrumb -->
+      <nav aria-label="Breadcrumb" class="mb-8 text-sm text-blue-200/50">
+        <ol class="flex items-center gap-2">
+          <li><a href="../../" class="hover:text-white transition-colors">Home</a></li>
+          <li aria-hidden="true">›</li>
+          <li><a href="../" class="hover:text-white transition-colors">Blog</a></li>
+          <li aria-hidden="true">›</li>
+          <li class="text-blue-200/80" aria-current="page">Why I Built This</li>
+        </ol>
+      </nav>
+
+      <!-- Header -->
+      <header class="mb-14 text-center animate-fade-in-down">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-panel text-blue-200 text-sm font-medium tracking-wide shadow-lg mb-8">
+          <span class="w-2 h-2 rounded-full bg-brand-gold shadow-[0_0_10px_rgba(255,176,0,0.5)]" aria-hidden="true"></span>
+          Privacy-first. On-device only. No accounts needed.
+        </div>
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-8 leading-[1.1] tracking-tight drop-shadow-2xl">
+          Why I Built<br />
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-gold to-yellow-200">Travel Document Vault</span>
+        </h1>
+
+        <div class="flex items-center justify-center gap-3">
+          <div class="h-10 w-10 rounded-full bg-gradient-to-br from-brand-gold to-brand-blue p-[2px]">
+            <div class="h-full w-full rounded-full bg-[#0A192F] flex items-center justify-center text-xs font-bold text-white">
+              MH
+            </div>
+          </div>
+          <div class="text-left">
+            <p class="text-white text-sm font-semibold">Mustafa Hafeez</p>
+            <div class="flex items-center gap-2 text-blue-200/50 text-xs">
+              <time datetime="2026-01-03">January 3, 2026</time>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Content Container -->
+      <div class="glass-panel rounded-2xl shadow-glass p-6 sm:p-12 animate-fade-in-up opacity-0">
+        <div class="prose md:prose-lg prose-invert prose-headings:font-bold prose-headings:text-white prose-p:text-blue-100/80 prose-p:leading-relaxed prose-strong:text-brand-gold prose-a:text-brand-gold hover:prose-a:text-white prose-blockquote:border-brand-gold prose-blockquote:bg-blue-500/5 prose-blockquote:py-2 prose-blockquote:px-6 prose-blockquote:rounded-r-lg prose-li:text-blue-100/80">
+
+          <p>
+            I was standing at immigration when the officer looked at my daughter's passport, paused, then looked up at me.
+          </p>
+
+          <p>
+            "You know this expires in seven months, right?" he said. "Just making sure you're aware - some countries won't let you in with less than six months validity."
+          </p>
+
+          <p>
+            I thanked him. We were fine - barely. But the whole trip, I kept thinking: if he hadn't mentioned it, I wouldn't have noticed. Seven months felt like plenty of time. I'd checked the passport before booking. But I'd completely forgotten about the six-month rule that most countries enforce.
+          </p>
+
+          <p>
+            That close call - realizing I'd almost ruined a family trip without even knowing it - stayed with me. I'd set up calendar reminders for everyone's passport expiry dates. I thought that was enough. But I wasn't checking the actual dates - I was just trusting the reminders. And when someone's passport got renewed, I'd have to update the reminder, update the scan in Google Drive, and hope I didn't miss anything.
+          </p>
+
+          <p>
+            That moment - that pit in your stomach when you realize you might have just ruined a family trip - is why I built this app.
+          </p>
+
+          <h2 class="text-2xl text-white mt-12 mb-6">The invisible work</h2>
+
+          <p>
+            If you're the person in your family who manages documents, you know this feeling.
+          </p>
+
+          <p>
+            You're not just storing files. You're carrying an invisible checklist in your head. Which passports expire when. Who needs what for school. Which countries have the six-month rule. Whether the travel insurance actually got renewed or if you just meant to do it.
+          </p>
+
+          <p>
+            It's not that any single check takes long. Finding one passport scan, reading the expiry date, checking if it's within six months of your trip - maybe two or three minutes. But multiply that by four family members, then add the insurance policy you need to dig out of email, the driver's licence you're not sure is still valid, and suddenly you've lost fifteen or twenty minutes. Not the end of the world, but it's fifteen minutes of low-grade stress at 11pm the night before a flight.
+          </p>
+
+          <p>
+            And that's if everything's where you think it is. If you're scrolling through thousands of photos trying to find that passport scan, or checking three different cloud folders for the right insurance file, it takes longer - and the stress compounds.
+          </p>
+
+          <p>
+            Nobody sees this work. There's no checklist anyone hands you. You just... carry it.
+          </p>
+
+          <p>
+            I didn't want to build a travel app. I wanted to stop carrying this in my head.
+          </p>
+
+          <h2 class="text-2xl text-white mt-12 mb-6">What I tried first</h2>
+
+          <p>
+            I tried everything before building this.
+          </p>
+
+          <p>
+            Cloud storage? Works for files, but doesn't tell you when they expire. I still had to open every document manually and do the mental math.
+          </p>
+
+          <p>
+            Calendar reminders? I tried that. Set a notification six months before each passport expired. But then the document scans lived in one place, the reminders in another, and when I actually needed to check something at 11pm before booking a flight, I was jumping between three different apps trying to piece it together.
+          </p>
+
+          <p>
+            Password managers? Some people swear by them for storing document scans. But they're built for passwords, not for tracking expiry dates. And they definitely don't remind you when your kid's passport is about to make you miss a trip.
+          </p>
+
+          <p>
+            Here's what finally clicked for me: I didn't need another place to save PDFs. I needed something that would actually remind me six months before the expiry date, not on the expiry date. Something where I could see "okay, we're traveling in August, does everyone's passport last until February?" without doing mental math or googling visa requirements.
+          </p>
+
+          <p>
+            And it had to work offline. Because I'd be at the airport, or in a hotel lobby with terrible Wi-Fi, trying to show someone a document copy, and that's when cloud apps decide to stop loading.
+          </p>
+
+          <h2 class="text-2xl text-white mt-12 mb-6">So I built exactly what I needed</h2>
+
+          <p>
+            Travel Document Vault does one thing: it puts everything you need in one place, so you never have to think about it again until the app reminds you.
+          </p>
+
+          <p>
+            Scan a document once. The app reads the expiry date (you double-check it's right). Reminders schedule themselves automatically: six months early, then three months, six weeks, one month, two weeks, down to the day before it expires.
+          </p>
+
+          <p>
+            One profile per family member. Every document in one spot. When you need to check if you're good to travel, you open the app and you know. Immediately. Not "probably" or "I think so" - you know.
+          </p>
+
+          <p>
+            And when a hotel needs your passport copy, or an embassy needs your details, or the car rental place asks for your licence, you share it in one tap. No digging. No Wi-Fi required. Everything together, right there.
+          </p>
+
+          <p>
+            That's the payoff: you get your brain space back. The invisible mental load - the constant low-level worry about whether you're forgetting something - it's gone. The app remembers, so you don't have to.
+          </p>
+
+          <h2 class="text-2xl text-white mt-12 mb-6">It's not just passports</h2>
+
+          <p>
+            Once I started using it, I realized how many other documents quietly expire in the background.
+          </p>
+
+          <p>
+            Work permits if you're living abroad. Visas and residency cards that need annual renewal. Driver's licences that expire every few years. Health insurance that renews annually (and you need to prove coverage). Travel insurance policies. The kids' national IDs.
+          </p>
+
+          <p>
+            They all have expiry dates. They all matter at the exact wrong moment. And nobody reminds you until it's too late - or you're already at the embassy realizing your visa expired last month.
+          </p>
+
+          <p>
+            The app handles all of them. Anything with an expiry date - passports, visas, work permits, insurance, licences, whatever your family needs - one place, tracked, handled.
+          </p>
+
+          <h2 class="text-2xl text-white mt-12 mb-6">When things go wrong abroad</h2>
+
+          <p>
+            Over 300,000 passports are lost or stolen every year in the US alone. If it happens to you abroad, you're not starting from zero.
+          </p>
+
+          <p>
+            Document numbers. Expiry dates. Clear scans. Ready when you need to file a report or contact an embassy. It doesn't replace your original documents, but it gives you what you need to move forward - without Wi-Fi, without panic.
+          </p>
+
+          <h2 class="text-2xl text-white mt-12 mb-6">Designed for privacy</h2>
+
+          <p>
+            Early on, I made a core decision about how this app should work: your documents belong to you, and they should stay only with you.
+          </p>
+
+          <p>
+            Travel Document Vault is self-contained:
+          </p>
+
+          <ul class="list-none space-y-2 pl-0 my-6 font-semibold text-white">
+            <li class="flex items-center gap-3">
+              <svg class="w-5 h-5 text-brand-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              No accounts to create
+            </li>
+            <li class="flex items-center gap-3">
+              <svg class="w-5 h-5 text-brand-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              No server upload
+            </li>
+            <li class="flex items-center gap-3">
+              <svg class="w-5 h-5 text-brand-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              Encrypted on your device
+            </li>
+          </ul>
+
+          <p>
+            When you scan a document, text recognition runs on your device. Everything stays on your phone. The app does not upload them to any server.
+          </p>
+
+          <p>
+            Some people prefer apps that sync everywhere. But for passports and IDs, I wanted a simpler model: your phone is the vault. You can export your copies whenever you need to. They are yours, after all.
+          </p>
+
+          <h2 class="text-2xl text-white mt-12 mb-6">Why pay once instead of subscribe</h2>
+
+          <p>
+            A travel document vault is something you set up once and forget about. It sits there quietly tracking expiry dates until you need it. That's the whole point.
+          </p>
+
+          <p>
+            A subscription doesn't make sense for that. If I stop paying, I'd need to export everything, find another app, migrate my documents, set up reminders again. And if I forget to renew? I lose access right when I might need it most - standing at airport check-in realizing my kid's passport expires in 4 months and I can't get to the scan I stored.
+          </p>
+
+          <p>
+            When you buy this app, it's yours. Your documents stay on your device. The reminders keep working. No renewals. No exports. No vendor lock-in. It just works, quietly, in the background, until you need it.
+          </p>
+
+          <p>
+            The free version gives you one profile, five documents, OCR, reminders, and a PIN lock. Pro unlocks unlimited profiles and documents with a single payment.* That's it.
+          </p>
+
+          <p class="text-slate-400 text-xs">
+            * One-time purchase applies to current version. Future major updates may be offered separately. See our <a href="../../pricing-policy/" class="text-brand-gold hover:text-white underline">Pricing Policy</a> for full details.
+          </p>
+
+          <hr class="border-white/10 my-12" />
+
+          <h2 class="text-2xl text-white mt-12 mb-6">Why this exists</h2>
+
+          <p>
+            I built Travel Document Vault because I wanted to stop being the anxious parent at the gate.
+          </p>
+
+          <p>
+            I wanted to be the one pointing out the planes to my kids, not the one switching between apps to find the right document. I wanted to know - actually know, not hope - that everything was sorted before we left the house.
+          </p>
+
+          <p>
+            If you're the person in your family who double-checks everything, who keeps the folder, who worries quietly so everyone else doesn't have to - I built this for you.
+          </p>
+
+          <p class="text-lg font-medium text-white">
+            <strong>One less thing to worry about.</strong>
+          </p>
+
+        </div>
+
+        <!-- Author Sig -->
+        <div class="mt-16 sm:mt-24 pt-10 border-t border-white/5 text-center">
+          <p class="text-xs text-blue-200/30 mb-8 font-medium tracking-wide">
+            Built for personal use first. No accounts. No server upload.
+          </p>
+          <p class="font-handwriting text-3xl text-white/90 mb-2">Mustafa</p>
+          <p class="text-blue-200/40 text-sm font-medium tracking-wide uppercase">Founder, Travel Document Vault</p>
+        </div>
+      </div>
+      <!-- Related Articles -->
+      <aside class="mt-12" aria-label="Related articles">
+        <h2 class="text-xs font-bold text-blue-200/40 uppercase tracking-widest mb-4">Related Articles</h2>
+        <div class="flex flex-col gap-3">
+          <a href="../passport-expiry-6-month-rule/" class="post-card" style="padding: 0.75rem 1rem;">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="tag-pill tag-passport">Passport Rules</span>
+              <span class="text-blue-200/40 text-xs">7 min read · Feb 1, 2026</span>
+            </div>
+            <p class="text-white font-semibold text-sm leading-snug">The 6-Month Passport Rule: Which Countries Enforce It</p>
+          </a>
+          <a href="../how-to-organise-family-travel-documents/" class="post-card" style="padding: 0.75rem 1rem;">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="tag-pill tag-organisation">Organisation</span>
+              <span class="text-blue-200/40 text-xs">7 min read · Feb 5, 2026</span>
+            </div>
+            <p class="text-white font-semibold text-sm leading-snug">How to Organise Family Travel Documents (Before Your Next Trip)</p>
+          </a>
+        </div>
+      </aside>
+
+    </article>
+  </main>
+
+  <!-- Disclaimer -->
+  <section class="px-4 mb-12">
+    <div class="glass-panel rounded-2xl p-6 sm:p-8 text-center max-w-3xl mx-auto">
+      <p class="text-slate-50 text-sm leading-relaxed">
+        <strong class="text-slate-200">Important:</strong> Travel Document Vault is a personal organization tool for storing digital copies of your documents. <strong class="text-slate-200">Digital copies stored in this app are NOT valid for travel.</strong> It does not verify document authenticity or provide legal or travel advice. Always carry original documents and verify all travel requirements with official government sources.
+      </p>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="text-center space-y-6 pt-8 pb-24 px-4">
+    <h2 class="text-3xl sm:text-4xl font-bold text-white">The App I Wish I'd Had</h2>
+    <p class="text-blue-200/70 text-lg max-w-xl mx-auto">If you're the person in your family who keeps track of everything — this is for you. Scan once, stop worrying forever.</p>
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-8">
+      <!-- App Store Badge -->
+      <a href="https://apps.apple.com/app/travel-document-vault/id6757014877" target="_blank" rel="noopener noreferrer" onclick="gtag('event', 'download_click', {'event_category': 'conversion', 'event_label': 'blog_bottom_cta_appstore'});" class="group relative inline-flex items-center transition-transform active:scale-95">
+        <div class="absolute -inset-1 bg-gradient-to-r from-brand-gold to-yellow-500 rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-200"></div>
+        <img loading="lazy" src="../../assets/images/app-store-badge-black.svg" alt="Download on the App Store" class="relative h-[56px] w-auto" width="120" height="40" />
+      </a>
+
+      <!-- Android Coming Soon (Status Indicator) -->
+      <div class="inline-flex items-center gap-3 h-[56px]">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-emerald-400/80 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/>
+        </svg>
+        <div class="flex flex-col justify-center gap-0.5">
+          <span class="text-[11px] font-medium text-slate-400 uppercase tracking-wide leading-tight">Coming Early 2026</span>
+          <span class="text-[15px] font-semibold text-slate-100 leading-tight">Android</span>
+        </div>
+      </div>
+    </div>
+    <span class="text-blue-200/40 text-xs font-semibold tracking-wider uppercase block mt-4">No subscription. One-time purchase.*</span>
+    <p class="text-slate-400 text-[10px] max-w-2xl mx-auto">
+      * Applies to current version. Future major updates may be offered separately. See our <a href="../../pricing-policy/" class="text-brand-gold hover:text-white underline">Pricing Policy</a> for full details.
+    </p>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center pt-20 pb-8 space-y-4">
+    <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm font-medium">
+      <a href="../../features/" class="text-slate-50 hover:text-white transition-colors duration-200">Features</a>
+      <span class="text-blue-200/20 hidden sm:inline">·</span>
+      <a href="../../faq/" class="text-slate-50 hover:text-white transition-colors duration-200">FAQ</a>
+      <span class="text-blue-200/20 hidden sm:inline">·</span>
+      <a href="./" class="text-slate-50 hover:text-white transition-colors duration-200">Why We Built This</a>
+      <span class="text-blue-200/20 hidden sm:inline">·</span>
+      <a href="../../accessibility/" class="text-slate-50 hover:text-white transition-colors duration-200">Accessibility</a>
+      <span class="text-blue-200/20 hidden sm:inline">·</span>
+      <a href="../../privacy-policy/" class="text-slate-50 hover:text-white transition-colors duration-200">Privacy Policy</a>
+      <span class="text-blue-200/20 hidden sm:inline">·</span>
+      <a href="../../terms/" class="text-slate-50 hover:text-white transition-colors duration-200">Terms of Service</a>
+      <span class="text-blue-200/20 hidden sm:inline">·</span>
+      <a href="../../pricing-policy/" class="text-slate-50 hover:text-white transition-colors duration-200">Pricing Policy</a>
+    </div>
+    <div class="text-sm">
+      <a href="mailto:support@traveldocumentvault.com" class="text-slate-50 hover:text-white transition-colors duration-200">support&#64;traveldocumentvault&#46;com</a>
+    </div>
+    <p class="text-slate-50 text-xs">© Mustafa Hafeez. All rights reserved.</p>
+  </footer>
+
+  <script src="../../assets/js/cookie-consent.js" defer></script>
+  <script src="../../assets/js/mobile-menu.js" defer></script>
+</body>
+</html>
