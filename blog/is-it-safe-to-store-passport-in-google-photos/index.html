@@ -85,7 +85,7 @@
         "name": "What is the safest way to store a digital copy of a passport?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "The safest approach is on-device encrypted storage - apps that keep your document scans stored locally on your phone with strong encryption, with no cloud upload. This means no third-party server ever holds your passport data. Examples include dedicated travel document apps with on-device AES-256 encryption."
+          "text": "The safest approach is on-device encrypted storage - apps that keep your document scans stored locally on your phone with strong encryption, with no cloud upload. This means no third-party server ever holds your passport data. Examples include dedicated travel document apps with strong on-device encryption."
         }
       },
       {
@@ -109,7 +109,7 @@
         "name": "What is the safest way to store a passport photo digitally?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "The safest way to store a passport photo is with on-device encrypted storage - apps that keep your document scans locally on your phone with AES-256 encryption and no cloud upload. This means no third-party server ever holds your passport data. If you want cloud access, a zero-knowledge encrypted password manager like 1Password or Bitwarden is a strong alternative. General cloud photo libraries like Google Photos and iCloud Photos are acceptable with strong account security but are not purpose-built for sensitive identity documents."
+          "text": "The safest way to store a passport photo is with on-device encrypted storage - apps that keep your document scans locally on your phone with strong encryption and no cloud upload. This means no third-party server ever holds your passport data. If you want cloud access, a zero-knowledge encrypted password manager like 1Password or Bitwarden is a strong alternative. General cloud photo libraries like Google Photos and iCloud Photos are acceptable with strong account security but are not purpose-built for sensitive identity documents."
         }
       }
     ]
@@ -507,7 +507,7 @@
           <div style="background: rgba(59,130,246,0.06); border: 1px solid rgba(59,130,246,0.25); border-radius: 10px; padding: 1.1rem 1.4rem; margin: 2rem 0;">
             <p style="margin: 0 0 0.4rem 0; font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(147,197,253,0.7);">What this means in practice</p>
             <p style="margin: 0; font-size: 0.95rem; color: rgba(219,234,254,0.9); line-height: 1.65;">
-              Say your Google account password was reused on a site that suffered a breach two years ago. You've forgotten about it. A credential-stuffing bot tries it against Google — and it works. In the next few minutes, everything in your Google Photos is accessible: holiday snapshots, screenshots, and your passport scan. The attacker now has your full legal name, date of birth, nationality, passport number, and your photo. That's enough to open a credit account in your name or run a targeted phishing attack that's hard to spot because it uses your real details. The account breach is the realistic threat — not Google itself.
+              Say your Google account password was reused on a site that suffered a breach two years ago. You've forgotten about it. An automated tool tries that password against Google, and it works. In the next few minutes, everything in your Google Photos is accessible: holiday snapshots, screenshots, and your passport scan. The attacker now has your full legal name, date of birth, nationality, passport number, and your photo. That's enough to open a credit account in your name or run a targeted phishing attack that's hard to spot because it uses your real details. The account breach is the realistic threat, not Google itself.
             </p>
           </div>
 
@@ -548,7 +548,7 @@
               <tr>
                 <td>On-device encrypted app (no cloud)</td>
                 <td>Your phone only</td>
-                <td>On-device AES-256; no server copy</td>
+                <td>Encrypted on-device; no server copy</td>
                 <td>Lowest</td>
                 <td style="color: #34d399; font-weight: 600;">Best for sensitive docs</td>
               </tr>
@@ -583,7 +583,7 @@
           <!-- Mid-article CTA nudge -->
           <div style="background: rgba(255,176,0,0.06); border: 1px solid rgba(255,176,0,0.15); border-radius: 10px; padding: 1rem 1.25rem; margin: 2rem 0;">
             <p style="margin: 0; font-size: 0.9rem; color: rgba(219,234,254,0.85); line-height: 1.6;">
-              <strong style="color: #FFB000;">Travel Document Vault</strong> stores your passport scans on-device only with AES-256 encryption - no cloud upload, no account, no third-party server ever touches your data. <a href="https://apps.apple.com/app/travel-document-vault/id6757014877" target="_blank" rel="noopener noreferrer" style="color: #FFB000;">Free on the App Store.</a>
+              <strong style="color: #FFB000;">Travel Document Vault</strong> stores your passport scans on-device only with strong encryption - no cloud upload, no account, no third-party server ever touches your data. <a href="https://apps.apple.com/app/travel-document-vault/id6757014877" target="_blank" rel="noopener noreferrer" style="color: #FFB000;">Free on the App Store.</a>
             </p>
           </div>
 
@@ -600,7 +600,7 @@
 
           <p><strong>On-device encrypted apps</strong></p>
           <p>
-            Apps built specifically for this - like <a href="https://traveldocumentvault.com" class="text-brand-gold hover:text-white">Travel Document Vault</a> - keep everything on your phone only. AES-256 encryption, no cloud upload, no account required. There's no server to breach because your digital passport copy never leaves the device. The one trade-off: if you lose your phone without a backup, the digital copy goes with it. But your physical passport is still with you.
+            Apps built specifically for this - like <a href="https://traveldocumentvault.com" class="text-brand-gold hover:text-white">Travel Document Vault</a> - keep everything on your phone only. Strong encryption, no cloud upload, no account required. There's no server to breach because your digital passport copy never leaves the device. The one trade-off: if you lose your phone without a backup, the digital copy goes with it. But your physical passport is still with you.
           </p>
 
           <p><strong>Encrypted cloud storage with client-side keys</strong></p>
@@ -632,7 +632,7 @@
 
             <div class="faq-item">
               <h3>Is it safe to store a passport photo in Google Photos?</h3>
-              <p>It's convenient, but Google Photos wasn't built for sensitive identity documents. Your scan lives on Google's servers, gets processed by their automated systems, and is protected by whatever security your Google account has. If your account gets compromised — through phishing, a reused password, or a data breach elsewhere — so does your passport scan. For a document this sensitive, a dedicated encrypted storage option is a smarter choice. If you do use Google Photos, turn on two-factor authentication and use a unique password on your Google account.</p>
+              <p>It's convenient, but Google Photos wasn't built for sensitive identity documents. Your scan lives on Google's servers, gets processed by their automated systems, and is protected by whatever security your Google account has. If your account gets compromised (through phishing, a reused password, or a data breach somewhere else), so does your passport scan. For a document this sensitive, a dedicated encrypted storage option is a smarter choice. If you do use Google Photos, turn on two-factor authentication and use a unique password on your Google account.</p>
             </div>
 
             <div class="faq-item">
@@ -693,7 +693,7 @@
   <!-- CTA Section -->
   <section class="scroll-fade-in text-center space-y-6 pt-24 pb-24">
     <h2 class="text-3xl sm:text-4xl font-bold text-white">Your Passport Deserves Actual Encryption</h2>
-    <p class="text-blue-200/70 text-lg max-w-xl mx-auto">AES-256 on-device encryption, no cloud upload, no account. Scan your passport once and it stays on your phone - where only you can access it.</p>
+    <p class="text-blue-200/70 text-lg max-w-xl mx-auto">Strong on-device encryption, no cloud upload, no account. Scan your passport once and it stays on your phone - where only you can access it.</p>
     <div class="flex flex-col sm:flex-row items-center justify-center gap-8">
       <a href="https://apps.apple.com/app/travel-document-vault/id6757014877" target="_blank" rel="noopener noreferrer" onclick="gtag('event', 'download_click', {'event_category': 'conversion', 'event_label': 'blog_bottom_cta_appstore'});" class="group relative inline-flex items-center transition-transform active:scale-95">
         <div class="absolute -inset-1 bg-gradient-to-r from-brand-gold to-yellow-500 rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-200"></div>

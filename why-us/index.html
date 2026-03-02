@@ -58,7 +58,7 @@
       {
         "@type": "Question",
         "name": "Is my data really safe?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Your documents are encrypted with AES-256 on your device and protected by the Secure Enclave. There are no cloud servers, no accounts, and no way for anyone - including the developer - to access your data." }
+        "acceptedAnswer": { "@type": "Answer", "text": "Your documents are strongly encrypted on your device and protected by your phone's built-in security chip. There are no cloud servers, no accounts, and no way for anyone - including the developer - to access your data." }
       },
       {
         "@type": "Question",
@@ -115,10 +115,10 @@
     .gold-line-grow.visible { transform: scaleY(1); }
     .sticky-cta { position: fixed; bottom: 0; left: 0; right: 0; z-index: 80; transform: translateY(100%); transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); background: rgba(10, 25, 47, 0.95); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-top: 1px solid rgba(255, 255, 255, 0.1); padding-bottom: env(safe-area-inset-bottom, 0); }
     .sticky-cta.visible { transform: translateY(0); }
-    /* Carousel base — legacy scroll-track rules removed; cross-fade stage replaces them */
+    /* Carousel base - legacy scroll-track rules removed; cross-fade stage replaces them */
     .carousel-dot { transition: all 0.3s ease; }
     .carousel-dot.active { background: #FFB000; width: 24px; }
-    /* Screenshot carousel — gold standard */
+    /* Screenshot carousel - gold standard */
     .carousel-stage {
       position: relative;
       height: calc(80vw * 2.17 + 70px);
@@ -136,7 +136,7 @@
       justify-content: flex-start;
       opacity: 0;
       pointer-events: none;
-      /* Cross-fade transition — smooth like Apple */
+      /* Cross-fade transition - smooth like Apple */
       transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
     .carousel-slide.is-active {
@@ -170,7 +170,7 @@
       /* Reset browser default <p> margin, then apply intentional spacing */
       margin-top: 0;
       margin-bottom: 2px;
-      font-size: 1.5rem;       /* 24px — premium weight, Apple-scale */
+      font-size: 1.5rem;       /* 24px - premium weight, Apple-scale */
       font-weight: 700;
       letter-spacing: -0.01em;
       line-height: 1.2;
@@ -790,7 +790,7 @@
             <span class="font-semibold text-white text-base">Is my data really safe?</span>
             <span class="transition group-open:rotate-180"><svg fill="none" class="h-5 w-5 text-brand-gold flex-shrink-0" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></span>
           </summary>
-          <div class="text-slate-300 text-base px-6 pb-6 leading-relaxed">Your documents are encrypted with AES-256 on your device and protected by the Secure Enclave. There are no cloud servers, no accounts, and no way for anyone - including me - to access your data. PIN lock is free; biometric lock (Face ID/Touch ID) is available with Pro.</div>
+          <div class="text-slate-300 text-base px-6 pb-6 leading-relaxed">Your documents are strongly encrypted on your device and protected by your phone's built-in security chip. There are no cloud servers, no accounts, and no way for anyone - including me - to access your data. PIN lock is free; biometric lock (Face ID/Touch ID) is available with Pro.</div>
         </details>
         <details class="glass-panel rounded-xl group">
           <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
@@ -1030,7 +1030,7 @@
           var outgoing = slides[currentIndex];
           var incoming = slides[index];
 
-          // Mark outgoing as exiting — triggers exit keyframe
+          // Mark outgoing as exiting - triggers exit keyframe
           outgoing.classList.add('is-exiting');
 
           // Bring incoming to z=1 but still transparent (let CSS handle fade-in)
@@ -1049,7 +1049,7 @@
             updateDots(currentIndex);
             updateArrows();
             // Update live region for screen readers
-            stage.setAttribute('aria-label', 'Screenshot carousel — slide ' + (currentIndex + 1) + ' of ' + itemCount);
+            stage.setAttribute('aria-label', 'Screenshot carousel - slide ' + (currentIndex + 1) + ' of ' + itemCount);
           }, DURATION);
         }
 
