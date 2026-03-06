@@ -26,14 +26,22 @@
   <link rel="icon" type="image/svg+xml" href="/assets/images/app_icon.svg">
   <link rel="apple-touch-icon" href="/assets/images/app_icon.svg">
 
+  <meta name="robots" content="index, follow">
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+
+  <meta name="robots" content="index, follow">
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+
   <!-- Structured Data (JSON-LD) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
+    "@type": "MobileApplication",
     "name": "Travel Document Vault",
-    "operatingSystem": "iOS, Android",
+    "operatingSystem": ["iOS", "Android"],
     "applicationCategory": "TravelApplication",
+    "url": "https://traveldocumentvault.com",
+    "downloadUrl": "https://apps.apple.com/app/id6757014877",
     "offers": {
       "@type": "Offer",
       "price": "9.99",
