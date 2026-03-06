@@ -48,6 +48,8 @@ jobs:
           cp -r privacy-policy _site/
           cp -r terms _site/
           cp -r pricing-policy _site/
+          cp robots.txt _site/
+          cp sitemap.xml _site/
           msg="Build complete. Contents of _site:"
           echo "$msg"
           ls -R _site
