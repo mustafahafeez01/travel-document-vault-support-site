@@ -221,6 +221,7 @@
         <span class="w-2 h-2 rounded-full bg-brand-gold shadow-[0_0_10px_rgba(255,176,0,0.5)]"></span>
         Privacy-first. On-device only. No accounts needed.
       </div>
+      <h1 class="sr-only">Travel Document Vault: Store family travel documents with expiry reminders</h1>
       <div class="text-4xl font-bold tracking-tight text-white leading-tight mb-6" aria-hidden="true" role="presentation">
         One Less Thing
         <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-gold to-yellow-300">to Worry</span><br />
@@ -327,9 +328,9 @@
             <svg width="16" height="16" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="20" r="20" fill="#FF6154"/><path d="M22.5 20H17.5V15H22.5C23.88 15 25 16.12 25 17.5C25 18.88 23.88 20 22.5 20Z" fill="white"/><path d="M17.5 20H22.5C23.88 20 25 21.12 25 22.5C25 23.88 23.88 25 22.5 25H17.5V20Z" fill="white" opacity="0.6"/><rect x="15" y="13" width="2.5" height="14" fill="white"/></svg>
             Find us on Product Hunt
           </a>
-          <span class="text-slate-50 text-sm font-medium">One-time purchase · No subscription*</span>
-          <p class="text-slate-400 text-xs max-w-2xl mx-auto pt-1">
-            * Applies to current version (v1.x). See <a href="pricing-policy/#version-policy" class="text-brand-gold hover:text-white underline">Pricing Policy</a>.
+          <span class="text-slate-50 text-sm font-medium">Pay once. All v1.x updates included, forever.</span>
+          <p class="text-slate-300 text-xs max-w-2xl mx-auto pt-1">
+            <a href="pricing-policy/#version-policy" class="text-brand-gold hover:text-white underline">About our version policy →</a>
           </p>
         </div>
       </div>
@@ -353,7 +354,7 @@
             </svg>
           </div>
           <h3 class="text-lg font-bold text-white">Built by a Parent</h3>
-          <p class="text-sm text-slate-300 leading-relaxed">I built this app because I needed it for my own family. No VC funding pushing us to sell your data. No corporate bloat. Just a tool that works exactly as it should.</p>
+          <p class="text-sm text-slate-300 leading-relaxed">I built this app because I needed it for my own family. Separate profiles for every family member. Automatic expiry reminders months before renewal is urgent. No VC funding pushing us to sell your data. Just a tool that works exactly as it should.</p>
         </div>
 
         <!-- Pillar 2 -->
@@ -364,7 +365,7 @@
              </svg>
           </div>
           <h3 class="text-lg font-bold text-white">Offline by Design</h3>
-          <p class="text-sm text-slate-300 leading-relaxed">A data breach cannot happen if the data never leaves your phone. We deliberately built this app without cloud syncing so your passports remain exactly where they belong.</p>
+          <p class="text-sm text-slate-300 leading-relaxed">A data breach cannot happen if the data never leaves your phone. Unlike apps that sync to a cloud dashboard, your documents stay put. We deliberately built without cloud syncing so your passports remain exactly where they belong.</p>
         </div>
 
         <!-- Pillar 3 -->
@@ -379,7 +380,40 @@
         </div>
       </div>
       
-      <div class="mt-8 text-center pt-6">
+      <!-- Transparency Checklist -->
+      <div class="mt-16 glass-panel rounded-2xl p-6 sm:p-8 max-w-3xl mx-auto">
+        <h3 class="text-lg font-bold text-white mb-1 text-center">Here's the truth about what I can see</h3>
+        <p class="text-sm text-blue-200/70 text-center mb-6">Here's an honest accounting of every piece of data in this app.</p>
+        <dl class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div class="flex items-start gap-3" style="padding:12px;border-radius:12px;background:rgba(255,255,255,0.05)">
+            <span class="flex-shrink-0 mt-0.5 w-5 h-5 rounded-full bg-green-500/15 border border-green-400/30 flex items-center justify-center">
+              <svg class="w-3 h-3 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            </span>
+            <div><dt class="text-sm font-medium text-white">Your passport scans</dt><dd class="text-xs text-slate-300 mt-0.5">Stored on your device only. I cannot see them.</dd></div>
+          </div>
+          <div class="flex items-start gap-3" style="padding:12px;border-radius:12px;background:rgba(255,255,255,0.05)">
+            <span class="flex-shrink-0 mt-0.5 w-5 h-5 rounded-full bg-green-500/15 border border-green-400/30 flex items-center justify-center">
+              <svg class="w-3 h-3 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            </span>
+            <div><dt class="text-sm font-medium text-white">Your document details</dt><dd class="text-xs text-slate-300 mt-0.5">Names, numbers, expiry dates. On your device only.</dd></div>
+          </div>
+          <div class="flex items-start gap-3" style="padding:12px;border-radius:12px;background:rgba(255,255,255,0.05)">
+            <span class="flex-shrink-0 mt-0.5 w-5 h-5 rounded-full bg-green-500/15 border border-green-400/30 flex items-center justify-center">
+              <svg class="w-3 h-3 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            </span>
+            <div><dt class="text-sm font-medium text-white">Your family profiles</dt><dd class="text-xs text-slate-300 mt-0.5">Never transmitted. No account, no sync, no server.</dd></div>
+          </div>
+          <div class="flex items-start gap-3" style="padding:12px;border-radius:12px;background:rgba(255,255,255,0.05)">
+            <span class="flex-shrink-0 mt-0.5 w-5 h-5 rounded-full bg-green-500/15 border border-green-400/30 flex items-center justify-center">
+              <svg class="w-3 h-3 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            </span>
+            <div><dt class="text-sm font-medium text-white">Reminder notifications</dt><dd class="text-xs text-slate-300 mt-0.5">Scheduled locally on your device. I don't know your expiry dates.</dd></div>
+          </div>
+        </dl>
+        <p class="text-center text-xs text-slate-400 mt-5">Even if someone hacked my servers... there are no servers. There's nothing to find.</p>
+      </div>
+
+      <div class="mt-8 text-center pt-2">
         <a href="blog/" class="text-brand-gold hover:text-brand-goldHover transition-colors text-sm inline-flex items-center gap-1 group font-medium">
           Read the founder's story: Why I built an app to carry one less thing in my head
           <span class="group-hover:translate-x-0.5 transition-transform">→</span>
@@ -644,8 +678,8 @@
             <h3 class="text-xl font-bold text-white">Pro</h3>
             <span class="text-xl font-bold text-brand-gold">$9.99</span>
           </div>
-          <p class="text-xs text-slate-50 mb-2">For your whole family. One-time purchase. No subscription.*</p>
-          <p class="text-[10px] text-slate-400 mb-4">* Applies to current version (v1.x). See <a href="pricing-policy/#version-policy" class="text-brand-gold hover:text-white underline">Pricing Policy</a>.</p>
+          <p class="text-xs text-slate-50 mb-2">For your whole family. Pay once. All v1.x updates included, forever.</p>
+          <p class="text-[10px] text-slate-300 mb-4"><a href="pricing-policy/#version-policy" class="text-brand-gold hover:text-white underline">About our version policy →</a></p>
 
           <ul class="space-y-3 mb-6 text-sm">
             <li class="flex items-center gap-3 text-white">
@@ -765,15 +799,15 @@
 
           <div class="mb-2">
             <span class="text-4xl font-bold text-white">$9.99</span>
-            <span class="text-slate-50"> one-time*</span>
+            <span class="text-slate-50"> one-time</span>
           </div>
 
           <div class="mb-6">
             <span class="inline-flex items-center px-3 py-1 rounded-full bg-blue-500/10 text-blue-200 text-xs font-medium border border-blue-400/20 tracking-wide">
-              For your whole family. One-time purchase.
+              For your whole family. Pay once. All v1.x updates included, forever.
             </span>
-            <p class="text-slate-400 text-xs mt-2">
-              * One-time purchase for v1.x. See <a href="pricing-policy/#version-policy" class="text-brand-gold hover:text-white underline">Pricing Policy</a>.
+            <p class="text-slate-300 text-xs mt-2">
+              <a href="pricing-policy/#version-policy" class="text-brand-gold hover:text-white underline">About our version policy →</a>
             </p>
           </div>
 
@@ -920,6 +954,7 @@
         <a href="mailto:support@traveldocumentvault.com" class="text-slate-50 hover:text-white transition-colors duration-200">support&#64;traveldocumentvault&#46;com</a>
       </div>
       <p class="text-slate-50 text-xs">© Mustafa Hafeez. All rights reserved.</p>
+      <p class="text-slate-400 text-xs">v1.0.5 · Updated March 2026</p>
     </footer>
 
   </div>
