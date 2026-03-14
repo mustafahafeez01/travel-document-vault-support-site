@@ -25,9 +25,9 @@ warn()    { echo -e "  ${YELLOW}⚠${NC} $*"; }
 SCHEDULE=(
   "2026-03-04 best-passport-organizer-app"
   "2026-03-11 what-documents-to-carry-when-travelling-internationally"
+  "2026-03-14 travel-while-passport-renewal-pending"
   "2026-03-18 visa-expiry-tracker-app"
   "2026-03-25 digital-passport-copy-valid"
-  "2026-04-01 travel-while-passport-renewal-pending"
   "2026-04-08 safest-way-to-store-passport-digitally"
   "2026-04-15 child-travel-consent-letter"
   "2026-04-22 visa-vs-passport"

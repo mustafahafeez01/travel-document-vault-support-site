@@ -11,7 +11,7 @@ Use this as the master reference when creating any new blog post HTML file.
 A single complete `index.html` file saved at:
 `blog/[slug]/index.html`
 
-Do NOT publish to the blog index (`blog/index.html`) — posts are drafted only until the user manually adds them.
+Save here — this is the draft. Publishing to `blog/index.html` is handled by the publish workflow described in `blog/_drafts/README.md`.
 
 ---
 

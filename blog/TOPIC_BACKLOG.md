@@ -285,7 +285,7 @@ When choosing the next post to write, score each topic:
 
 ## Additional P2 Topics (from Content Ideas research)
 
-> Full article briefs for each of these are in `blog/_drafts/CONTENT_IDEAS.md` — read that file before writing any of the below.
+> Full article briefs for topics #39–50 are embedded in `blog/TOPIC_BACKLOG.md` (below the table). Read that section before writing any of these posts.
 
 | # | Title | Slug | Priority | Primary Keyword | Volume |
 |---|-------|------|----------|----------------|--------|
