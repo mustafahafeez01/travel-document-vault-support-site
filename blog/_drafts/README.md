@@ -106,20 +106,28 @@ Status: ✅ Published · ✍️ Draft ready · 📝 Not yet written
 
 ## How to Publish Manually — Step by Step
 
-### Step 1 — Update the publish date in the draft
-
-In `blog/_drafts/[slug]/index.html`, set today's date in:
-- `<span>Published [date]</span>` in the article header
-- `"datePublished"` and `"dateModified"` in the JSON-LD schema
-
-### Step 2 — Run the publish script
+### Step 1 — Run the publish script
 
 ```bash
 cd ~/Github/support-site
 ./blog/_drafts/publish.sh [slug]
+# or: ./blog/_drafts/publish.sh --next
 ```
 
-Moves `blog/_drafts/[slug]/` → `blog/[slug]/`. The card insertion step fails — do Step 3 manually.
+The script automatically:
+- Updates `datePublished` and `dateModified` in JSON-LD to today
+- Updates `datetime="..."` on the `<time>` element
+- Updates the human-readable displayed date (e.g. "March 18, 2026")
+- Moves `blog/_drafts/[slug]/` → `blog/[slug]/`
+- Attempts to insert the post card into `blog/index.html` (may fail — verify Step 2)
+
+### Step 2 — Verify card in blog/index.html
+
+The card insertion step sometimes fails silently. Always verify:
+```bash
+grep "[slug]" blog/index.html
+```
+If missing, insert manually from the Post card summaries section below.
 
 ### Step 3 — Insert post card into blog/index.html
 

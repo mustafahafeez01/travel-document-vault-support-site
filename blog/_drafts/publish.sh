@@ -412,12 +412,54 @@ else
   SKIP_CARD=false
 fi
 
-# ── Step 1: Move the draft folder ─────────────────────────────────────────────
+# ── Step 1: Update dates in the draft HTML to today ─────────────────────────
+TODAY=$(date +%Y-%m-%d)
+DRAFT_HTML="${DRAFT_DIR}/index.html"
+
+info "Updating dates to ${TODAY} in draft HTML..."
+
+python3 - "${DRAFT_HTML}" "${TODAY}" << 'PYDATE'
+import sys, re
+from datetime import datetime
+
+html_path = sys.argv[1]
+today_iso  = sys.argv[2]                                      # e.g. 2026-03-18
+today_dt   = datetime.strptime(today_iso, "%Y-%m-%d")
+today_disp = today_dt.strftime("%-d %B %Y")                   # e.g. 18 March 2026
+# Also build Month D, YYYY format used in some posts
+today_us   = today_dt.strftime("%B %-d, %Y")                  # e.g. March 18, 2026
+
+with open(html_path, 'r') as f:
+    html = f.read()
+
+# JSON-LD datePublished / dateModified (plain date or with T time suffix)
+html = re.sub(r'"datePublished":\s*"[\d\-T:Z]+"', f'"datePublished": "{today_iso}"', html)
+html = re.sub(r'"dateModified":\s*"[\d\-T:Z]+"',  f'"dateModified": "{today_iso}"',  html)
+
+# datetime="YYYY-MM-DD" attribute on <time> tags
+html = re.sub(r'datetime="\d{4}-\d{2}-\d{2}"', f'datetime="{today_iso}"', html)
+
+# Human-readable date inside <time>...</time> — handles "March 18, 2026" or "18 March 2026"
+html = re.sub(
+    r'(<time[^>]*>)[A-Z][a-z]+ \d{1,2},? \d{4}(</time>)',
+    r'\g<1>' + today_us + r'\2',
+    html
+)
+
+with open(html_path, 'w') as f:
+    f.write(html)
+
+print(f"  Dates updated to {today_iso} ({today_us})")
+PYDATE
+
+success "Dates updated to ${TODAY}"
+
+# ── Step 2: Move the draft folder ─────────────────────────────────────────────
 info "Moving ${DRAFT_DIR}/ → ${BLOG_DIR}/"
 mv "$DRAFT_DIR" "$BLOG_DIR"
 success "Draft moved to blog/${SLUG}/"
 
-# ── Step 2: Insert the post card into blog/index.html ────────────────────────
+# ── Step 3: Insert the post card into blog/index.html ────────────────────────
 if [[ "$SKIP_CARD" == false ]]; then
   info "Inserting post card into ${BLOG_INDEX}..."
 
@@ -440,7 +482,7 @@ else
   warn "Skipped blog/index.html update — add card manually."
 fi
 
-# ── Step 3: Summary ───────────────────────────────────────────────────────────
+# ── Step 4: Summary ───────────────────────────────────────────────────────────
 echo ""
 echo -e "${GREEN}${BOLD}Done.${NC} Published: ${SLUG}"
 echo ""
