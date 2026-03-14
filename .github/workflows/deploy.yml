@@ -50,17 +50,21 @@ jobs:
           cp -r terms _site/
           cp -r pricing-policy _site/
 
-          # Copy blog — exclude internal files that must never be public
+          # Copy blog — exclude all internal planning files
+          # _drafts/ = draft HTML + social posts (not ready to publish)
+          # *.md = planning docs (TOPIC_BACKLOG, BLOG_STYLE_GUIDE, social.md, etc.)
+          # BLOG_POST_SYSTEM_PROMPT.md = internal Claude prompt
           rsync -a \
             --exclude='_drafts/' \
-            --exclude='BLOG_POST_SYSTEM_PROMPT.md' \
             --exclude='*.md' \
             blog/ _site/blog/
 
-          msg="Build complete. Contents of _site/blog (internal files excluded):"
-          echo "$msg"
+          # Verify no internal files leaked into build
+          echo "--- Build verification ---"
           find _site/blog -name "*.md" && echo "WARNING: .md files found in build" || echo "OK: no .md files in build"
           find _site/blog -name "_drafts" && echo "WARNING: _drafts found in build" || echo "OK: no _drafts in build"
+          echo "--- Published blog posts ---"
+          find _site/blog -name "index.html" | sort
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
