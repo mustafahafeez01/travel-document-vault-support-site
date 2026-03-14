@@ -38,9 +38,10 @@ jobs:
           mkdir _site
           cp index.html _site/
           cp CNAME _site/
+          cp robots.txt _site/
+          cp sitemap.xml _site/
           cp -r assets _site/
           cp -r dist _site/
-          cp -r blog _site/
           cp -r features _site/
           cp -r why-us _site/
           cp -r faq _site/
@@ -48,11 +49,18 @@ jobs:
           cp -r privacy-policy _site/
           cp -r terms _site/
           cp -r pricing-policy _site/
-          cp robots.txt _site/
-          cp sitemap.xml _site/
-          msg="Build complete. Contents of _site:"
+
+          # Copy blog — exclude internal files that must never be public
+          rsync -a \
+            --exclude='_drafts/' \
+            --exclude='BLOG_POST_SYSTEM_PROMPT.md' \
+            --exclude='*.md' \
+            blog/ _site/blog/
+
+          msg="Build complete. Contents of _site/blog (internal files excluded):"
           echo "$msg"
-          ls -R _site
+          find _site/blog -name "*.md" && echo "WARNING: .md files found in build" || echo "OK: no .md files in build"
+          find _site/blog -name "_drafts" && echo "WARNING: _drafts found in build" || echo "OK: no _drafts in build"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
